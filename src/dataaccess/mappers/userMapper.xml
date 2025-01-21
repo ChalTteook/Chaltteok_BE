@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">  
+  <select id="findUserById">
+    SELECT
+      id,
+      username,
+      email,
+      password,
+      social_id
+    FROM
+      members 
+    <where>
+      id = #{id}
+    </where>
+  </select>
+
+  <insert id="insertUser">
+    INSERT INTO members (
+      password,
+      auth_id,
+      username, 
+      email, 
+      phone,
+      address,
+      social_id
+    ) VALUES (
+      #{password}, 
+      #{authId}, 
+      #{username}, 
+      #{email}, 
+      #{phone},
+      #{address},
+      #{socialId}
+    )
+  </insert>
+</mapper>

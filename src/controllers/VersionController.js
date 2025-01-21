@@ -7,3 +7,5 @@ const getVersionCheck = async(req,res) => {
 export default {
     getVersionCheck
 }
+
+module.exports = router;
