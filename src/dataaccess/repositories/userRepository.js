@@ -31,32 +31,21 @@ class UserRepository {
     }
 
     async findById(id) {
+        const connection = await this.db.getConnection();
         try {
-            const connection = await this.db.getConnection();
-            // const user = await this.db.findUserById(id);
-            try {
-                const query = mybatisMapper.getStatement(
-                    'user',    // namespace
-                    'findUserById', // sql id
-                    id,    // parameters
-                    this.format   // format
-                );
-                console.log('Generated SQL:', query);
-                const [result] = await connection.query(query);
-                return {
-                    success: true,
-                    data: result,
-                    message: '사용자가 성공적으로 조회되었습니다.'
-                };
-            } catch (err) {
-                console.error('Failed to find user by id:', err);
-                throw err;
-            } finally {
-                connection.release();
-            }
+            const query = mybatisMapper.getStatement(
+                'user',
+                'findUserById',
+                { id }, // Pass id as an object
+                this.format
+            );
+            const [result] = await connection.query(query);
+            return result.length > 0 ? result[0] : null; // Return user data
         } catch (err) {
             console.error('Failed to find user by id:', err);
             throw err;
+        } finally {
+            connection.release();
         }
     }
 
@@ -145,17 +134,21 @@ class UserRepository {
     }
 
     async updateUser(userModel) {
+        const connection = await this.db.getConnection();
         try {
-            const connection = await this.db.getConnection();
             const query = mybatisMapper.getStatement(
                 'user',    // namespace
                 'updateUser', // sql id
                 userModel,    // parameters
                 this.format   // format
             );
+            await connection.query(query);
+            return { success: true, message: 'User updated successfully' };
         } catch (err) {
             console.error('Error in updateUser:', err);
             throw err;
+        } finally {
+            connection.release();
         }
     }
 }

@@ -104,19 +104,12 @@
 
   <update id="updateUser">
     UPDATE user SET
-      type,
-      email,
-      password,
-      name,
-      age,
-      gender,
-      nick_name,
-      phone,
-      address,
-      social_id,
-      it_plc_1,
-      it_plc_2,
-      it_plc_3
+      name = #{name},
+      phone = #{phone},
+      address = #{address},
+      age = #{age},
+      gender = #{gender},
+      nick_name = #{nickName}
     WHERE id = #{id}
   </update>
 </mapper>

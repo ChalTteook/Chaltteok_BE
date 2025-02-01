@@ -43,6 +43,15 @@ class UserService {
         return this.userRepository.createUser(userModel);
     }
 
+    async findById(id) {
+        const userData = await this.userRepository.findById(id);
+        return userData ? new UserModel(userData) : null;
+    }
+
+    async updateUser(userModel) {
+        return this.userRepository.updateUser(userModel);
+    }
+
     // 다른 사용자 관련 메서드 추가 가능
 }
 
