@@ -4,34 +4,119 @@
   <select id="findUserById">
     SELECT
       id,
-      username,
+      type,
       email,
       password,
-      social_id
+      name,
+      age,
+      gender,
+      nick_name,
+      phone,
+      address,
+      social_id,
+      it_plc_1,
+      it_plc_2,
+      it_plc_3,
+      reg_date,
+      mod_date
     FROM
-      members 
+      user 
     <where>
       id = #{id}
     </where>
   </select>
 
-  <insert id="insertUser">
-    INSERT INTO members (
+   <select id="findUserByEmail">
+    SELECT
+      id,
+      type,
+      email,
       password,
-      auth_id,
-      username, 
-      email, 
+      name,
+      age,
+      gender,
+      nick_name,
+      phone,
+      address,
+      social_id,
+      it_plc_1,
+      it_plc_2,
+      it_plc_3,
+      reg_date,
+      mod_date
+    FROM
+      user 
+    <where>
+      email = #{email}
+    </where>
+  </select>
+
+   <select id="findUserBySocialId">
+    SELECT
+      id,
+      type,
+      email,
+      password,
+      name,
+      age,
+      gender,
+      nick_name,
+      phone,
+      address,
+      social_id,
+      it_plc_1,
+      it_plc_2,
+      it_plc_3,
+      reg_date,
+      mod_date
+    FROM
+      user 
+    <where>
+      social_id = #{socialId}
+    </where>
+  </select>
+
+  <insert id="insertUser">
+    INSERT INTO user (
+      type,
+      email,
+      password,
+      name,
+      age,
+      gender,
+      nick_name,
       phone,
       address,
       social_id
     ) VALUES (
-      #{password}, 
-      #{authId}, 
-      #{username}, 
+      #{type}, 
       #{email}, 
+      #{password}, 
+      #{name}, 
+      #{age},
+      #{gender},
+      #{nickName},
       #{phone},
       #{address},
       #{socialId}
     )
   </insert>
+
+  <update id="updateUser">
+    UPDATE user SET
+      type,
+      email,
+      password,
+      name,
+      age,
+      gender,
+      nick_name,
+      phone,
+      address,
+      social_id,
+      it_plc_1,
+      it_plc_2,
+      it_plc_3
+    WHERE id = #{id}
+  </update>
 </mapper>

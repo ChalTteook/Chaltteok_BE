@@ -1,5 +1,4 @@
 import express from "express";
-import TestRouter from "./src/controllers/testController.js";
 import UserRouter from "./src/controllers/userController.js";
 import AuthRouter from "./src/controllers/AuthController.js";
 
@@ -9,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended : false }));
 
-app.use('/test', TestRouter);
+
 app.use('/user', UserRouter);
 app.use('/auth', AuthRouter);
 
