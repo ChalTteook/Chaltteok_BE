@@ -1,14 +1,17 @@
 import axios from 'axios';
 import SocialAuthService from './socialAuthService.js';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Load environment variables
 
 class KakaoAuthService extends SocialAuthService {
     constructor() {
         super({
             authUrl: 'https://kauth.kakao.com',
             apiUrl: 'https://kapi.kakao.com',
-            clientId: 'fe0e720fbe5b74240985fb33256f2826',
-            redirectUri: 'http://127.0.0.1',
-            state: '1234'
+            clientId: process.env.KAKAO_CLIENT_ID,
+            redirectUri: process.env.KAKAO_REDIRECT_URI,
+            state: process.env.KAKAO_STATE
         });
     }
 

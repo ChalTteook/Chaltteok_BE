@@ -1,16 +1,18 @@
 import axios from 'axios';
 import SocialAuthService from './socialAuthService.js';
-import readline from 'readline';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Load environment variables
 
 class NaverAuthService extends SocialAuthService {
     constructor() {
         super({
             authUrl: 'https://nid.naver.com',
             apiUrl: 'https://openapi.naver.com',
-            clientId: 'GK2ORFcjWGkcsqlGPh8M',
-            clientSecret: '_3XrtIBeLs',
-            redirectUri: 'http://127.0.0.1',
-            state: '1234'
+            clientId: process.env.NAVER_CLIENT_ID,
+            clientSecret: process.env.NAVER_CLIENT_SECRET,
+            redirectUri: process.env.NAVER_REDIRECT_URI,
+            state: process.env.NAVER_STATE
         });
     }
 
