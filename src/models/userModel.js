@@ -1,51 +1,60 @@
+import bcrypts from 'bcryptjs';
+
 class UserModel {
-    // No-args constructor
-    constructor() {
-        this.id = null;
-        this.password = '';
-        this.authId = 1000;
-        this.username = '';
-        this.email = '';
-        this.phone = '';
-        this.address = '';
-        this.socialId = '';
-        this.createdAt = new Date();
-        this.updatedAt = new Date();
+    constructor(data) {
+        this.id = data.id || null;
+        this.type = data.type || null;
+        this.email = data.email || null;
+        this.password = data.password || null;
+        this.name = data.name || '';
+        this.age = data.age || null;
+        this.gender = data.gender || null;
+        this.nickName = data.nickName || null;
+        this.phone = data.phone || '';
+        this.address = data.address || '';
+        this.socialId = data.socialId || null;
+        this.regDate = data.regDate || null;
+        this.modDate = data.modDate || null;
     }
 
-    // Constructor with args (static factory method)
-    static from({id, username, email, password, createdAt = new Date(), updatedAt = new Date()}) {
-        const user = new UserModel();
-        user.id = id;
-        user.username = username;
-        user.email = email;
-        user.password = password;
-        user.createdAt = createdAt;
-        user.updatedAt = updatedAt;
-        return user;
+    async verifyPassword(password) {
+        return await bcrypts.compare(password, this.password);
     }
 
-    // Basic validation method
-    validate() {
-        if (!this.email || !this.email.includes('@')) {
-            throw new Error('Invalid email');
-        }
-        if (!this.username || this.username.length < 3) {
-            throw new Error('Username must be at least 3 characters');
-        }
-        if (!this.password || this.password.length < 6) {
-            throw new Error('Password must be at least 6 characters');
-        }
+    async hashPassword() {
+        const saltRounds = 10;
+        this.password = await bcrypts.hash(this.password, saltRounds);
+    }
+
+    async updateUserData(userData) {
+        this.name = userData.name ?? this.name;
+        this.age = userData.age ?? this.age;
+        this.gender = userData.gender ?? this.gender;
+        this.nickName = userData.nickName ?? this.nickName;
+        this.phone = userData.phone ?? this.phone;
+        this.address = userData.address ?? this.address;
+        this.itPlc1 = userData.itPlc1 ?? this.itPlc1;
+        this.itPlc2 = userData.itPlc2 ?? this.itPlc2;
+        this.itPlc3 = userData.itPlc3 ?? this.itPlc3;
+    }
+
+    async updatePassword(password) {
+        this.password = password;
+        await this.hashPassword(password);
+        return this;
     }
 
     // Convert to JSON for API responses (excluding sensitive data)
     toJSON() {
         return {
             id: this.id,
-            password: this.password,
-            authID: this.authId,
-            username: this.username,
+            type: this.type,
             email: this.email,
+            password: this.password,
+            name: this.name,
+            age: this.age,
+            gender: this.gender,
+            nickName: this.nickName,
             phone: this.phone,
             address: this.address,
             socialId: this.socialId,
@@ -53,6 +62,29 @@ class UserModel {
             updatedAt: this.updatedAt
         };
     }
+
+    // Constructor with args (static factory method)
+    static from({id, type, email, password, name, age, gender, nickName, phone, address, socialId, itPlc1, itPlc2, itPlc3, regDate, modDate}) {
+        const user = new UserModel();
+        user.id = id;
+        user.type = type;
+        user.email = email;
+        user.password = password;
+        user.name = name;
+        user.age = age;
+        user.gender = gender;
+        user.nickName = nickName;
+        user.phone = phone;
+        user.address = address;
+        user.socialId = socialId;
+        user.itPlc1 = itPlc1;
+        user.itPlc2 = itPlc2;
+        user.itPlc3 = itPlc3;
+        user.regDate = regDate;
+        user.modDate = modDate;
+        return user;
+    }
+    
 }
 
 export default UserModel;
