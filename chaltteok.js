@@ -4,7 +4,7 @@ import AuthRouter from "./src/controllers/AuthController.js";
 
 const port = 9801;
 const app = express();
-const basePath = '/app/v1';
+const basePath = '/api/v1';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
