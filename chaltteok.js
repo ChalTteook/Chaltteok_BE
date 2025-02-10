@@ -1,6 +1,6 @@
 import express from "express";
 import UserRouter from "./src/controllers/userController.js";
-import AuthRouter from "./src/controllers/AuthController.js";
+import AuthRouter from "./src/controllers/authController.js";
 
 const port = 9801;
 const app = express();
