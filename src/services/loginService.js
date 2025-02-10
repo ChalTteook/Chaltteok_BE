@@ -2,6 +2,7 @@ import UserService from './userService.js';
 import JwtUtil from '../utils/jwtUtil.js';
 import naverAuthService from './naverAuthService.js';
 import kakaoAuthService from './kakaoAuthService.js';
+import UserModel from '../models/userModel.js';
 
 class LoginService {
     async login(email, password) {

@@ -1,4 +1,4 @@
-import bcrypts from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 
 class UserModel {
     constructor(data) {
@@ -9,12 +9,12 @@ class UserModel {
         this.name = data.name || '';
         this.age = data.age || null;
         this.gender = data.gender || null;
-        this.nickName = data.nickName || null;
+        this.nickName = data.nickName || data.nick_name || null;
         this.phone = data.phone || '';
         this.address = data.address || '';
-        this.socialId = data.socialId || null;
-        this.regDate = data.regDate || null;
-        this.modDate = data.modDate || null;
+        this.socialId = data.socialId || data.social_id || null;
+        this.regDate = data.regDate || data.reg_date || null;
+        this.modDate = data.modDate || data.mod_date || null;
     }
 
     async verifyPassword(password) {
