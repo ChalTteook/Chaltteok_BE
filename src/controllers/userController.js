@@ -58,7 +58,7 @@ router.get('/me/profile', authenticateUser, async (req, res) => {
     }
 });
 
-// Update current user profile information
+// 프로필 업데이트
 router.patch('/me/profile', authenticateUser, async (req, res) => {
     const { name, phone, address, age, gender, nickName } = req.body; // Extract fields to update
     try {
