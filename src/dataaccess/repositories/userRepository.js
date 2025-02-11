@@ -1,27 +1,24 @@
-import Database from '../../utils/database.js';
+// import Database from '../../utils/database.js';
 import mybatisMapper from 'mybatis-mapper';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { pool } from '../../utils/database.js';
 
 class UserRepository {
     constructor() {
-        this.db = null;
+        // pool = null;
         this.format = {language: 'sql', indent: '  '};
         this.initialize();
     }
 
     async initialize() {
-        // 데이터베이스 초기화
         try {
-            this.db = await Database.init();
-            
             // 매퍼 XML 파일 경로 설정
             const mapperPath = path.join(
                 path.dirname(fileURLToPath(import.meta.url)), 
                 '../mappers/userMapper.xml'
             );
             console.log('Mapper Path:', mapperPath);
-
             // 매퍼 생성
             mybatisMapper.createMapper([mapperPath]);
         } catch (err) {
@@ -31,7 +28,7 @@ class UserRepository {
     }
 
     async findById(id) {
-        const connection = await this.db.getConnection();
+        const connection = await pool.getConnection();
         try {
             const query = mybatisMapper.getStatement(
                 'user',
@@ -50,8 +47,8 @@ class UserRepository {
     }
 
     async findByEmail(email) {
+        const connection = await pool.getConnection();
         try {
-            const connection = await this.db.getConnection();
             const query = mybatisMapper.getStatement(
                 'user',    // namespace
                 'findUserByEmail', // sql id
@@ -65,11 +62,13 @@ class UserRepository {
         } catch (err) {
             console.error('Failed to find user by email:', err);
             throw err;
+        } finally {
+            await connection.release();
         }
     }
 
     async findBySocialId(socialId) {
-        const connection = await this.db.getConnection();
+        const connection = await pool.getConnection();
         try {
             const query = mybatisMapper.getStatement(
                 'user',
@@ -89,7 +88,7 @@ class UserRepository {
 
     async createUser(userModel) {
         try {
-            const connection = await this.db.getConnection();
+            const connection = await pool.getConnection();
             try {
                 const query = mybatisMapper.getStatement(
                     'user',    // namespace
@@ -134,7 +133,7 @@ class UserRepository {
     }
 
     async updateUser(userModel) {
-        const connection = await this.db.getConnection();
+        const connection = await pool.getConnection();
         try {
             const query = mybatisMapper.getStatement(
                 'user',    // namespace
