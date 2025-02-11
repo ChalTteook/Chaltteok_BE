@@ -18,12 +18,12 @@ class UserModel {
     }
 
     async verifyPassword(password) {
-        return await bcrypts.compare(password, this.password);
+        return await bcrypt.compare(password, this.password);
     }
 
     async hashPassword() {
         const saltRounds = 10;
-        this.password = await bcrypts.hash(this.password, saltRounds);
+        this.password = await bcrypt.hash(this.password, saltRounds);
     }
 
     async updateUserData(userData) {
