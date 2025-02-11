@@ -1,7 +1,7 @@
 import axios from 'axios';
 import SocialAuthService from './socialAuthService.js';
 import dotenv from 'dotenv';
-
+ 
 dotenv.config(); // Load environment variables
 
 class KakaoAuthService extends SocialAuthService {
@@ -13,6 +13,22 @@ class KakaoAuthService extends SocialAuthService {
             redirectUri: process.env.KAKAO_REDIRECT_URI,
             state: process.env.KAKAO_STATE
         });
+    }
+    
+    async getAuthCode() {
+        try {
+            const data = await axios.get(`https://kauth.kakao.com/oauth/authorize`, {
+                params : {
+                    client_id : this.clientId,
+                    redirect_uri : this.redirectUri,
+                    response_type : 'code' 
+                }
+            })
+            return data;
+        } catch(error) {
+            console.log(error)
+        }
+
     }
 
     async getAccessToken(authorizationCode) {
@@ -35,6 +51,7 @@ class KakaoAuthService extends SocialAuthService {
                 }
             };
         } catch (error) {
+            console.log(error);
             return {
                 success: false,
                 error: 'Failed to get Kakao access token',

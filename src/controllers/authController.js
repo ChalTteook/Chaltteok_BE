@@ -42,4 +42,14 @@ router.post('/social-login', async (request, response) => {
     }
 });
 
+router.get('/kakao_auth', async(request,response) => {
+    try {
+        const result = await LoginService.socailLoginGetAuthCode();
+        response.status(200).json({ success: true, data : result.request.res.responseUrl });
+    } catch(error) {
+        console.error(error);
+        response.status(400).json({ success: false, message: error.message });
+    }
+})
+
 export default router;

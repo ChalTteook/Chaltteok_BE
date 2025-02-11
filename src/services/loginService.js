@@ -14,16 +14,22 @@ class LoginService {
         return null;
     }
 
+    async socailLoginGetAuthCode() {
+        const data = await kakaoAuthService.getAuthCode();
+        console.log(data);
+        return data;
+    }
+
     async socialLogin(provider, code) {
         let userInfo;
-
-        if (provider === 'naver') {
+        if (provider == 'naver') {
             const tokenResult = await naverAuthService.getAccessToken(code);
             if (tokenResult.success) {
                 userInfo = await naverAuthService.getUserInfo(tokenResult.data.accessToken);
             }
-        } else if (provider === 'kakao') {
+        } else if (provider == 'kakao') {
             const tokenResult = await kakaoAuthService.getAccessToken(code);
+            console.log(tokenResult);
             if (tokenResult.success) {
                 userInfo = await kakaoAuthService.getUserInfo(tokenResult.data.accessToken);
             }
@@ -44,7 +50,7 @@ class LoginService {
                 return { user: newUser, token };
             }
         } else {
-            throw new Error('Social login failed');
+            // throw new Error('Social login failed');
         }
     }
 }
