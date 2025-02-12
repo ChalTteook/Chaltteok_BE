@@ -1,4 +1,3 @@
-// import Database from '../../utils/database.js';
 import mybatisMapper from 'mybatis-mapper';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -6,7 +5,6 @@ import { pool } from '../../utils/database.js';
 
 class UserRepository {
     constructor() {
-        // pool = null;
         this.format = {language: 'sql', indent: '  '};
         this.initialize();
     }
@@ -18,11 +16,11 @@ class UserRepository {
                 path.dirname(fileURLToPath(import.meta.url)), 
                 '../mappers/userMapper.xml'
             );
-            console.log('Mapper Path:', mapperPath);
+            console.log('Mapper loaded:', mapperPath);
             // 매퍼 생성
             mybatisMapper.createMapper([mapperPath]);
         } catch (err) {
-            console.error('Failed to initialize:', err);
+            console.error('Failed to initialize:', mapperPath);
             throw err;
         }
     }
@@ -63,7 +61,7 @@ class UserRepository {
             console.error('Failed to find user by email:', err);
             throw err;
         } finally {
-            await connection.release();
+            connection.release();
         }
     }
 

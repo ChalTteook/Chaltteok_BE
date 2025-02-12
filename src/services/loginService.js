@@ -3,12 +3,23 @@ import JwtUtil from '../utils/jwtUtil.js';
 import naverAuthService from './naverAuthService.js';
 import kakaoAuthService from './kakaoAuthService.js';
 import UserModel from '../models/userModel.js';
+import SessionRepository from '../dataaccess/repositories/sessionRepository.js';
 
 class LoginService {
     async login(email, password) {
         const user = await UserService.findByEmail(email);
         if (user && await user.verifyPassword(password)) {
-            const token = JwtUtil.generateToken({ userId: user.id });
+
+            const session = await SessionRepository.findSession(user.id);
+            let token
+
+            if (session) {
+                token = session.session;
+            } else {
+                token = JwtUtil.generateToken({ userId: user.id });
+                SessionRepository.saveSession(user.id, token);
+            }
+            
             return { user, token };
         }
         return null;
@@ -22,14 +33,14 @@ class LoginService {
 
     async socialLogin(provider, code) {
         let userInfo;
-        if (provider == 'naver') {
+
+        if (provider === 'naver') {
             const tokenResult = await naverAuthService.getAccessToken(code);
             if (tokenResult.success) {
                 userInfo = await naverAuthService.getUserInfo(tokenResult.data.accessToken);
             }
-        } else if (provider == 'kakao') {
+        } else if (provider === 'kakao') {
             const tokenResult = await kakaoAuthService.getAccessToken(code);
-            console.log(tokenResult);
             if (tokenResult.success) {
                 userInfo = await kakaoAuthService.getUserInfo(tokenResult.data.accessToken);
             }
@@ -38,19 +49,31 @@ class LoginService {
         if (userInfo) {
             const existingUser = await UserService.findBySocialId(userInfo.data.id);
             if (existingUser) {
-                const token = JwtUtil.generateToken({ userId: existingUser.id });
+                // const token = JwtUtil.generateToken({ userId: existingUser.id });
+                const session = await SessionRepository.findSession(user.id);
+                let token
+
+                if (session) {
+                    token = session.session;
+                } else {
+                    token = JwtUtil.generateToken({ userId: existingUser.id });
+                    SessionRepository.saveSession(user.id, token);
+                }
                 return { user: existingUser, token };
             } else {
                 const newUser = new UserModel({
                     socialId: userInfo.data.id,
                     type: provider // 'kakao' 또는 'naver'로 설정
                 });
+
                 await UserService.createSocialUser(newUser);
                 const token = JwtUtil.generateToken({ userId: newUser.id });
+                SessionRepository.saveUserSession(user.id, token);
+                
                 return { user: newUser, token };
             }
         } else {
-            // throw new Error('Social login failed');
+            throw new Error('Social login failed');
         }
     }
 }
