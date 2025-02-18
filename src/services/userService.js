@@ -52,6 +52,15 @@ class UserService {
         return this.userRepository.updateUser(userModel);
     }
 
+    async forgotPhoneNumber(param) {
+
+        const max = 999999;
+        const randomNumber = Math.floor(Math.random() * max).toString().padStart(6, '0');
+        // console.log(randomNumber);
+        return randomNumber
+    }
+
+
     // 다른 사용자 관련 메서드 추가 가능
 }
 

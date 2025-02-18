@@ -1,16 +1,24 @@
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Load environment variables
 
 class JwtUtil {
-    constructor(secretKey = process.env.JWT_SECRET_KEY || 'your-secret-key') {
+    constructor(secretKey = process.env.JWT_SECRET_KEY) {
         this.secretKey = secretKey;
-        this.tokenExpiration = '1h';
-        this.refreshTokenExpiration = '7d';
+        // this.tokenExpiration = '1h';
+        // this.refreshTokenExpiration = '7d';
     }
 
     generateToken(payload) {
-        return jwt.sign(payload, this.secretKey, { 
-            expiresIn: this.tokenExpiration 
-        });
+        try {
+            return jwt.sign(payload, this.secretKey, { 
+                // expiresIn: this.tokenExpiration 
+            });
+        } catch(error) {
+            console.log(error);
+        }
+        
     }
 
     generateRefreshToken(payload) {
@@ -51,6 +59,7 @@ class JwtUtil {
     getAuthMiddleware() {
         return (req, res, next) => {
             const token = req.headers['authorization']?.split(' ')[1];
+            
 
             if (!token || token === 'null') {
                 return res.status(401).json({

@@ -8,17 +8,20 @@ import SessionRepository from '../dataaccess/repositories/sessionRepository.js';
 class LoginService {
     async login(email, password) {
         const user = await UserService.findByEmail(email);
+
         if (user && await user.verifyPassword(password)) {
-
-            const session = await SessionRepository.findSession(user.id);
+            // const session = await SessionRepository.findSession(user.id);
             let token
+            /* 세션 바로바로 교체하는거로 변경*/
+            token = JwtUtil.generateToken({ userId: user.id });
+            SessionRepository.saveSession(user.id, token);
 
-            if (session) {
-                token = session.session;
-            } else {
-                token = JwtUtil.generateToken({ userId: user.id });
-                SessionRepository.saveSession(user.id, token);
-            }
+            // if (session) {
+            //     token = session.session;
+            // } else {
+            //     token = JwtUtil.generateToken({ userId: user.id });
+            //     SessionRepository.saveSession(user.id, token);
+            // }
             
             return { user, token };
         }
@@ -27,7 +30,6 @@ class LoginService {
 
     async socailLoginGetAuthCode() {
         const data = await kakaoAuthService.getAuthCode();
-        console.log(data);
         return data;
     }
 
