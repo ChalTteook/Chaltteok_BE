@@ -30,7 +30,9 @@ class UserService {
         await userModel.hashPassword();
         
         // 사용자 생성
-        return this.userRepository.createUser(userModel);
+        const savedUser = new UserModel(this.userRepository.createUser(userModel));
+        savedUser.makeDefaultNickName();
+        
     }
 
     async findBySocialId(socialId) {

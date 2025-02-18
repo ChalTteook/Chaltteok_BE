@@ -6,11 +6,11 @@ dotenv.config(); // Load environment variables
 const server = process.env.MODE;
 
 const pool = mysql.createPool({
-    host: server == 'dev' ? process.env.DEV_DB_HOST : process.env.PROD_DB_HOST,
-    user: process.env.PROD_DB_USER,
-    password: process.env.PROD_DB_PASSWORD,
-    database: process.env.PROD_DB_NAME,
-    port: process.env.PROD_DB_PORT,
+    host: server == 'dev' ? process.env.DEV_DB_HOST : process.env.LOCAL_DB_HOST,
+    user:  server == 'dev' ? process.env.DEV_DB_USER : process.env.LOCAL_DB_USER,
+    password: server == 'dev' ? process.env.DEV_DB_PASSWORD : process.env.LOCAL_DB_PASSWORD,
+    database: server == 'dev' ? process.env.DEV_DB_NAME : process.env.LOCAL_DB_NAME,
+    port: server == 'dev' ? process.env.DEV_DB_PORT : process.env.LOCAL_DB_PORT,
     dateStrings: true,
     connectionLimit: 10,
     enableKeepAlive: true,

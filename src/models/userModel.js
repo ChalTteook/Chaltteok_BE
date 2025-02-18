@@ -26,6 +26,13 @@ class UserModel {
         this.password = await bcrypt.hash(this.password, saltRounds);
     }
 
+    async makeDefaultNickName() {
+        if(this.id === null) {
+            throw new Error('Invalid Id');
+        }
+        this.nickName = '찰떡' + this.id.padStart(6, 0);
+    }
+
     async updateUserData(userData) {
         this.name = userData.name ?? this.name;
         this.age = userData.age ?? this.age;
