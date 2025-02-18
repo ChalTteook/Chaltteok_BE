@@ -60,7 +60,10 @@ class UserService {
         return randomNumber
     }
 
-
+    async changePassword(user, newPassword) {
+        const changedUser = await user.updatePassword( newPassword );
+        this.userRepository.updateUser(changedUser);
+    }
     // 다른 사용자 관련 메서드 추가 가능
 }
 

@@ -7,6 +7,7 @@
       type,
       email,
       password,
+      is_retry,
       name,
       age,
       gender,
@@ -32,6 +33,7 @@
       type,
       email,
       password,
+      is_retry,
       name,
       age,
       gender,
@@ -57,6 +59,7 @@
       type,
       email,
       password,
+      is_retry,
       name,
       age,
       gender,
@@ -81,6 +84,7 @@
       type,
       email,
       password,
+      is_retry,
       name,
       age,
       gender,
@@ -92,6 +96,7 @@
       #{type}, 
       #{email}, 
       #{password}, 
+      #{is_retry},
       #{name}, 
       #{age},
       #{gender},
@@ -104,12 +109,17 @@
 
   <update id="updateUser">
     UPDATE user SET
+      password = #{password},
+      is_retry = #{isRetry},
       name = #{name},
       phone = #{phone},
       address = #{address},
       age = #{age},
       gender = #{gender},
-      nick_name = #{nickName}
+      nick_name = #{nickName},
+      type = #{type},
+      email = #{email},
+      social_id = #{socialId}
     WHERE id = #{id}
   </update>
 </mapper>

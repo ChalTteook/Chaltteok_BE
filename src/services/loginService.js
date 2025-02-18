@@ -71,7 +71,7 @@ class LoginService {
                 await UserService.createSocialUser(newUser);
                 const token = JwtUtil.generateToken({ userId: newUser.id });
                 SessionRepository.saveUserSession(user.id, token);
-                
+
                 return { user: newUser, token };
             }
         } else {

@@ -7,7 +7,7 @@ const router = express.Router();
 // Middleware to authenticate user based on JWT
 const authenticateUser = (req, res, next) => {
     // const token = req.headers['authorization']?.split(' ')[1];
-    const token = req.headers.authorization;
+    const token = req.headers.authorization.split(' ')[1];
     if (!token) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
@@ -85,6 +85,24 @@ router.patch('/me/profile', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, message: 'Server error' });
     }
 });
+
+router.post('/change-password', authenticateUser, async (req, res) => {
+    const { newPassword, confirmPassword } = req.body;
+    if ( newPassword !== confirmPassword ) {
+        return res.status(400).json({ success: false, message: 'invalid inputs' });
+    }
+
+    try {
+        const user = await UserService.findById(req.user.userId);
+        await UserService.changePassword(user, newPassword);
+        return res.status(200).json({ success: true, message: 'password change success'})
+        
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+})
 
 // router.get('/:id', (request, response) => {
 //     response.status(200).json({
