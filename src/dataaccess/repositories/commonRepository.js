@@ -49,7 +49,7 @@ class CommonRepository {
                 this.format
             );
             const [result] = await pool.query(query);
-            return result.length > 0 ? result[0] : null; // Return user data
+            return result; // Return user data
         } catch (err) {
             return { success: true, message: err};
         }
@@ -64,7 +64,7 @@ class CommonRepository {
                 this.format
             );
             const [result] = await pool.query(query);
-            return result.length > 0 ? result[0] : null; // Return user data
+            return result; // Return user data
         } catch (err) {
             return { success: true, message: err};
         }

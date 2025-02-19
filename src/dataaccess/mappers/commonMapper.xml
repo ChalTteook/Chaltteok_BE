@@ -19,7 +19,7 @@
 
     <select id="selectAuthCode">
       SELECT phone
-            , code
+           , code
       FROM user_auth
       WHERE phone = #{phone_number}
       AND code = #{code}
