@@ -1,12 +1,13 @@
 import bcrypt from 'bcryptjs';
 
 class UserModel {
+
     constructor(data) {
         this.id = data.id || null;
         this.type = data.type || null;
         this.email = data.email || null;
         this.password = data.password || null;
-        this.isRetry = data.isRetry || data.is_retry || null;
+        this.isRetry = data.isRetry || data.is_retry || 0;
         this.name = data.name || '';
         this.age = data.age || null;
         this.gender = data.gender || null;
@@ -52,7 +53,7 @@ class UserModel {
         if ( this.isRetry === 1 ) {
             this.isRetry = 0;
         }
-        
+
         return this;
     }
 

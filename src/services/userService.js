@@ -28,6 +28,7 @@ class UserService {
 
         // 비밀번호 해시화
         await userModel.hashPassword();
+
         
         // 사용자 생성
         return this.userRepository.createUser(userModel);
