@@ -4,11 +4,12 @@ import UserService from '../services/userService.js';
 import UserModel from '../models/userModel.js';
 
 const router = express.Router();
+const userService = new UserService();
 
 router.post('/register', async (request, response) => {
     const userModel = new UserModel(request.body);
     try {
-        await UserService.createUser(userModel);
+        await userService.createUser(userModel);
         response.status(201).json({ success: true, message: '회원가입 성공' });
     } catch (error) {
         console.error(error);

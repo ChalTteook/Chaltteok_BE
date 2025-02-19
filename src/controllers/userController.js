@@ -3,6 +3,7 @@ import UserService from '../services/userService.js';
 import JwtUtil from '../utils/jwtUtil.js';
 
 const router = express.Router();
+const userService = new UserService();
 
 // Middleware to authenticate user based on JWT
 const authenticateUser = (req, res, next) => {
@@ -24,7 +25,7 @@ const authenticateUser = (req, res, next) => {
 // Get current user information
 router.get('/me', authenticateUser, async (req, res) => {
     try {
-        const user = await UserService.findById(req.user.userId); // Assuming userId is in the token
+        const user = await userService.findById(req.user.userId); // Assuming userId is in the token
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -38,7 +39,7 @@ router.get('/me', authenticateUser, async (req, res) => {
 // Get current user profile information
 router.get('/me/profile', authenticateUser, async (req, res) => {
     try {
-        const user = await UserService.findById(req.user.userId); // Assuming userId is in the token
+        const user = await userService.findById(req.user.userId); // Assuming userId is in the token
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -63,7 +64,7 @@ router.get('/me/profile', authenticateUser, async (req, res) => {
 router.patch('/me/profile', authenticateUser, async (req, res) => {
     const { name, phone, address, age, gender, nickName } = req.body; // Extract fields to update
     try {
-        const user = await UserService.findById(req.user.userId); // Assuming userId is in the token
+        const user = await userService.findById(req.user.userId); // Assuming userId is in the token
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -77,7 +78,7 @@ router.patch('/me/profile', authenticateUser, async (req, res) => {
         user.nickName = nickName || user.nickName; // Update nickName if provided
 
         // Save updated user data
-        await UserService.updateUser(user);
+        await userService.updateUser(user);
 
         res.status(200).json({ success: true, message: 'Profile updated successfully', user });
     } catch (error) {
@@ -93,8 +94,8 @@ router.post('/change-password', authenticateUser, async (req, res) => {
     }
 
     try {
-        const user = await UserService.findById(req.user.userId);
-        await UserService.changePassword(user, newPassword);
+        const user = await userService.findById(req.user.userId);
+        await userService.changePassword(user, newPassword);
         return res.status(200).json({ success: true, message: 'password change success'})
         
 

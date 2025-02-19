@@ -6,7 +6,7 @@ import UserModel from '../models/userModel.js';
 
 class UserService {
     constructor() {
-        this.userRepository = UserRepository;
+        this.userRepository = new UserRepository();
     }
 
     async findByEmail(email) {
@@ -67,4 +67,4 @@ class UserService {
     // 다른 사용자 관련 메서드 추가 가능
 }
 
-export default new UserService();
+export default UserService;
