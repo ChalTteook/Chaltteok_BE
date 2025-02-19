@@ -57,14 +57,14 @@ class LoginService {
             const existingUser = await this.userService.findBySocialId(userInfo.data.id);
             if (existingUser) {
                 // const token = JwtUtil.generateToken({ userId: existingUser.id });
-                const session = await this.sessionRepository.findSession(user.id);
+                const session = await this.sessionRepository.findSession(existingUser.id);
                 let token
 
                 if (session) {
                     token = session.session;
                 } else {
                     token = JwtUtil.generateToken({ userId: existingUser.id });
-                    this.sessionRepository.saveSession(user.id, token);
+                    this.sessionRepository.saveSession(existingUser.id, token);
                 }
                 return { user: existingUser, token };
             } else {
@@ -75,7 +75,7 @@ class LoginService {
 
                 await this.userService.createSocialUser(newUser);
                 const token = JwtUtil.generateToken({ userId: newUser.id });
-                this.sessionRepository.saveUserSession(user.id, token);
+                this.sessionRepository.saveUserSession(newUser.id, token);
 
                 return { user: newUser, token };
             }
