@@ -1,19 +1,22 @@
-class Studio {
+class Shop {
     constructor(data) {
         this.id = data.id;
-        this.name = data.name;
-        this.tel = data.tel;
+        this.interestId = data.interest_id;
+        this.title = data.title;
+        this.description = data.description;
+        this.phoneNumber = data.phone_number;
+        this.openTime = data.open_time;
+        this.closeTime = data.close_time;
         this.address = data.address;
-        this.road_address = data.road_address;
-        this.thum_url = data.thum_url;
         this.latitude = data.latitude;
         this.longitude = data.longitude;
-        this.home_page = data.home_page;
-        this.menu_info = data.menu_info;
-        this.naver_booking_url = data.naver_booking_url;
-        this.business_hours = data.business_hours;
-        this.business_status = data.business_status;
-        this.created_at = data.created_at;
-        this.updated_at = data.updated_at;
+        this.parking = data.parking;
+        this.floor = data.floor;
+        this.price = data.price;
+        this.img = data.img;
+        this.regDate = data.reg_date;
+        this.modDate = data.mod_date;
     }
 }
+
+export default Shop;

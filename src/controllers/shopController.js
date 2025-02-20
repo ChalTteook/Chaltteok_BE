@@ -1,13 +1,12 @@
 import express from 'express';
-import StudioService from '../services/studioService.js';
+import ShopService from '../services/shopService.js';
 
 const router = express.Router();
-const studioService = new StudioService();
 
 router.get('', async (req, res) => {
     try {
-        const studios = await studioService.getStudioList(0, 20);
-        res.status(200).json({ success: true, data: studios });
+        const shops = await ShopService.getShopList(0, 20);
+        res.status(200).json({ success: true, data: shops });
     } catch (error) {
         console.error(error);
         res.status(400).json({ success: false, message: error.message });
@@ -17,8 +16,8 @@ router.get('', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        const studio = await studioService.getStudio(id);
-        res.status(200).json({ success: true, data: studio });
+        const shop = await ShopService.getShop(id);
+        res.status(200).json({ success: true, data: shop });
     } catch (error) {
         console.error(error);
         res.status(400).json({ success: false, message: error.message });

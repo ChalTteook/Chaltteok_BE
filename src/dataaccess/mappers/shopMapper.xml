@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop">  
+  <select id="getShops">
+    SELECT
+        id,
+        interest_id,
+        title,
+        description,
+        phone_number,
+        open_time,
+        close_time,
+        address,
+        latitude,
+        longitude,
+        parking,
+        floor,
+        price,
+        img,
+        reg_date,
+        mod_date
+    FROM
+        shop
+  </select>
+  
+  <select id="findShopById">
+    SELECT
+        id,
+        interest_id,
+        title,
+        description,
+        phone_number,
+        open_time,
+        close_time,
+        address,
+        latitude,
+        longitude,
+        parking,
+        floor,
+        price,
+        img,
+        reg_date,
+        mod_date
+    FROM
+      shop 
+    <where>
+      id = #{id}
+    </where>
+  </select>
+</mapper>
