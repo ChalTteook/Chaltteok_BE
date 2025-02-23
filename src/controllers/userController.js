@@ -3,7 +3,7 @@ import UserService from '../services/userService.js';
 import JwtUtil from '../utils/jwtUtil.js';
 
 const router = express.Router();
-const userService = new UserService();
+const userService = UserService;
 
 // Middleware to authenticate user based on JWT
 const authenticateUser = (req, res, next) => {

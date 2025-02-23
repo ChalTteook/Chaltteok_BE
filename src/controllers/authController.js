@@ -4,7 +4,7 @@ import UserService from '../services/userService.js';
 import UserModel from '../models/userModel.js';
 
 const router = express.Router();
-const userService = new UserService();
+const userService = UserService;
 
 router.post('/register', async (request, response) => {
     const userModel = new UserModel(request.body);

@@ -6,68 +6,96 @@ import UserModel from '../models/userModel.js';
 
 class UserService {
     constructor() {
-        this.userRepository = new UserRepository();
+        this.userRepository = UserRepository;
     }
 
     async findByEmail(email) {
-        const userData = await this.userRepository.findByEmail(email);
-        return userData ? new UserModel(userData) : null;
+        try {
+            const userData = await this.userRepository.findByEmail(email);
+            return userData ? new UserModel(userData) : null;
+        } catch (error) {
+            console.error('Error in findByEmail:', error);
+            // Optionally, return a specific value or throw a custom error
+            return null; // or throw new Error('Custom error message');
+        }
     }
 
     async createUser(userModel) {
-        // 이메일로 사용자가 존재하는지 확인
-        const existingUser = await this.userRepository.findByEmail(userModel.email);
-        
-        // 사용자가 존재하지 않을 경우에만 생성
-        if (existingUser) {
-            throw new Error('User already exists');
+        try {
+            const existingUser = await this.userRepository.findByEmail(userModel.email);
+            if (existingUser) {
+                throw new Error('User already exists');
+            }
+
+            userModel.type = 'email';
+            await userModel.hashPassword();
+            const savedUser = await this.userRepository.createUser(userModel);
+            return new UserModel(savedUser);
+        } catch (error) {
+            console.error('Error in createUser:', error);
+            throw error;
         }
-
-        // 유저 타입 지정
-        userModel.type = 'email';
-
-        // 비밀번호 해시화
-        await userModel.hashPassword();
-
-        
-        // 사용자 생성
-        const savedUser = new UserModel(this.userRepository.createUser(userModel));
-        savedUser.makeDefaultNickName();
-        
     }
 
     async findBySocialId(socialId) {
-        const userData = await this.userRepository.findBySocialId(socialId);
-        return userData ? new UserModel(userData) : null;
+        try {
+            const userData = await this.userRepository.findBySocialId(socialId);
+            return userData ? new UserModel(userData) : null;
+        } catch (error) {
+            console.error('Error in findBySocialId:', error);
+            return null;
+        }
     }
 
-    async createSocialUser(userModel) {        
-        // 사용자 생성
-        return this.userRepository.createUser(userModel);
+    async createSocialUser(userModel) {
+        try {
+            return await this.userRepository.createUser(userModel);
+        } catch (error) {
+            console.error('Error in createSocialUser:', error);
+            return null;
+        }
     }
 
     async findById(id) {
-        const userData = await this.userRepository.findById(id);
-        return userData ? new UserModel(userData) : null;
+        try {
+            const userData = await this.userRepository.findById(id);
+            return userData ? new UserModel(userData) : null;
+        } catch (error) {
+            console.error('Error in findById:', error);
+            return null;
+        }
     }
 
     async updateUser(userModel) {
-        return this.userRepository.updateUser(userModel);
+        try {
+            return await this.userRepository.updateUser(userModel);
+        } catch (error) {
+            console.error('Error in updateUser:', error);
+            return null;
+        }
     }
 
     async forgotPhoneNumber(param) {
-
-        const max = 999999;
-        const randomNumber = Math.floor(Math.random() * max).toString().padStart(6, '0');
-        // console.log(randomNumber);
-        return randomNumber
+        try {
+            const max = 999999;
+            const randomNumber = Math.floor(Math.random() * max).toString().padStart(6, '0');
+            return randomNumber;
+        } catch (error) {
+            console.error('Error in forgotPhoneNumber:', error);
+            return null;
+        }
     }
 
     async changePassword(user, newPassword) {
-        const changedUser = await user.updatePassword( newPassword );
-        this.userRepository.updateUser(changedUser);
+        try {
+            const changedUser = await user.updatePassword(newPassword);
+            return await this.userRepository.updateUser(changedUser);
+        } catch (error) {
+            console.error('Error in changePassword:', error);
+            return null;
+        }
     }
     // 다른 사용자 관련 메서드 추가 가능
 }
 
-export default UserService;
+export default new UserService();

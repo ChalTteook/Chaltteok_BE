@@ -7,8 +7,8 @@ import SessionRepository from '../dataaccess/repositories/sessionRepository.js';
 
 class LoginService {
     constructor() {
-        this.userService = new UserService();
-        this.sessionRepository = new SessionRepository();
+        this.userService = UserService;
+        this.sessionRepository = SessionRepository;
     }
 
     async login(email, password) {

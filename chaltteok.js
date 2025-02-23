@@ -1,11 +1,8 @@
 import express from "express";
 import UserRouter from "./src/controllers/userController.js";
 import AuthRouter from "./src/controllers/authController.js";
-<<<<<<< HEAD
 import ShopRouter from "./src/controllers/shopController.js";
-=======
 import CommonRouter from "./src/controllers/commonControlller.js"
->>>>>>> dev_findPassword
 
 const port = 9801;
 const app = express();
