@@ -63,4 +63,4 @@ class SessionRepository {
     }
 }
 
-export default new SessionRepository();
+export default SessionRepository;

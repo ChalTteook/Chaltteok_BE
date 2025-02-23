@@ -1,11 +1,13 @@
 import bcrypt from 'bcryptjs';
 
 class UserModel {
+
     constructor(data) {
         this.id = data.id || null;
         this.type = data.type || null;
         this.email = data.email || null;
         this.password = data.password || null;
+        this.isRetry = data.isRetry || data.is_retry || 0;
         this.name = data.name || '';
         this.age = data.age || null;
         this.gender = data.gender || null;
@@ -18,7 +20,11 @@ class UserModel {
     }
 
     async verifyPassword(password) {
-        return await bcrypt.compare(password, this.password);
+        if(!this.isRetry) {
+            return await bcrypt.compare(password, this.password);
+        } else {
+            return password === this.password;
+        }
     }
 
     async hashPassword() {
@@ -46,8 +52,15 @@ class UserModel {
     }
 
     async updatePassword(password) {
+
         this.password = password;
-        await this.hashPassword(password);
+
+        await this.hashPassword();
+
+        if ( this.isRetry === 1 ) {
+            this.isRetry = 0;
+        }
+
         return this;
     }
 

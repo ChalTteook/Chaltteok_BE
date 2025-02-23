@@ -6,7 +6,7 @@ import UserModel from '../models/userModel.js';
 
 class UserService {
     constructor() {
-        this.userRepository = UserRepository;
+        this.userRepository = new UserRepository();
     }
 
     async findByEmail(email) {
@@ -28,6 +28,7 @@ class UserService {
 
         // 비밀번호 해시화
         await userModel.hashPassword();
+
         
         // 사용자 생성
         const savedUser = new UserModel(this.userRepository.createUser(userModel));
@@ -54,7 +55,19 @@ class UserService {
         return this.userRepository.updateUser(userModel);
     }
 
+    async forgotPhoneNumber(param) {
+
+        const max = 999999;
+        const randomNumber = Math.floor(Math.random() * max).toString().padStart(6, '0');
+        // console.log(randomNumber);
+        return randomNumber
+    }
+
+    async changePassword(user, newPassword) {
+        const changedUser = await user.updatePassword( newPassword );
+        this.userRepository.updateUser(changedUser);
+    }
     // 다른 사용자 관련 메서드 추가 가능
 }
 
-export default new UserService();
+export default UserService;

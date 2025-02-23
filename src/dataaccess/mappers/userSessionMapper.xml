@@ -8,7 +8,7 @@
         ) VALUES (
             #{userId},
             #{session}
-        )
+        ) ON DUPLICATE KEY UPDATE session = #{session}
     </insert>
 
     <select id="findSession">

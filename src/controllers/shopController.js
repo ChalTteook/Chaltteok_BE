@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('', async (req, res) => {
     try {
         const shops = await ShopService.getShopList(0, 20);
-        res.status(200).json({ success: true, data: shops });
+        res.status(200).json({ success: true, size: shops.length, data: shops });
     } catch (error) {
         console.error(error);
         res.status(400).json({ success: false, message: error.message });

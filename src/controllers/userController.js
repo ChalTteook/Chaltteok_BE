@@ -3,10 +3,12 @@ import UserService from '../services/userService.js';
 import JwtUtil from '../utils/jwtUtil.js';
 
 const router = express.Router();
+const userService = new UserService();
 
 // Middleware to authenticate user based on JWT
 const authenticateUser = (req, res, next) => {
-    const token = req.headers['authorization']?.split(' ')[1];
+    // const token = req.headers['authorization']?.split(' ')[1];
+    const token = req.headers.authorization.split(' ')[1];
     if (!token) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
@@ -23,7 +25,7 @@ const authenticateUser = (req, res, next) => {
 // Get current user information
 router.get('/me', authenticateUser, async (req, res) => {
     try {
-        const user = await UserService.findById(req.user.userId); // Assuming userId is in the token
+        const user = await userService.findById(req.user.userId); // Assuming userId is in the token
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -37,7 +39,7 @@ router.get('/me', authenticateUser, async (req, res) => {
 // Get current user profile information
 router.get('/me/profile', authenticateUser, async (req, res) => {
     try {
-        const user = await UserService.findById(req.user.userId); // Assuming userId is in the token
+        const user = await userService.findById(req.user.userId); // Assuming userId is in the token
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -62,7 +64,7 @@ router.get('/me/profile', authenticateUser, async (req, res) => {
 router.patch('/me/profile', authenticateUser, async (req, res) => {
     const { name, phone, address, age, gender, nickName } = req.body; // Extract fields to update
     try {
-        const user = await UserService.findById(req.user.userId); // Assuming userId is in the token
+        const user = await userService.findById(req.user.userId); // Assuming userId is in the token
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -76,7 +78,7 @@ router.patch('/me/profile', authenticateUser, async (req, res) => {
         user.nickName = nickName || user.nickName; // Update nickName if provided
 
         // Save updated user data
-        await UserService.updateUser(user);
+        await userService.updateUser(user);
 
         res.status(200).json({ success: true, message: 'Profile updated successfully', user });
     } catch (error) {
@@ -84,6 +86,24 @@ router.patch('/me/profile', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, message: 'Server error' });
     }
 });
+
+router.post('/change-password', authenticateUser, async (req, res) => {
+    const { newPassword, confirmPassword } = req.body;
+    if ( newPassword !== confirmPassword ) {
+        return res.status(400).json({ success: false, message: 'invalid inputs' });
+    }
+
+    try {
+        const user = await userService.findById(req.user.userId);
+        await userService.changePassword(user, newPassword);
+        return res.status(200).json({ success: true, message: 'password change success'})
+        
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+})
 
 // router.get('/:id', (request, response) => {
 //     response.status(200).json({
