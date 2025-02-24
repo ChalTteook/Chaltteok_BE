@@ -6,15 +6,20 @@ import UserModel from '../models/userModel.js';
 import SessionRepository from '../dataaccess/repositories/sessionRepository.js';
 
 class LoginService {
+    constructor() {
+        this.userService = UserService;
+        this.sessionRepository = SessionRepository;
+    }
+
     async login(email, password) {
-        const user = await UserService.findByEmail(email);
+        const user = await this.userService.findByEmail(email);
 
         if (user && await user.verifyPassword(password)) {
             // const session = await SessionRepository.findSession(user.id);
             let token
             /* 세션 바로바로 교체하는거로 변경*/
             token = JwtUtil.generateToken({ userId: user.id });
-            SessionRepository.saveSession(user.id, token);
+            this.sessionRepository.saveSession(user.id, token);
 
             // if (session) {
             //     token = session.session;
@@ -49,17 +54,17 @@ class LoginService {
         }
 
         if (userInfo) {
-            const existingUser = await UserService.findBySocialId(userInfo.data.id);
+            const existingUser = await this.userService.findBySocialId(userInfo.data.id);
             if (existingUser) {
                 // const token = JwtUtil.generateToken({ userId: existingUser.id });
-                const session = await SessionRepository.findSession(user.id);
+                const session = await this.sessionRepository.findSession(existingUser.id);
                 let token
 
                 if (session) {
                     token = session.session;
                 } else {
                     token = JwtUtil.generateToken({ userId: existingUser.id });
-                    SessionRepository.saveSession(user.id, token);
+                    this.sessionRepository.saveSession(existingUser.id, token);
                 }
                 return { user: existingUser, token };
             } else {
@@ -68,9 +73,9 @@ class LoginService {
                     type: provider // 'kakao' 또는 'naver'로 설정
                 });
 
-                await UserService.createSocialUser(newUser);
+                await this.userService.createSocialUser(newUser);
                 const token = JwtUtil.generateToken({ userId: newUser.id });
-                SessionRepository.saveUserSession(user.id, token);
+                this.sessionRepository.saveUserSession(newUser.id, token);
 
                 return { user: newUser, token };
             }

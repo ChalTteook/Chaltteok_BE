@@ -85,48 +85,21 @@ class UserRepository {
     }
 
     async createUser(userModel) {
+        const connection = await pool.getConnection();
         try {
-            const connection = await pool.getConnection();
-            try {
-                const query = mybatisMapper.getStatement(
-                    'user',    // namespace
-                    'insertUser', // sql id
-                    userModel,    // parameters
-                    this.format   // format
-                );
-                console.log('Generated SQL:', query);
-                
-                const [result] = await connection.query(query);
-                return {
-                    success: true,
-                    data: result,
-                    message: '사용자가 성공적으로 생성되었습니다.'
-                };
-            } catch (err) {
-                // 에러 타입에 따른 응답 생성
-                let errorResponse = {
-                    success: false,
-                    data: err,
-                    message: '알 수 없는 오류가 발생했습니다.'
-                };
-
-                if (err.code === 'ER_DUP_ENTRY') {
-                    errorResponse.message = '이미 존재하는 이메일입니다.';
-                } else if (err.code === 'ER_WRONG_VALUE_COUNT_ON_ROW') {
-                    errorResponse.message = '입력값이 올바르지 않습니다.';
-                } else if (err.code === 'ER_NO_SUCH_TABLE') {
-                    errorResponse.message = '데이터베이스 테이블이 존재하지 않습니다.';
-                } else if (err.code === 'ECONNREFUSED') {
-                    errorResponse.message = '데이터베이스 연결에 실패했습니다.';
-                }
-                console.log(errorResponse);
-                return errorResponse;
-            } finally {
-                connection.release();
-            }
+            const query = mybatisMapper.getStatement(
+                'user',
+                'insertUser',
+                userModel,
+                this.format
+            );
+            const [result] = await connection.query(query);
+            return result; // Ensure you return the result
         } catch (err) {
             console.error('Error in createUser:', err);
             throw err;
+        } finally {
+            connection.release();
         }
     }
 
