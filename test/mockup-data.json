@@ -1,0 +1,102 @@
+{
+  "login": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/auth/login",
+      "body": {
+        "email": "test@2b.com",
+        "password": "test1234"
+      }
+    },
+    "response": {
+      "success": true,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiaWF0IjoxNjQzMDkyMDAwLCJleHAiOjE2NDMxNzg0MDB9.jfA9RKP2_RazHZRYBOyJFqxE5-2JsK1qYXwP3jQYIy8"
+    }
+  },
+  "getUserProfile": {
+    "request": {
+      "method": "GET",
+      "url": "/api/v1/user/me/profile",
+      "headers": {
+        "Authorization": "Bearer {token}"
+      }
+    },
+    "response": {
+      "success": true,
+      "profile": {
+        "id": "1",
+        "name": "테스트 사용자",
+        "email": "test@b.com",
+        "phone": "01012345678",
+        "address": "서울시 강남구",
+        "socialId": null,
+        "type": "email",
+        "profileImage": "/uploads/profile-images/f2a5d8e3-8b4c-4f1d-9e5a-6c7b8d9e0f1a.png"
+      }
+    }
+  },
+  "updateUserProfile": {
+    "request": {
+      "method": "PATCH",
+      "url": "/api/v1/user/me/profile",
+      "headers": {
+        "Authorization": "Bearer {token}"
+      },
+      "body": {
+        "name": "수정된 이름",
+        "phone": "01098765432",
+        "address": "서울시 서초구",
+        "age": 35,
+        "gender": "F",
+        "nickName": "수정닉네임"
+      }
+    },
+    "response": {
+      "success": true,
+      "message": "Profile updated successfully",
+      "user": {
+        "id": "1",
+        "type": "email",
+        "email": "test@b.com",
+        "name": "수정된 이름",
+        "age": 35,
+        "gender": "F",
+        "nickName": "수정닉네임",
+        "phone": "01098765432",
+        "address": "서울시 서초구",
+        "profileImage": "/uploads/profile-images/f2a5d8e3-8b4c-4f1d-9e5a-6c7b8d9e0f1a.jpg"
+      }
+    }
+  },
+  "uploadProfileImage": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/user/me/profile-image",
+      "headers": {
+        "Authorization": "Bearer {token}",
+        "Content-Type": "multipart/form-data"
+      },
+      "formData": {
+        "profileImage": "[파일 데이터]"
+      }
+    },
+    "response": {
+      "success": true,
+      "message": "프로필 이미지가 업로드되었습니다.",
+      "profileImage": "/uploads/profile-images/a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6.jpg"
+    }
+  },
+  "deleteProfileImage": {
+    "request": {
+      "method": "DELETE",
+      "url": "/api/v1/user/me/profile-image",
+      "headers": {
+        "Authorization": "Bearer {token}"
+      }
+    },
+    "response": {
+      "success": true,
+      "message": "프로필 이미지가 삭제되었습니다."
+    }
+  }
+} 

@@ -21,6 +21,7 @@
         mod_date
     FROM
         shop
+    LIMIT #{limit} OFFSET #{offset}
   </select>
   
   <select id="findShopById">

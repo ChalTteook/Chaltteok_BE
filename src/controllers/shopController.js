@@ -4,8 +4,11 @@ import ShopService from '../services/shopService.js';
 const router = express.Router();
 
 router.get('', async (req, res) => {
+    const page = parseInt(req.query.page) || 1; // Get page from query, default to 1
+    const limit = parseInt(req.query.limit) || 20; // Get limit from query, default to 20
+
     try {
-        const shops = await ShopService.getShopList(0, 20);
+        const shops = await ShopService.getShopList(page, limit);
         res.status(200).json({ success: true, size: shops.length, data: shops });
     } catch (error) {
         console.error(error);

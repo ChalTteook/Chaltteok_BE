@@ -5,8 +5,9 @@ class ShopService {
         this.shopRepository = ShopRepository;
     }
 
-    async getShopList(limit, offset) {
-        return this.shopRepository.getShops(parseInt(limit, 10), parseInt(offset, 10));
+    async getShopList(page = 1, limit = 20) {
+        const offset = (page - 1) * limit; // Calculate the offset
+        return this.shopRepository.getShops(limit, offset); // Pass limit and offset to the repository
     }
 
     async getShop(id) {

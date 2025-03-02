@@ -15,6 +15,7 @@ class UserModel {
         this.phone = data.phone || '';
         this.address = data.address || '';
         this.socialId = data.socialId || data.social_id || null;
+        this.profileImage = data.profileImage || data.profile_image || null;
         this.regDate = data.regDate || data.reg_date || null;
         this.modDate = data.modDate || data.mod_date || null;
     }
@@ -46,6 +47,7 @@ class UserModel {
         this.nickName = userData.nickName ?? this.nickName;
         this.phone = userData.phone ?? this.phone;
         this.address = userData.address ?? this.address;
+        this.profileImage = userData.profileImage ?? this.profileImage;
         this.itPlc1 = userData.itPlc1 ?? this.itPlc1;
         this.itPlc2 = userData.itPlc2 ?? this.itPlc2;
         this.itPlc3 = userData.itPlc3 ?? this.itPlc3;
@@ -78,13 +80,14 @@ class UserModel {
             phone: this.phone,
             address: this.address,
             socialId: this.socialId,
+            profileImage: this.profileImage,
             createdAt: this.createdAt,
             updatedAt: this.updatedAt
         };
     }
 
     // Constructor with args (static factory method)
-    static from({id, type, email, password, name, age, gender, nickName, phone, address, socialId, itPlc1, itPlc2, itPlc3, regDate, modDate}) {
+    static from({id, type, email, password, name, age, gender, nickName, phone, address, socialId, profileImage, itPlc1, itPlc2, itPlc3, regDate, modDate}) {
         const user = new UserModel();
         user.id = id;
         user.type = type;
@@ -97,6 +100,7 @@ class UserModel {
         user.phone = phone;
         user.address = address;
         user.socialId = socialId;
+        user.profileImage = profileImage;
         user.itPlc1 = itPlc1;
         user.itPlc2 = itPlc2;
         user.itPlc3 = itPlc3;
