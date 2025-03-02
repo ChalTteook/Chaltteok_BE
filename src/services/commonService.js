@@ -55,12 +55,16 @@ class CommonService {
             
             /* 인증실패 */
             if(user.length < 1) {
-                return { success: false, message: 'not_found_user'};
+                return { success: false, message: 'do_not_match_code & do_not_match_user'};
             }
 
             /* 인증성공 */
             param.phone = user.phone
             const user_email = await this.commonRepository.selectUserEmail(param)
+
+            if(user_email.length < 1) {
+                return { success: false, message: 'not_found_user_email'};
+            }
 
             data.type = user_email.type
             data.phone = user_email.phone
