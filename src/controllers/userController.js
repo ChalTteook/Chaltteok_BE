@@ -126,10 +126,7 @@ router.post('/me/profile-image', authenticateUser, uploadProfileImage.single('pr
 
         // 이전 프로필 이미지가 있으면 삭제
         if (user.profileImage) {
-            const oldImagePath = path.join(fileUploader.PROFILE_IMAGE_PATH, user.profileImage);
-            if (fs.existsSync(oldImagePath)) {
-                fs.unlinkSync(oldImagePath);
-            }
+            await fileUploader.deleteProfileImage(user.profileImage);
         }
 
         // 사용자 모델 업데이트
@@ -143,6 +140,17 @@ router.post('/me/profile-image', authenticateUser, uploadProfileImage.single('pr
         });
     } catch (error) {
         console.error('프로필 이미지 업로드 오류:', error);
+        // 파일이 업로드된 경우 에러 발생 시 삭제 시도
+        if (req.file && req.file.filename) {
+            try {
+                await fileUploader.deleteProfileImage(req.file.filename);
+            } catch (cleanupError) {
+                console.error('업로드된 파일 정리 중 오류:', cleanupError);
+            }
+        }
+        if (error.message && error.message.includes('지원하지 않는 파일 형식')) {
+            return res.status(400).json({ success: false, message: error.message });
+        }
         res.status(500).json({ success: false, message: '서버 오류' });
     }
 });
@@ -157,9 +165,10 @@ router.delete('/me/profile-image', authenticateUser, async (req, res) => {
 
         // 프로필 이미지가 있는 경우에만 삭제
         if (user.profileImage) {
-            const imagePath = path.join(fileUploader.PROFILE_IMAGE_PATH, user.profileImage);
-            if (fs.existsSync(imagePath)) {
-                fs.unlinkSync(imagePath);
+            const deleteResult = await fileUploader.deleteProfileImage(user.profileImage);
+            
+            if (!deleteResult) {
+                console.warn(`프로필 이미지 파일을 찾을 수 없습니다: ${user.profileImage}`);
             }
 
             // 사용자 모델 업데이트

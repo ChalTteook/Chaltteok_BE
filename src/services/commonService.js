@@ -1,9 +1,9 @@
-
 import nodemailer from 'nodemailer';
 import CommonRepository from '../dataaccess/repositories/commonRepository.js';
 import dotenv from 'dotenv';
 import { pool } from '../utils/database.js';
- 
+import bcrypt from 'bcryptjs';
+
 dotenv.config();
 
 class CommonService {
@@ -81,7 +81,6 @@ class CommonService {
     }
     
     async sendEmail(body) {
-
         const connection = await pool.getConnection();
         try {
             await connection.beginTransaction();
@@ -98,10 +97,10 @@ class CommonService {
             }
                         
             const transporter = nodemailer.createTransport({
-                service: 'gmail', // 지메일 쓰면 됨
+                service: 'gmail',
                 auth: {
-                    user: process.env.SERVER_USER_MAIL, // 보낼 email 주소
-                    pass: process.env.SERVER_USER_APP_PASSWORD, // 이메일 앱 비밀번호 ㄱㄱ
+                    user: process.env.SERVER_USER_MAIL,
+                    pass: process.env.SERVER_USER_APP_PASSWORD,
                 },
             });
         
@@ -116,8 +115,12 @@ class CommonService {
             // 이메일 전송
             await transporter.sendMail(mailOptions);
 
+            // 비밀번호 해싱
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(result, salt);
+
             var param = {
-                new_password : result,
+                new_password : hashedPassword,
                 email : body.email
             }
 

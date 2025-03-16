@@ -17,10 +17,10 @@ const login = async () => {
   try {
     console.log('로그인 시도 중...');
     console.log('요청 URL:', `${API_BASE_URL}/auth/login`);
-    console.log('요청 데이터:', { email: 'test2@b.com', password: 'test1234' });
+    console.log('요청 데이터:', { email: 'test@2b.com', password: 'test1234' });
     
     const response = await axios.post(`${API_BASE_URL}/auth/login`, {
-      email: 'test2@b.com',  // 사용자가 제공한 로그인 정보
+      email: 'test@2b.com',  // 사용자가 제공한 로그인 정보
       password: 'test1234'  // 사용자가 제공한 로그인 정보
     });
     
@@ -44,7 +44,7 @@ const login = async () => {
       // 요청은 보냈지만 응답이 없는 경우
       console.error('서버로부터 응답이 없습니다. 서버가 실행 중인지 확인하세요.');
     } else {
-      // 요청 설정 중 오류 발생
+      // 요청 설정 과정에서 오류가 발생한 경우
       console.error('오류 메시지:', error.message);
     }
     return false;

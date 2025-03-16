@@ -21,10 +21,22 @@ class UserModel {
     }
 
     async verifyPassword(password) {
-        if(!this.isRetry) {
-            return await bcrypt.compare(password, this.password);
-        } else {
-            return password === this.password;
+        try {
+            // 비밀번호가 이미 해시된 경우
+            if (this.password.startsWith('$2a$') || this.password.startsWith('$2b$')) {
+                return await bcrypt.compare(password, this.password);
+            }
+            // 임시 비밀번호인 경우 (is_retry가 1인 경우)
+            else if (this.isRetry === 1) {
+                return password === this.password;
+            }
+            // 기타 경우 (기본적으로 해시된 비밀번호와 비교)
+            else {
+                return await bcrypt.compare(password, this.password);
+            }
+        } catch (error) {
+            console.error('Password verification error:', error);
+            return false;
         }
     }
 
@@ -54,12 +66,12 @@ class UserModel {
     }
 
     async updatePassword(password) {
+        // 비밀번호 해싱
+        const salt = await bcrypt.genSalt(10);
+        this.password = await bcrypt.hash(password, salt);
 
-        this.password = password;
-
-        await this.hashPassword();
-
-        if ( this.isRetry === 1 ) {
+        // 임시 비밀번호 상태 리셋
+        if (this.isRetry === 1) {
             this.isRetry = 0;
         }
 

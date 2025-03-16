@@ -23,12 +23,17 @@ class KakaoAuthService extends SocialAuthService {
                     redirect_uri : this.redirectUri,
                     response_type : 'code' 
                 }
-            })
+            });
+            
+            if (!data || !data.request || !data.request.res || !data.request.res.responseUrl) {
+                throw new Error('Invalid response from Kakao authorization server');
+            }
+            
             return data;
         } catch(error) {
-            console.log(error)
+            console.error('Error getting Kakao auth code:', error);
+            throw new Error(`카카오 인증 URL을 가져오는데 실패했습니다: ${error.message}`);
         }
-
     }
 
     async getAccessToken(authorizationCode) {
@@ -51,7 +56,7 @@ class KakaoAuthService extends SocialAuthService {
                 }
             };
         } catch (error) {
-            console.log(error);
+            console.error('Error getting Kakao access token:', error);
             return {
                 success: false,
                 error: 'Failed to get Kakao access token',
@@ -73,6 +78,7 @@ class KakaoAuthService extends SocialAuthService {
                 data: response.data
             };
         } catch (error) {
+            console.error('Error getting Kakao user info:', error);
             return {
                 success: false,
                 error: 'Failed to get Kakao user info',

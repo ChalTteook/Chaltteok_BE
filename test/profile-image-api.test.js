@@ -3,32 +3,31 @@ import fs from 'fs';
 import path from 'path';
 import FormData from 'form-data';
 import { fileURLToPath } from 'url';
+import assert from 'assert';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // 테스트 환경 설정
 const API_BASE_URL = 'http://localhost:9801/api/v1';
-let authToken = ''; // 여기에 유효한 JWT 토큰을 넣으세요
+let authToken = '';
 let uploadedImageUrl = null;
 
-// 로그인 함수 (토큰 획득)
+/**
+ * 사용자 로그인 및 토큰 획득
+ */
 const login = async () => {
   try {
     console.log('로그인 시도 중...');
-    console.log('요청 URL:', `${API_BASE_URL}/auth/login`);
-    console.log('요청 데이터:', { email: 'test@b.com', password: 'test1234' });
     
     const response = await axios.post(`${API_BASE_URL}/auth/login`, {
-      email: 'test2@b.com',  // 사용자가 제공한 로그인 정보
-      password: 'test1234'  // 사용자가 제공한 로그인 정보
+      email: 'test@2b.com',
+      password: 'test1234'
     });
-    
-    console.log('응답 데이터:', response.data);
     
     if (response.data.success && response.data.token) {
       authToken = response.data.token;
-      console.log('로그인 성공, 토큰 획득:', authToken);
+      console.log('로그인 성공, 토큰 획득');
       return true;
     } else {
       console.error('로그인 실패:', response.data);
@@ -37,21 +36,20 @@ const login = async () => {
   } catch (error) {
     console.error('로그인 오류:');
     if (error.response) {
-      // 서버 응답이 있는 경우
       console.error('응답 상태:', error.response.status);
       console.error('응답 데이터:', error.response.data);
     } else if (error.request) {
-      // 요청은 보냈지만 응답이 없는 경우
       console.error('서버로부터 응답이 없습니다. 서버가 실행 중인지 확인하세요.');
     } else {
-      // 요청 설정 중 오류 발생
       console.error('오류 메시지:', error.message);
     }
     return false;
   }
 };
 
-// 프로필 정보 조회
+/**
+ * 프로필 정보 조회
+ */
 const getProfile = async () => {
   try {
     console.log('\n프로필 정보 조회 중...');
@@ -59,8 +57,7 @@ const getProfile = async () => {
       headers: { Authorization: `Bearer ${authToken}` }
     });
     
-    console.log('프로필 정보 조회 성공:');
-    console.log(JSON.stringify(response.data, null, 2));
+    console.log('프로필 정보 조회 성공');
     
     return response.data.success ? response.data.profile : null;
   } catch (error) {
@@ -69,23 +66,23 @@ const getProfile = async () => {
   }
 };
 
-// 프로필 이미지 업로드 테스트
-const uploadProfileImage = async () => {
+/**
+ * 프로필 이미지 업로드 테스트
+ * @param {string} imagePath - 테스트 이미지 파일 경로
+ */
+const uploadProfileImage = async (imagePath = path.join(__dirname, 'test.png')) => {
   try {
     console.log('\n프로필 이미지 업로드 테스트 중...');
     
-    // 테스트 이미지 파일 경로 (테스트 디렉토리에 테스트 이미지를 추가해야 합니다)
-    const testImagePath = path.join(__dirname, 'test.png');
-    
     // 파일이 없으면 에러 처리
-    if (!fs.existsSync(testImagePath)) {
-      console.error(`테스트 이미지 파일이 없습니다: ${testImagePath}`);
-      return false;
+    if (!fs.existsSync(imagePath)) {
+      console.error(`테스트 이미지 파일이 없습니다: ${imagePath}`);
+      return { success: false, error: 'FILE_NOT_FOUND' };
     }
     
     // FormData 생성 및 이미지 파일 추가
     const formData = new FormData();
-    formData.append('profileImage', fs.createReadStream(testImagePath));
+    formData.append('profileImage', fs.createReadStream(imagePath));
     
     // 요청 보내기
     const response = await axios.post(
@@ -104,16 +101,79 @@ const uploadProfileImage = async () => {
     
     if (response.data.success && response.data.profileImage) {
       uploadedImageUrl = response.data.profileImage;
-      return true;
+      return { success: true, profileImage: response.data.profileImage };
     }
-    return false;
+    return { success: false, error: 'UPLOAD_FAILED' };
   } catch (error) {
     console.error('프로필 이미지 업로드 오류:', error.response?.data || error.message);
-    return false;
+    return { 
+      success: false, 
+      error: 'REQUEST_FAILED',
+      status: error.response?.status,
+      message: error.response?.data?.message || error.message
+    };
   }
 };
 
-// 프로필 이미지 삭제 테스트
+/**
+ * 잘못된 형식의 파일 업로드 테스트
+ */
+const uploadInvalidFileType = async () => {
+  try {
+    console.log('\n잘못된 형식의 파일 업로드 테스트 중...');
+    
+    // 텍스트 파일 생성
+    const tmpFilePath = path.join(__dirname, 'temp-test.txt');
+    fs.writeFileSync(tmpFilePath, 'This is not an image file');
+    
+    // FormData 생성 및 이미지 파일 추가
+    const formData = new FormData();
+    formData.append('profileImage', fs.createReadStream(tmpFilePath));
+    
+    try {
+      // 요청 보내기
+      const response = await axios.post(
+        `${API_BASE_URL}/user/me/profile-image`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+            ...formData.getHeaders()
+          }
+        }
+      );
+      
+      // 요청이 성공하면 실패 (잘못된 파일 형식은 오류를 발생시켜야 함)
+      console.error('잘못된 파일 형식 테스트 실패: 요청이 성공했습니다');
+      fs.unlinkSync(tmpFilePath); // 임시 파일 삭제
+      return { success: false, error: 'INVALID_FILE_ACCEPTED' };
+    } catch (error) {
+      // 400 에러가 발생해야 정상
+      if (error.response && error.response.status === 400) {
+        console.log('잘못된 파일 형식 테스트 성공: 적절한 오류 발생');
+        console.log(error.response.data);
+        fs.unlinkSync(tmpFilePath); // 임시 파일 삭제
+        return { success: true, status: error.response.status };
+      } else {
+        console.error('잘못된 파일 형식 테스트 실패: 예상치 못한 오류', error.response?.status);
+        fs.unlinkSync(tmpFilePath); // 임시 파일 삭제
+        return { 
+          success: false, 
+          error: 'UNEXPECTED_ERROR',
+          status: error.response?.status,
+          message: error.response?.data?.message || error.message
+        };
+      }
+    }
+  } catch (error) {
+    console.error('테스트 실행 오류:', error);
+    return { success: false, error: 'TEST_EXECUTION_ERROR' };
+  }
+};
+
+/**
+ * 프로필 이미지 삭제 테스트
+ */
 const deleteProfileImage = async () => {
   try {
     console.log('\n프로필 이미지 삭제 테스트 중...');
@@ -128,14 +188,21 @@ const deleteProfileImage = async () => {
     console.log('프로필 이미지 삭제 응답:');
     console.log(JSON.stringify(response.data, null, 2));
     
-    return response.data.success;
+    return { success: response.data.success };
   } catch (error) {
     console.error('프로필 이미지 삭제 오류:', error.response?.data || error.message);
-    return false;
+    return { 
+      success: false, 
+      error: 'REQUEST_FAILED',
+      status: error.response?.status,
+      message: error.response?.data?.message || error.message
+    };
   }
 };
 
-// 프로필 정보 업데이트 테스트
+/**
+ * 프로필 정보 업데이트 테스트
+ */
 const updateProfile = async () => {
   try {
     console.log('\n프로필 정보 업데이트 테스트 중...');
@@ -160,32 +227,105 @@ const updateProfile = async () => {
     console.log('프로필 업데이트 응답:');
     console.log(JSON.stringify(response.data, null, 2));
     
-    return response.data.success;
+    return { success: response.data.success };
   } catch (error) {
     console.error('프로필 업데이트 오류:', error.response?.data || error.message);
-    return false;
+    return { 
+      success: false, 
+      error: 'REQUEST_FAILED',
+      status: error.response?.status,
+      message: error.response?.data?.message || error.message
+    };
   }
 };
 
-// 모든 테스트 실행
+/**
+ * 업로드된 이미지 접근성 테스트
+ * @param {string} imageUrl - 테스트할 이미지 URL
+ */
+const testImageAccessibility = async (imageUrl) => {
+  try {
+    console.log(`\n이미지 접근성 테스트 중: ${imageUrl}`);
+    
+    if (!imageUrl) {
+      console.error('테스트할 이미지 URL이 없습니다.');
+      return { success: false, error: 'NO_IMAGE_URL' };
+    }
+    
+    // API 서버의 기본 URL을 추출하여 상대 경로 이미지 URL을 절대 경로로 변환
+    const baseUrl = API_BASE_URL.split('/api')[0]; // http://localhost:9801
+    const fullImageUrl = imageUrl.startsWith('http') ? imageUrl : `${baseUrl}${imageUrl}`;
+    
+    // 이미지 요청
+    const response = await axios.get(fullImageUrl, {
+      // 이미지를 arraybuffer로 받아서 바이너리 데이터 형태로 처리
+      responseType: 'arraybuffer'
+    });
+    
+    // 응답 상태 및 콘텐츠 타입 확인
+    const contentType = response.headers['content-type'];
+    const isImage = contentType && contentType.startsWith('image/');
+    
+    if (response.status === 200 && isImage) {
+      console.log(`이미지 접근 성공: ${contentType}, 크기: ${response.data.byteLength} bytes`);
+      return { 
+        success: true, 
+        contentType, 
+        size: response.data.byteLength 
+      };
+    } else {
+      console.error(`이미지 접근 실패: 응답은 이미지가 아닙니다. ContentType: ${contentType}`);
+      return { 
+        success: false, 
+        error: 'NOT_AN_IMAGE',
+        contentType
+      };
+    }
+  } catch (error) {
+    console.error('이미지 접근 오류:', error.message);
+    return { 
+      success: false, 
+      error: 'REQUEST_FAILED',
+      status: error.response?.status,
+      message: error.message
+    };
+  }
+};
+
+/**
+ * 모든 테스트 실행 및 결과 검증
+ */
 const runAllTests = async () => {
   console.log('===== 프로필 이미지 API 테스트 시작 =====');
+  const testResults = {
+    login: false,
+    getInitialProfile: false,
+    updateProfile: false,
+    uploadImage: false,
+    invalidFileTypeRejected: false,
+    profileWithImage: false,
+    imageAccessible: false,
+    deleteImage: false,
+    profileAfterImageDeletion: false
+  };
   
   // 1. 로그인 테스트
   const loginSuccess = await login();
   if (!loginSuccess) {
     console.error('로그인 실패. 테스트를 중단합니다.');
-    return;
+    return testResults;
   }
+  testResults.login = true;
   
   // 2. 초기 프로필 정보 조회
   console.log('\n----- 초기 프로필 정보 -----');
-  await getProfile();
+  const initialProfile = await getProfile();
+  testResults.getInitialProfile = !!initialProfile;
   
   // 3. 프로필 정보 업데이트 테스트
   console.log('\n----- 프로필 정보 업데이트 테스트 -----');
-  const updateSuccess = await updateProfile();
-  console.log('프로필 업데이트 결과:', updateSuccess ? '성공' : '실패');
+  const updateResult = await updateProfile();
+  testResults.updateProfile = updateResult.success;
   
   // 4. 업데이트 후 프로필 정보 조회
   console.log('\n----- 업데이트 후 프로필 정보 -----');
@@ -193,26 +333,47 @@ const runAllTests = async () => {
   
   // 5. 프로필 이미지 업로드 테스트
   console.log('\n----- 프로필 이미지 업로드 테스트 -----');
-  const uploadSuccess = await uploadProfileImage();
-  console.log('이미지 업로드 결과:', uploadSuccess ? '성공' : '실패');
+  const uploadResult = await uploadProfileImage();
+  testResults.uploadImage = uploadResult.success;
   
-  // 6. 이미지 업로드 후 프로필 정보 조회
+  // 6. 잘못된 형식의 파일 업로드 테스트
+  console.log('\n----- 잘못된 형식의 파일 업로드 테스트 -----');
+  const invalidFileResult = await uploadInvalidFileType();
+  testResults.invalidFileTypeRejected = invalidFileResult.success;
+  
+  // 7. 이미지 업로드 후 프로필 정보 조회 및 검증
   console.log('\n----- 이미지 업로드 후 프로필 정보 -----');
-  await getProfile();
+  const profileWithImage = await getProfile();
+  testResults.profileWithImage = profileWithImage && !!profileWithImage.profileImage;
   
-  // 7. 프로필 이미지 삭제 테스트
+  // 8. 업로드된 이미지 접근성 테스트 (NEW)
+  if (profileWithImage && profileWithImage.profileImage) {
+    console.log('\n----- 업로드된 이미지 접근성 테스트 -----');
+    const imageAccessResult = await testImageAccessibility(profileWithImage.profileImage);
+    testResults.imageAccessible = imageAccessResult.success;
+  }
+  
+  // 9. 프로필 이미지 삭제 테스트
   console.log('\n----- 프로필 이미지 삭제 테스트 -----');
-  const deleteSuccess = await deleteProfileImage();
-  console.log('이미지 삭제 결과:', deleteSuccess ? '성공' : '실패');
+  const deleteResult = await deleteProfileImage();
+  testResults.deleteImage = deleteResult.success;
   
-  // 8. 이미지 삭제 후 프로필 정보 조회
+  // 10. 이미지 삭제 후 프로필 정보 조회 및 검증
   console.log('\n----- 이미지 삭제 후 프로필 정보 -----');
-  await getProfile();
+  const profileAfterDeletion = await getProfile();
+  testResults.profileAfterImageDeletion = profileAfterDeletion && profileAfterDeletion.profileImage === null;
   
-  console.log('\n===== 프로필 이미지 API 테스트 완료 =====');
+  console.log('\n===== 프로필 이미지 API 테스트 결과 =====');
+  console.table(testResults);
+  
+  // 전체 테스트 성공 여부 확인
+  const allTestsPassed = Object.values(testResults).every(result => result === true);
+  console.log(`\n전체 테스트 ${allTestsPassed ? '성공' : '실패'}`);
+  
+  return testResults;
 };
 
-// 테스트 실행
+// 비동기 테스트 실행
 runAllTests().catch(error => {
   console.error('테스트 실행 중 오류 발생:', error);
 }); 

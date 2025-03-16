@@ -98,5 +98,69 @@
       "success": true,
       "message": "프로필 이미지가 삭제되었습니다."
     }
+  },
+  "sendPhoneAuthCode": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/common/send/auth",
+      "body": {
+        "phone_number": "01012345678"
+      }
+    },
+    "response": {
+      "success": true,
+      "message": {
+        "phone_number": "01012345678",
+        "code": "123456"
+      }
+    }
+  },
+  "verifyPhoneAuthCode": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/common/check/auth",
+      "body": {
+        "phone_number": "01012345678",
+        "code": "123456"
+      }
+    },
+    "response": {
+      "success": true,
+      "message": {
+        "type": "email",
+        "phone": "01012345678",
+        "email": "test@b.com"
+      }
+    }
+  },
+  "resetPassword": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/common/send/email",
+      "body": {
+        "email": "test@b.com"
+      }
+    },
+    "response": {
+      "success": true,
+      "message": "SUCCESS"
+    }
+  },
+  "changePassword": {
+    "request": {
+      "method": "POST",
+      "url": "/api/v1/user/change-password",
+      "headers": {
+        "Authorization": "Bearer {token}"
+      },
+      "body": {
+        "newPassword": "newPassword123",
+        "confirmPassword": "newPassword123"
+      }
+    },
+    "response": {
+      "success": true,
+      "message": "password change success"
+    }
   }
 } 
