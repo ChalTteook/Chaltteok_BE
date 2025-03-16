@@ -1,4 +1,4 @@
-# 찰떡 (Chaltteok) 백엔드 테스트 가이드
+# 찰떡 (Chaltteok) 백엔드 API 가이드
 
 ## 테스트 디렉토리 구조
 
@@ -75,28 +75,6 @@ node test/password-reset.test.js
 node test/upload-test.js
 ```
 
-### 유틸리티 스크립트 실행
-
-```bash
-# 테스트 사용자 생성
-node test/utils/create-test-user.js
-
-# 테스트 리뷰 생성
-node test/utils/create-test-review.js
-
-# 댓글 테이블 생성
-node test/utils/create-comments-table.js
-```
-
-## 테스트 가이드
-
-각 E2E 테스트 파일은 통합 테스트로, 실제 API와 동일한 방식으로 요청을 전송하고 응답을 확인합니다. 테스트는 다음 단계를 일반적으로 포함합니다:
-
-1. 로그인 및 인증 토큰 획득
-2. API 엔드포인트 호출
-3. 응답 검증
-4. 리소스 정리 (필요한 경우)
-
 ## 문제 해결
 
 1. **인증 오류**
@@ -111,7 +89,7 @@ node test/utils/create-comments-table.js
    - 콘솔 로그를 확인하여 어떤 부분에서 실패했는지 파악하세요.
    - 필요한 테스트 데이터가 DB에 존재하는지 확인하세요.
 
-## API 문서
+---
 
 # 찰떡 (Chaltteok) API 종합 가이드
 
@@ -120,21 +98,11 @@ node test/utils/create-comments-table.js
 1. [개요](#개요)
 2. [기본 정보](#기본-정보)
 3. [인증 API](#인증-api)
-   - [로그인](#로그인)
-   - [소셜 로그인](#소셜-로그인)
-   - [비밀번호 재설정](#비밀번호-재설정)
 4. [사용자 API](#사용자-api)
-   - [프로필 조회](#프로필-조회)
-   - [프로필 이미지 업로드](#프로필-이미지-업로드)
-   - [프로필 이미지 삭제](#프로필-이미지-삭제)
-   - [프로필 업데이트](#프로필-업데이트)
 5. [상점(Shop) API](#상점-api)
-6. [리뷰 API](#리뷰-api)
+6. [리뷰 이미지 API](#리뷰-이미지-api)
 7. [댓글 API](#댓글-api)
-   - [댓글 이미지 업로드](#댓글-이미지-업로드)
-8. [테스트 가이드](#테스트-가이드)
-   - [소셜 로그인 테스트](#소셜-로그인-테스트)
-   - [파일 업로드 테스트](#파일-업로드-테스트)
+8. [공통 API](#공통-api)
 
 ---
 
@@ -168,6 +136,30 @@ Authorization: Bearer {토큰값}
 ---
 
 ## 인증 API
+
+### 회원가입
+
+**요청**
+```
+POST /auth/register
+Content-Type: application/json
+
+{
+  "email": "사용자 이메일",
+  "password": "사용자 비밀번호",
+  "name": "사용자 이름",
+  "phone": "전화번호",
+  "address": "주소"
+}
+```
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "message": "회원가입 성공"
+}
+```
 
 ### 로그인
 
@@ -240,58 +232,43 @@ Content-Type: application/json
 }
 ```
 
-### 비밀번호 재설정
-
-#### 비밀번호 재설정 이메일 요청
-
-**요청**
-```
-POST /auth/request-password-reset
-Content-Type: application/json
-
-{
-  "email": "user@example.com"
-}
-```
-
-**응답 예시**
-```json
-{
-  "success": true,
-  "message": "비밀번호 재설정 링크가 이메일로 발송되었습니다."
-}
-```
-
-#### 비밀번호 재설정
-
-**요청**
-```
-POST /auth/reset-password
-Content-Type: application/json
-
-{
-  "token": "비밀번호_재설정_토큰",
-  "password": "새_비밀번호"
-}
-```
-
-**응답 예시**
-```json
-{
-  "success": true,
-  "message": "비밀번호가 성공적으로 변경되었습니다."
-}
-```
-
 ---
 
 ## 사용자 API
 
-### 프로필 조회
+### 현재 사용자 정보 조회
 
 **요청**
 ```
-GET /users/me/profile
+GET /user/me
+Authorization: Bearer {토큰값}
+```
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "user": {
+    "id": 1,
+    "name": "사용자이름",
+    "email": "user@example.com",
+    "phone": "01012345678",
+    "address": "서울특별시",
+    "type": "email",
+    "age": 30,
+    "gender": "M",
+    "nickName": "닉네임",
+    "profileImage": "이미지파일명"
+    // 기타 사용자 정보
+  }
+}
+```
+
+### 프로필 정보 조회
+
+**요청**
+```
+GET /user/me/profile
 Authorization: Bearer {토큰값}
 ```
 
@@ -305,44 +282,10 @@ Authorization: Bearer {토큰값}
     "email": "user@example.com",
     "phone": "01012345678",
     "address": "서울특별시",
-    "profileImage": "https://example.com/profile/image.jpg"
+    "socialId": null,
+    "type": "email",
+    "profileImage": "/uploads/profile-images/image.jpg"
   }
-}
-```
-
-### 프로필 이미지 업로드
-
-**요청**
-```
-POST /users/me/profile-image
-Authorization: Bearer {토큰값}
-Content-Type: multipart/form-data
-
-form-data:
-- image: [이미지 파일]
-```
-
-**응답 예시**
-```json
-{
-  "success": true,
-  "imageUrl": "https://example.com/profile/image.jpg"
-}
-```
-
-### 프로필 이미지 삭제
-
-**요청**
-```
-DELETE /users/me/profile-image
-Authorization: Bearer {토큰값}
-```
-
-**응답 예시**
-```json
-{
-  "success": true,
-  "message": "프로필 이미지가 성공적으로 삭제되었습니다."
 }
 ```
 
@@ -350,14 +293,17 @@ Authorization: Bearer {토큰값}
 
 **요청**
 ```
-PUT /users/me/profile
+PATCH /user/me/profile
 Authorization: Bearer {토큰값}
 Content-Type: application/json
 
 {
   "name": "새이름",
   "phone": "01087654321",
-  "address": "부산광역시"
+  "address": "부산광역시",
+  "age": 32,
+  "gender": "F",
+  "nickName": "새닉네임"
 }
 ```
 
@@ -365,14 +311,77 @@ Content-Type: application/json
 ```json
 {
   "success": true,
-  "profile": {
+  "message": "Profile updated successfully",
+  "user": {
     "id": 1,
     "name": "새이름",
     "email": "user@example.com",
     "phone": "01087654321",
     "address": "부산광역시",
-    "profileImage": "https://example.com/profile/image.jpg"
+    "age": 32,
+    "gender": "F",
+    "nickName": "새닉네임",
+    // 기타 사용자 정보
   }
+}
+```
+
+### 비밀번호 변경
+
+**요청**
+```
+POST /user/change-password
+Authorization: Bearer {토큰값}
+Content-Type: application/json
+
+{
+  "newPassword": "새비밀번호",
+  "confirmPassword": "새비밀번호"
+}
+```
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "message": "password change success"
+}
+```
+
+### 프로필 이미지 업로드
+
+**요청**
+```
+POST /user/me/profile-image
+Authorization: Bearer {토큰값}
+Content-Type: multipart/form-data
+
+form-data:
+- profileImage: [이미지 파일]
+```
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "message": "프로필 이미지가 업로드되었습니다.",
+  "profileImage": "/uploads/profile-images/uuid-filename.png"
+}
+```
+
+### 프로필 이미지 삭제
+
+**요청**
+```
+DELETE /user/me/profile-image
+Authorization: Bearer {토큰값}
+```
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "message": "프로필 이미지가 삭제되었습니다."
 }
 ```
 
@@ -390,28 +399,23 @@ GET /shops?page=1&limit=20&sort=price
 **정렬 옵션**
 - `price`: 가격순 정렬
 - `review`: 리뷰 수 기준 정렬
-- `recommendation`: 추천 수 기준 정렬
+- 기본값 또는 다른 값: 기본 정렬
 
 **응답 예시**
 ```json
 {
   "success": true,
+  "size": 20,
   "data": [
     {
       "id": 1,
       "name": "찰떡상점1",
       "address": "서울시 강남구",
       "price": 10000,
-      "review_count": 5,
-      "total_likes": 10
+      // 기타 상점 정보
     },
-    ...
-  ],
-  "pagination": {
-    "currentPage": 1,
-    "totalPages": 5,
-    "totalItems": 100
-  }
+    // 추가 상점 정보
+  ]
 }
 ```
 
@@ -432,86 +436,58 @@ GET /shops/{shop_id}
     "address": "서울시 강남구",
     "description": "맛있는 찰떡 가게",
     "price": 10000,
-    "review_count": 5,
-    "total_likes": 10,
-    "images": [
-      "https://example.com/shop/image1.jpg",
-      "https://example.com/shop/image2.jpg"
-    ]
+    // 기타 상점 상세 정보
   }
 }
 ```
 
 ---
 
-## 리뷰 API
+## 리뷰 이미지 API
 
-### 리뷰 작성
+### 리뷰 이미지 업로드
 
 **요청**
 ```
-POST /shops/{shop_id}/reviews
+POST /reviews/{reviewId}/images?index={imageIndex}
 Authorization: Bearer {토큰값}
-Content-Type: application/json
+Content-Type: multipart/form-data
 
-{
-  "title": "리뷰 제목",
-  "content": "리뷰 내용",
-  "rating": 4.5
-}
+form-data:
+- image: [이미지 파일]
 ```
+
+**매개변수**
+- `reviewId`: 리뷰 ID (경로 매개변수)
+- `index`: 이미지 인덱스 (1~5 범위, 쿼리 매개변수)
 
 **응답 예시**
 ```json
 {
   "success": true,
   "data": {
-    "id": 1,
-    "title": "리뷰 제목",
-    "content": "리뷰 내용",
-    "rating": 4.5,
-    "created_at": "2023-03-15T12:00:00Z",
-    "user": {
-      "id": 1,
-      "name": "사용자이름"
-    }
+    "imageUrl": "이미지_URL"
   }
 }
 ```
 
-### 리뷰 조회
+### 리뷰 이미지 삭제
 
 **요청**
 ```
-GET /shops/{shop_id}/reviews?page=1&limit=10
+DELETE /reviews/{reviewId}/images/{imageIndex}
+Authorization: Bearer {토큰값}
 ```
+
+**매개변수**
+- `reviewId`: 리뷰 ID (경로 매개변수)
+- `imageIndex`: 이미지 인덱스 (1~5 범위, 경로 매개변수)
 
 **응답 예시**
 ```json
 {
   "success": true,
-  "data": [
-    {
-      "id": 1,
-      "title": "리뷰 제목",
-      "content": "리뷰 내용",
-      "rating": 4.5,
-      "created_at": "2023-03-15T12:00:00Z",
-      "user": {
-        "id": 1,
-        "name": "사용자이름"
-      },
-      "images": [
-        "https://example.com/review/image1.jpg"
-      ]
-    },
-    ...
-  ],
-  "pagination": {
-    "currentPage": 1,
-    "totalPages": 3,
-    "totalItems": 25
-  }
+  "message": "이미지가 성공적으로 삭제되었습니다."
 }
 ```
 
@@ -519,11 +495,43 @@ GET /shops/{shop_id}/reviews?page=1&limit=10
 
 ## 댓글 API
 
+### 댓글 목록 조회
+
+**요청**
+```
+GET /comments/{reviewId}/comments
+```
+
+**매개변수**
+- `reviewId`: 리뷰 ID (경로 매개변수)
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "data": {
+    "comments": [
+      {
+        "id": 1,
+        "content": "댓글 내용",
+        "created_at": "2023-03-15T12:00:00Z",
+        "user": {
+          "id": 1,
+          "name": "사용자이름"
+        }
+        // 기타 댓글 정보
+      },
+      // 추가 댓글
+    ]
+  }
+}
+```
+
 ### 댓글 작성
 
 **요청**
 ```
-POST /reviews/{review_id}/comments
+POST /comments/{reviewId}/comments
 Authorization: Bearer {토큰값}
 Content-Type: application/json
 
@@ -532,76 +540,128 @@ Content-Type: application/json
 }
 ```
 
+**매개변수**
+- `reviewId`: 리뷰 ID (경로 매개변수)
+
 **응답 예시**
 ```json
 {
   "success": true,
   "data": {
-    "id": 1,
-    "content": "댓글 내용",
-    "created_at": "2023-03-15T13:00:00Z",
-    "user": {
+    "comment": {
       "id": 1,
-      "name": "사용자이름"
+      "content": "댓글 내용",
+      // 기타 댓글 정보
     }
   }
 }
 ```
 
-### 댓글 조회
+### 댓글 수정
 
 **요청**
 ```
-GET /reviews/{review_id}/comments?page=1&limit=20
-```
+PUT /comments/{commentId}
+Authorization: Bearer {토큰값}
+Content-Type: application/json
 
-**응답 예시**
-```json
 {
-  "success": true,
-  "data": [
-    {
-      "id": 1,
-      "content": "댓글 내용",
-      "created_at": "2023-03-15T13:00:00Z",
-      "user": {
-        "id": 1,
-        "name": "사용자이름"
-      },
-      "images": [
-        "https://example.com/comment/image1.jpg"
-      ]
-    },
-    ...
-  ],
-  "pagination": {
-    "currentPage": 1,
-    "totalPages": 2,
-    "totalItems": 35
-  }
+  "content": "수정된 댓글 내용"
 }
 ```
 
-### 댓글 이미지 업로드
+**매개변수**
+- `commentId`: 댓글 ID (경로 매개변수)
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "message": "댓글이 성공적으로 수정되었습니다."
+}
+```
+
+### 댓글 삭제
 
 **요청**
 ```
-POST /comments/{comment_id}/images
+DELETE /comments/{commentId}
 Authorization: Bearer {토큰값}
-Content-Type: multipart/form-data
+```
 
-form-data:
-- image: [이미지 파일]
+**매개변수**
+- `commentId`: 댓글 ID (경로 매개변수)
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "message": "댓글이 성공적으로 삭제되었습니다."
+}
+```
+
+---
+
+## 공통 API
+
+### 인증 코드 발송
+
+**요청**
+```
+POST /common/send/auth
+Content-Type: application/json
+
+{
+  "phone_number": "전화번호"
+}
 ```
 
 **응답 예시**
 ```json
 {
   "success": true,
-  "data": {
-    "image_url": "https://example.com/comment/image.jpg",
-    "comment_id": 1
-  }
+  "message": "인증 코드가 발송되었습니다."
+}
+```
+
+### 인증 코드 확인
+
+**요청**
+```
+POST /common/check/auth
+Content-Type: application/json
+
+{
+  "phone_number": "전화번호",
+  "code": "인증코드"
+}
+```
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "message": "인증이 완료되었습니다."
+}
+```
+
+### 이메일 발송
+
+**요청**
+```
+POST /common/send/email
+Content-Type: application/json
+
+{
+  "email": "이메일주소"
+}
+```
+
+**응답 예시**
+```json
+{
+  "success": true,
+  "message": "이메일이 발송되었습니다."
 }
 ```
 
@@ -609,26 +669,7 @@ form-data:
 
 ## 테스트 가이드
 
-### 소셜 로그인 테스트
-
-카카오 소셜 로그인 테스트를 실행하려면 다음 명령어를 사용하세요:
-
-```bash
-node test/kakao-api-test.js
-```
-
-테스트는 다음 단계로 진행됩니다:
-
-1. **인증 URL 획득**: 백엔드 API에서 카카오 인증 URL을 가져옵니다.
-2. **인증 코드 입력**: 
-   - 제공된 URL을 브라우저에서 열어 카카오 계정으로 로그인합니다.
-   - 로그인 후 리다이렉트된 URL에서 `code` 파라미터 값을 복사합니다.
-   - 복사한 코드를 터미널에 입력합니다.
-3. **소셜 로그인 API 호출**: 
-   - 입력받은 인증 코드로 소셜 로그인 API를 호출합니다.
-   - 로그인 성공 시 사용자 정보와 토큰을 확인합니다.
-
-### 파일 업로드 테스트
+### 프로필 이미지 테스트
 
 프로필 이미지 업로드 테스트를 실행하려면 다음 명령어를 사용하세요:
 
@@ -640,33 +681,14 @@ node test/profile-image-api.test.js
 - 로그인
 - 프로필 정보 조회
 - 프로필 이미지 업로드
+- 잘못된 형식의 파일 업로드 거부
+- 프로필 이미지 접근성
 - 프로필 이미지 삭제
 - 프로필 정보 업데이트
 
-### 비밀번호 재설정 테스트
+### 주의사항
 
-비밀번호 재설정 테스트를 실행하려면 다음 명령어를 사용하세요:
-
-```bash
-node test/password-reset.test.js
-```
-
-이 테스트는 다음 기능을 확인합니다:
-- 로그인
-- 비밀번호 재설정 이메일 요청
-- 비밀번호 재설정 토큰 검증
-- 비밀번호 재설정
-
-### 댓글 이미지 테스트
-
-댓글 이미지 기능 테스트를 실행하려면 다음 명령어를 사용하세요:
-
-```bash
-node test/comment-image-test.js
-```
-
-이 테스트는 다음 기능을 확인합니다:
-- 로그인
-- 댓글 작성
-- 댓글 이미지 업로드
-- 댓글 이미지가 포함된 댓글 조회 
+1. 테스트 실행 전 서버가 실행중인지 확인하세요.
+2. 테스트용 계정 정보는 실제 환경과 분리하여 관리하는 것이 좋습니다.
+3. 이미지 파일은 PNG, JPEG, GIF, WEBP 형식만 지원합니다.
+4. 업로드된 이미지는 프로젝트의 uploads 디렉토리에 저장됩니다. 
