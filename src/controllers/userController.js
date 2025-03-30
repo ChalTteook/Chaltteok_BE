@@ -113,12 +113,31 @@ router.post('/change-password', authenticateUser, async (req, res) => {
 });
 
 // 프로필 이미지 업로드
-router.post('/me/profile-image', authenticateUser, uploadProfileImage.single('profileImage'), async (req, res) => {
-    try {
+router.post('/me/profile-image', authenticateUser, (req, res, next) => {
+    // 파일 형식 검증 미들웨어 전에 오류 처리
+    uploadProfileImage.single('profileImage')(req, res, (err) => {
+        if (err) {
+            console.error('프로필 이미지 업로드 오류:', err.message);
+            // multer 에러 처리
+            if (err.code === 'LIMIT_FILE_SIZE') {
+                return res.status(400).json({ success: false, message: '파일 크기가 제한을 초과했습니다. (최대 5MB)' });
+            }
+            if (err.message && err.message.includes('지원하지 않는 파일 형식')) {
+                return res.status(400).json({ success: false, message: err.message });
+            }
+            return res.status(400).json({ success: false, message: '파일 업로드 중 오류가 발생했습니다.' });
+        }
+        
+        // 파일 없음 검사
         if (!req.file) {
             return res.status(400).json({ success: false, message: '이미지 파일이 필요합니다.' });
         }
-
+        
+        // 이 지점에서 파일이 유효하므로 계속 진행
+        next();
+    });
+}, async (req, res) => {
+    try {
         const user = await userService.findById(req.user.userId);
         if (!user) {
             return res.status(404).json({ success: false, message: '사용자를 찾을 수 없습니다.' });
@@ -147,9 +166,6 @@ router.post('/me/profile-image', authenticateUser, uploadProfileImage.single('pr
             } catch (cleanupError) {
                 console.error('업로드된 파일 정리 중 오류:', cleanupError);
             }
-        }
-        if (error.message && error.message.includes('지원하지 않는 파일 형식')) {
-            return res.status(400).json({ success: false, message: error.message });
         }
         res.status(500).json({ success: false, message: '서버 오류' });
     }
@@ -188,8 +204,15 @@ router.delete('/me/profile-image', authenticateUser, async (req, res) => {
 
 // 정적 파일 제공 설정 (Express 애플리케이션 설정에서 사용)
 const setupStaticFileServing = (app) => {
-    const uploadsPath = path.join(path.dirname(fileUploader.PROFILE_IMAGE_PATH), '');
-    app.use('/uploads', express.static(uploadsPath));
+    // 업로드 루트 디렉토리 설정
+    const uploadsRoot = path.join(process.cwd(), 'uploads');
+    app.use('/uploads', express.static(uploadsRoot));
+
+    // 프로필 이미지 디렉토리 설정
+    const profileImagesPath = path.join(uploadsRoot, 'profile-images');
+    app.use('/uploads/profile-images', express.static(profileImagesPath));
+    
+    console.log(`정적 파일 서비스 경로 설정 완료: ${uploadsRoot}`);
 };
 
 // router.get('/:id', (request, response) => {

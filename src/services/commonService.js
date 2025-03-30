@@ -1,8 +1,9 @@
 import nodemailer from 'nodemailer';
 import CommonRepository from '../dataaccess/repositories/commonRepository.js';
 import dotenv from 'dotenv';
-import { pool } from '../utils/database.js';
 import bcrypt from 'bcryptjs';
+import { db } from '../utils/database.js';
+import { logInfo, logError, logDebug, logWarn } from '../utils/logger.js';
 
 dotenv.config();
 
@@ -81,21 +82,21 @@ class CommonService {
     }
     
     async sendEmail(body) {
-        const connection = await pool.getConnection();
         try {
-            await connection.beginTransaction();
-            
-            /* 문자열 */
+            // 문자열 생성
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#';
             let result = '';
             const charactersLength = characters.length;
 
-            /* 8자리 랜덤 뽑기 */
+            // 8자리 랜덤 비밀번호 생성
             for (let i = 0; i < 8; i++) {
                 const randomIndex = Math.floor(Math.random() * charactersLength);
                 result += characters.charAt(randomIndex);
             }
-                        
+            
+            logDebug('임시 비밀번호 생성 완료', { email: body.email });
+
+            // 이메일 송신 설정
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
@@ -114,30 +115,31 @@ class CommonService {
         
             // 이메일 전송
             await transporter.sendMail(mailOptions);
+            logInfo('임시 비밀번호 이메일 발송 완료', { email: body.email });
 
             // 비밀번호 해싱
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(result, salt);
 
-            var param = {
-                new_password : hashedPassword,
-                email : body.email
-            }
+            // 트랜잭션으로 비밀번호 업데이트
+            return await db.transaction(async (connection) => {
+                var param = {
+                    new_password: hashedPassword,
+                    email: body.email
+                };
 
-            /* 비밀번호 상태 업데이트 쿼리 */
-            await this.commonRepository.updateUserPassword(param, connection)
-
-            await connection.commit();
-            return { success: true, message: 'SUCCESS'};
-
-        } catch(error) { 
-            await connection.rollback();
+                // 비밀번호 상태 업데이트 쿼리
+                await this.commonRepository.updateUserPassword(param, connection);
+                logInfo('사용자 비밀번호 업데이트 완료', { email: body.email });
+                
+                return { success: true, message: 'SUCCESS' };
+            });
+        } catch (error) {
+            logError('비밀번호 재설정 프로세스 실패', error);
             return {
-                success : false,
-                message: error,
+                success: false,
+                message: error.message || '비밀번호 재설정 중 오류가 발생했습니다.'
             };
-        } finally {
-            await connection.release();
         }
     }
 

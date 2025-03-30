@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 // 환경 변수 로드
 dotenv.config();
 
-const JWT_SECRET = process.env.JWT_SECRET || 'default_secret_key_do_not_use_in_production';
+const JWT_SECRET = process.env.JWT_SECRET_KEY || 'default_secret_key_do_not_use_in_production';
 
 /**
  * JWT 토큰 검증 미들웨어

@@ -21,6 +21,7 @@ class ReviewModel {
     // 표시용 추가 정보 (JOIN 쿼리 결과 포함)
     this.userName = data.user_name || null;
     this.userProfileImage = data.user_profile_image || null;
+    this.shopName = data.shop_name || null;
   }
 }
 

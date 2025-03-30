@@ -22,7 +22,12 @@ router.post('/login', async (request, response) => {
     try {
         const result = await LoginService.login(email, password);
         if (result) {
-            response.status(200).json({ success: true, ...result });
+            console.log('로그인 성공, 토큰 반환:', result.token ? '토큰 있음' : '토큰 없음');
+            response.status(200).json({ 
+                success: true, 
+                user: result.user,
+                token: result.token
+            });
         } else {
             response.status(401).json({ success: false, message: '이메일 또는 비밀번호가 잘못되었습니다.' });
         }

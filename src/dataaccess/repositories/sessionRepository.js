@@ -1,7 +1,8 @@
 import mybatisMapper from 'mybatis-mapper';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { pool } from '../../utils/database.js';
+import { db } from '../../utils/database.js';
+import { logInfo, logError, logDebug } from '../../utils/logger.js';
 
 class SessionRepository {
     constructor() {
@@ -16,49 +17,50 @@ class SessionRepository {
                 path.dirname(fileURLToPath(import.meta.url)), 
                 '../mappers/userSessionMapper.xml'
             );
-            console.log('Mapper loaded:', mapperPath);
+            logInfo('세션 매퍼 로드됨', { path: mapperPath });
             // 매퍼 생성
             mybatisMapper.createMapper([mapperPath]);
         } catch (err) {
-            console.error('Failed to initialize:', mapperPath);
+            logError('세션 레포지토리 초기화 실패', err);
             throw err;
         }
     }
 
     async saveSession(userId, session) {
-        const connection = await pool.getConnection();
         try {
-            const query =  mybatisMapper.getStatement(
+            // 세션 객체를 문자열로 변환
+            const sessionStr = typeof session === 'object' ? JSON.stringify(session) : session;
+            
+            const query = mybatisMapper.getStatement(
                 'session',    // namespace
                 'saveSession', // sql id
-                { userId, session },    // parameters
+                { userId, session: sessionStr },    // parameters
                 this.format   // format
             );
-            await connection.query(query);
+            
+            logDebug('사용자 세션 저장', { userId });
+            await db.execute(query);
+            logInfo('세션 저장 성공', { userId });
         } catch (err) {
-            console.error('Failed to save user session:', err);
+            logError('사용자 세션 저장 실패', err);
             throw err;
-        } finally {
-            connection.release();
         }
     }
 
     async findSession(userId) {
-        const connection = await pool.getConnection();
         try {
-            const query =  mybatisMapper.getStatement(
+            const query = mybatisMapper.getStatement(
                 'session',    // namespace
                 'findSession', // sql id
                 { userId },    // parameters
                 this.format   // format
             );
-            const [result] = await connection.query(query);
-            return result.length > 0 ? result[0] : null;
+            
+            logDebug('사용자 세션 조회', { userId });
+            return await db.queryOne(query);
         } catch (err) {
-            console.error('Failed to save user session:', err, userId, query);
+            logError('사용자 세션 조회 실패', err);
             throw err;
-        } finally {
-            connection.release();
         }
     }
 }

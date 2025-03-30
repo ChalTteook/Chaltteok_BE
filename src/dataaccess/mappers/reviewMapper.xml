@@ -5,10 +5,12 @@
   <select id="getReviewById">
     SELECT 
       r.*,
+      s.title as shop_name,
       u.name as user_name,
-      u.profile_img as user_profile_image
+      u.profile_image as user_profile_image
     FROM shop_review r
-    LEFT JOIN users u ON r.user_id = u.id
+    LEFT JOIN shop s ON r.shop_id = s.id
+    LEFT JOIN user u ON r.user_id = u.id
     WHERE r.id = #{reviewId}
   </select>
 
@@ -17,13 +19,50 @@
     SELECT 
       r.*,
       u.name as user_name,
-      u.profile_img as user_profile_image
+      u.profile_image as user_profile_image
     FROM shop_review r
-    LEFT JOIN users u ON r.user_id = u.id
+    LEFT JOIN user u ON r.user_id = u.id
     WHERE r.shop_id = #{shopId}
     ORDER BY r.reg_date DESC
-    LIMIT #{offset}, #{limit}
+    LIMIT ${limit} OFFSET ${offset}
   </select>
+
+  <!-- 새 리뷰 생성 -->
+  <insert id="createReview">
+    <![CDATA[
+    INSERT INTO shop_review (
+      shop_id,
+      shop_prd_id,
+      user_id,
+      description
+    ) VALUES (
+      #{shopId},
+      #{shopPrdId},
+      #{userId},
+      #{description}
+    )
+    ]]>
+    <selectKey keyProperty="id" resultType="bigint" order="AFTER">
+      <![CDATA[
+      SELECT LAST_INSERT_ID()
+      ]]>
+    </selectKey>
+  </insert>
+
+  <!-- 리뷰 수정 -->
+  <update id="updateReview">
+    UPDATE shop_review
+    SET
+      description = #{description},
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 삭제 -->
+  <delete id="deleteReview">
+    DELETE FROM shop_review
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </delete>
 
   <!-- 리뷰 이미지 업데이트 - 인덱스 1 -->
   <update id="updateImage1">
@@ -121,4 +160,25 @@
     FROM shop_review
     WHERE id = #{reviewId} AND user_id = #{userId}
   </select>
+
+  <!-- 좋아요 추가 -->
+  <update id="incrementLike">
+    UPDATE shop_review
+    SET 
+      like_count = like_count + 1,
+      mod_date = NOW()
+    WHERE id = #{reviewId}
+  </update>
+
+  <!-- 좋아요 취소 -->
+  <update id="decrementLike">
+    UPDATE shop_review
+    SET 
+      like_count = CASE
+        WHEN like_count > 0 THEN like_count - 1
+        ELSE 0
+      END,
+      mod_date = NOW()
+    WHERE id = #{reviewId}
+  </update>
 </mapper> 

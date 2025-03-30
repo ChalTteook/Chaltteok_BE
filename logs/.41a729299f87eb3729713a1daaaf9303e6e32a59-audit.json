@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/Users/hj/work/Chaltteok_BE/logs/.41a729299f87eb3729713a1daaaf9303e6e32a59-audit.json",
+    "files": [
+        {
+            "date": 1743089067863,
+            "name": "/Users/hj/work/Chaltteok_BE/logs/exception-2025-03-28.log",
+            "hash": "ee0eb74c5ba2ba54d6a0f2ae112eeb7ade7ef279eb85597c8c7b1d533197b95c"
+        },
+        {
+            "date": 1743313453154,
+            "name": "/Users/hj/work/Chaltteok_BE/logs/exception-2025-03-30.log",
+            "hash": "a5ce2002a7f023326f7e42a1b77558b286a58c63009db10c9d701b9f7b9e9e9e"
+        }
+    ],
+    "hashType": "sha256"
+}
