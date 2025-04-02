@@ -19,6 +19,11 @@
             "date": 1743313453151,
             "name": "/Users/hj/work/Chaltteok_BE/logs/application-2025-03-30.log",
             "hash": "6cfd627acd830cac12925b696be980c029488332e1368303278b5e6b18aaa486"
+        },
+        {
+            "date": 1743531636438,
+            "name": "/Users/hj/work/Chaltteok_BE/logs/application-2025-04-02.log",
+            "hash": "8d1d15d2337d76b343adccc446ca0c589938f0543b78c27c8b820e8bd7617391"
         }
     ],
     "hashType": "sha256"

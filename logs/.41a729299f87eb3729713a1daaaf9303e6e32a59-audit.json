@@ -14,6 +14,11 @@
             "date": 1743313453154,
             "name": "/Users/hj/work/Chaltteok_BE/logs/exception-2025-03-30.log",
             "hash": "a5ce2002a7f023326f7e42a1b77558b286a58c63009db10c9d701b9f7b9e9e9e"
+        },
+        {
+            "date": 1743531636441,
+            "name": "/Users/hj/work/Chaltteok_BE/logs/exception-2025-04-02.log",
+            "hash": "acafa52c7e0de839cf9d8425f0c8523fcb6deaf86ce676ee3386fb6520d1d450"
         }
     ],
     "hashType": "sha256"

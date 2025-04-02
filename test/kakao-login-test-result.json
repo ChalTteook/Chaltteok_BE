@@ -1,0 +1,5 @@
+{
+  "success": true,
+  "timestamp": "2025-03-16T08:57:21.213Z",
+  "authUrl": "https://accounts.kakao.com/login?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fclient_id%3Dfe0e720fbe5b74240985fb33256f2826%26redirect_uri%3Dhttp%253A%252F%252F43.201.211.39%252F%26response_type%3Dcode%26through_account%3Dtrue"
+}
