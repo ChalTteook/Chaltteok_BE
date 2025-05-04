@@ -26,7 +26,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // API 기본 URL
-const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:9801/api/v1';
+const API_BASE_URL = 'http://localhost:9801/api/v1';
 
 // 결과 저장을 위한 디렉토리
 const resultsDir = path.join(__dirname, '../test-results');

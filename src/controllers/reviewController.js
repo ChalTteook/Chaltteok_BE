@@ -3,6 +3,7 @@ import multer from 'multer';
 import ReviewService from '../services/reviewService.js';
 import ReviewImageService from '../services/reviewImageService.js';
 import { verifyToken } from '../utils/authMiddleware.js';
+import { ERROR_CODES } from '../utils/errorCodes.js';
 
 const router = express.Router();
 
@@ -31,6 +32,7 @@ router.get('/shops/:shopId', async (req, res) => {
     if (isNaN(shopId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 매장 ID입니다.'
       });
     }
@@ -51,7 +53,8 @@ router.get('/shops/:shopId', async (req, res) => {
     console.error('리뷰 목록 조회 중 오류 발생:', error);
     return res.status(500).json({
       success: false,
-      message: '리뷰 목록을 불러오는 중 오류가 발생했습니다.'
+      errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+      message: ERROR_CODES.INTERNAL_ERROR.message
     });
   }
 });
@@ -67,6 +70,7 @@ router.get('/:reviewId', async (req, res) => {
     if (isNaN(reviewId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 리뷰 ID입니다.'
       });
     }
@@ -76,7 +80,8 @@ router.get('/:reviewId', async (req, res) => {
     if (!review) {
       return res.status(404).json({
         success: false,
-        message: '해당 ID의 리뷰를 찾을 수 없습니다.'
+        errorCode: ERROR_CODES.REVIEW_NOT_FOUND.code,
+        message: ERROR_CODES.REVIEW_NOT_FOUND.message
       });
     }
     
@@ -88,7 +93,8 @@ router.get('/:reviewId', async (req, res) => {
     console.error('리뷰 조회 중 오류 발생:', error);
     return res.status(500).json({
       success: false,
-      message: '리뷰를 불러오는 중 오류가 발생했습니다.'
+      errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+      message: ERROR_CODES.INTERNAL_ERROR.message
     });
   }
 });
@@ -121,6 +127,7 @@ router.post('/shops/:shopId', verifyToken, async (req, res) => {
     if (isNaN(shopId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 매장 ID입니다.'
       });
     }
@@ -128,6 +135,7 @@ router.post('/shops/:shopId', verifyToken, async (req, res) => {
     if (!description || description.trim() === '') {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '리뷰 내용을 입력해주세요.'
       });
     }
@@ -142,7 +150,8 @@ router.post('/shops/:shopId', verifyToken, async (req, res) => {
     console.error('리뷰 작성 중 오류 발생:', error);
     return res.status(500).json({
       success: false,
-      message: '리뷰 작성 중 오류가 발생했습니다.'
+      errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+      message: ERROR_CODES.INTERNAL_ERROR.message
     });
   }
 });
@@ -173,6 +182,7 @@ router.put('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) => 
     if (isNaN(shopId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 매장 ID입니다.'
       });
     }
@@ -180,6 +190,7 @@ router.put('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) => 
     if (isNaN(reviewId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 리뷰 ID입니다.'
       });
     }
@@ -187,6 +198,7 @@ router.put('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) => 
     if (!description || description.trim() === '') {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '리뷰 내용을 입력해주세요.'
       });
     }
@@ -197,7 +209,8 @@ router.put('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) => 
       if (!review || review.shopId !== shopId) {
         return res.status(404).json({
           success: false,
-          message: '해당 매장의 리뷰를 찾을 수 없습니다.'
+          errorCode: ERROR_CODES.REVIEW_NOT_FOUND.code,
+          message: ERROR_CODES.REVIEW_NOT_FOUND.message
         });
       }
       
@@ -211,7 +224,8 @@ router.put('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) => 
       if (error.message.includes('권한이 없습니다')) {
         return res.status(403).json({
           success: false,
-          message: '리뷰 수정 권한이 없습니다.'
+          errorCode: ERROR_CODES.FORBIDDEN.code,
+          message: ERROR_CODES.FORBIDDEN.message
         });
       }
       throw error;
@@ -220,7 +234,8 @@ router.put('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) => 
     console.error('리뷰 수정 중 오류 발생:', error);
     return res.status(500).json({
       success: false,
-      message: '리뷰 수정 중 오류가 발생했습니다.'
+      errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+      message: ERROR_CODES.INTERNAL_ERROR.message
     });
   }
 });
@@ -250,6 +265,7 @@ router.delete('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) 
     if (isNaN(shopId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 매장 ID입니다.'
       });
     }
@@ -257,6 +273,7 @@ router.delete('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) 
     if (isNaN(reviewId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 리뷰 ID입니다.'
       });
     }
@@ -267,7 +284,8 @@ router.delete('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) 
       if (!review || review.shopId !== shopId) {
         return res.status(404).json({
           success: false,
-          message: '해당 매장의 리뷰를 찾을 수 없습니다.'
+          errorCode: ERROR_CODES.REVIEW_NOT_FOUND.code,
+          message: ERROR_CODES.REVIEW_NOT_FOUND.message
         });
       }
       
@@ -288,7 +306,8 @@ router.delete('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) 
       if (error.message.includes('권한이 없습니다')) {
         return res.status(403).json({
           success: false,
-          message: '리뷰 삭제 권한이 없습니다.'
+          errorCode: ERROR_CODES.FORBIDDEN.code,
+          message: ERROR_CODES.FORBIDDEN.message
         });
       }
       throw error;
@@ -297,7 +316,8 @@ router.delete('/shops/:shopId/reviews/:reviewId', verifyToken, async (req, res) 
     console.error('리뷰 삭제 중 오류 발생:', error);
     return res.status(500).json({
       success: false,
-      message: '리뷰 삭제 중 오류가 발생했습니다.'
+      errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+      message: ERROR_CODES.INTERNAL_ERROR.message
     });
   }
 });
@@ -328,6 +348,7 @@ router.post('/:reviewId/images', verifyToken, upload.single('image'), async (req
     if (isNaN(reviewId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 리뷰 ID입니다.'
       });
     }
@@ -335,6 +356,7 @@ router.post('/:reviewId/images', verifyToken, upload.single('image'), async (req
     if (isNaN(imageIndex) || imageIndex < 1 || imageIndex > 5) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 이미지 인덱스입니다. 1~5 사이의 값을 입력해주세요.'
       });
     }
@@ -360,6 +382,7 @@ router.post('/:reviewId/images', verifyToken, upload.single('image'), async (req
       if (error.message.includes('권한이 없습니다')) {
         return res.status(403).json({
           success: false,
+          errorCode: ERROR_CODES.FORBIDDEN.code,
           message: error.message
         });
       }
@@ -369,7 +392,8 @@ router.post('/:reviewId/images', verifyToken, upload.single('image'), async (req
     console.error('이미지 업로드 중 오류 발생:', error);
     return res.status(500).json({
       success: false,
-      message: '이미지 업로드 중 오류가 발생했습니다.'
+      errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+      message: ERROR_CODES.INTERNAL_ERROR.message
     });
   }
 });
@@ -400,6 +424,7 @@ router.delete('/:reviewId/images/:imageIndex', verifyToken, async (req, res) => 
     if (isNaN(reviewId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 리뷰 ID입니다.'
       });
     }
@@ -407,6 +432,7 @@ router.delete('/:reviewId/images/:imageIndex', verifyToken, async (req, res) => 
     if (isNaN(imageIndex) || imageIndex < 1 || imageIndex > 5) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 이미지 인덱스입니다. 1~5 사이의 값을 입력해주세요.'
       });
     }
@@ -430,6 +456,7 @@ router.delete('/:reviewId/images/:imageIndex', verifyToken, async (req, res) => 
       if (error.message.includes('권한이 없습니다')) {
         return res.status(403).json({
           success: false,
+          errorCode: ERROR_CODES.FORBIDDEN.code,
           message: error.message
         });
       }
@@ -439,7 +466,8 @@ router.delete('/:reviewId/images/:imageIndex', verifyToken, async (req, res) => 
     console.error('이미지 삭제 중 오류 발생:', error);
     return res.status(500).json({
       success: false,
-      message: '이미지 삭제 중 오류가 발생했습니다.'
+      errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+      message: ERROR_CODES.INTERNAL_ERROR.message
     });
   }
 });
@@ -469,6 +497,7 @@ router.post('/shops/:shopId/reviews/:reviewId/like', verifyToken, async (req, re
     if (isNaN(shopId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 매장 ID입니다.'
       });
     }
@@ -476,6 +505,7 @@ router.post('/shops/:shopId/reviews/:reviewId/like', verifyToken, async (req, re
     if (isNaN(reviewId)) {
       return res.status(400).json({
         success: false,
+        errorCode: ERROR_CODES.INVALID_PARAM.code,
         message: '유효하지 않은 리뷰 ID입니다.'
       });
     }
@@ -485,7 +515,8 @@ router.post('/shops/:shopId/reviews/:reviewId/like', verifyToken, async (req, re
     if (!review || review.shopId !== shopId) {
       return res.status(404).json({
         success: false,
-        message: '해당 매장의 리뷰를 찾을 수 없습니다.'
+        errorCode: ERROR_CODES.REVIEW_NOT_FOUND.code,
+        message: ERROR_CODES.REVIEW_NOT_FOUND.message
       });
     }
     
@@ -507,7 +538,8 @@ router.post('/shops/:shopId/reviews/:reviewId/like', verifyToken, async (req, re
     console.error('좋아요 추가 중 오류 발생:', error);
     return res.status(500).json({
       success: false,
-      message: '좋아요 추가 중 오류가 발생했습니다.'
+      errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+      message: ERROR_CODES.INTERNAL_ERROR.message
     });
   }
 });

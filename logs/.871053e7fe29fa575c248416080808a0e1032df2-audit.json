@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\.871053e7fe29fa575c248416080808a0e1032df2-audit.json",
+    "files": [
+        {
+            "date": 1746331333751,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\rejection-2025-05-04.log",
+            "hash": "ed725a44381de8168742cc69163f0b1e7aff80eca9b6d4c2733f65c472ea8afb"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -7,7 +7,7 @@ import FormData from 'form-data';
 dotenv.config();
 
 // API 베이스 URL
-const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:9801/api/v1';
+const API_BASE_URL = 'http://localhost:9801/api/v1';
 
 // 테스트용 변수
 let userToken = '';

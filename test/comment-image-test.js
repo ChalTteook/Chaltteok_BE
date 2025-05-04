@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // API 기본 URL 설정
-const API_BASE_URL = 'http://43.201.211.39/api/v1';
+const API_BASE_URL = 'http://localhost:9801/api/v1';
 
 // 테스트 변수
 let authToken = null;

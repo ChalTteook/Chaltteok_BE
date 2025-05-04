@@ -1,5 +1,6 @@
 import multer from 'multer';
 import { logError, logWarn } from './logger.js';
+import { ERROR_CODES } from './errorCodes.js';
 
 /**
  * Multer 오류 처리 미들웨어
@@ -45,6 +46,7 @@ export const handleMulterError = (err, req, res, next) => {
         
         return res.status(400).json({
             success: false,
+            errorCode: ERROR_CODES.FILE_TOO_LARGE.code,
             message: message
         });
     }
@@ -62,6 +64,7 @@ export const handleMulterError = (err, req, res, next) => {
         
         return res.status(400).json({
             success: false,
+            errorCode: ERROR_CODES.INVALID_FILE_TYPE.code,
             message: err.message
         });
     }
@@ -97,7 +100,8 @@ export const handleGenericError = (err, req, res, next) => {
     
     res.status(500).json({
         success: false,
-        message: '서버 오류가 발생했습니다.',
+        errorCode: ERROR_CODES.INTERNAL_ERROR.code,
+        message: ERROR_CODES.INTERNAL_ERROR.message,
         ...errorDetails
     });
 }; 
