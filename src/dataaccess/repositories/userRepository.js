@@ -89,8 +89,15 @@ class UserRepository {
             logDebug('사용자 생성 시작', { userModel });
             const insertId = await db.insert(query);
             logInfo('사용자 생성 성공', { userId: insertId });
-            
-            return { insertId };
+            // 전체 row 반환
+            const selectQuery = mybatisMapper.getStatement(
+                'user',
+                'findUserById',
+                { id: insertId },
+                this.format
+            );
+            const [user] = await db.query(selectQuery);
+            return user;
         } catch (err) {
             logError('사용자 생성 실패', err);
             throw err;

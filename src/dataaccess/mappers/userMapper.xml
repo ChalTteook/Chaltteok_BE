@@ -4,6 +4,7 @@
   <select id="findUserById">
     SELECT
       id,
+      role,
       type,
       email,
       password,
@@ -31,6 +32,7 @@
    <select id="findUserByEmail">
     SELECT
       id,
+      role,
       type,
       email,
       password,
@@ -58,6 +60,7 @@
    <select id="findUserBySocialId">
     SELECT
       id,
+      role,
       type,
       email,
       password,
@@ -84,6 +87,7 @@
 
   <insert id="insertUser">
     INSERT INTO user (
+      role,
       type,
       email,
       password,
@@ -96,6 +100,7 @@
       social_id,
       profile_image
     ) VALUES (
+      #{role},
       #{type}, 
       #{email}, 
       #{password}, 
@@ -112,6 +117,7 @@
 
   <update id="updateUser">
     UPDATE user SET
+      role = #{role},
       password = #{password},
       is_retry = #{isRetry},
       name = #{name},

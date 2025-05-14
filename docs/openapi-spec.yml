@@ -1,8 +1,13 @@
 openapi: 3.0.3
 info:
   title: 찰떡 서비스 API
-  description: 찰떡 서비스의 전체 REST API 명세 (자동 생성, 주요 기능별 한국어 설명 포함)
-  version: 1.0.0
+  description: |
+    찰떡 서비스의 전체 REST API 명세입니다.
+    - 2025-05-15 기준 최신 라우터 구조 반영
+    - 회원/인증, 리뷰, 이미지 업로드, 제휴/일반 사진관 구분, 신고, 소셜 로그인 등 모든 주요 기능 포함
+    - 각 엔드포인트별 요청/응답 예시(테스트 데이터 기반) 포함
+    - 에러 코드 및 메시지, 인증 방식, 파라미터 설명 등 상세 명시
+  version: 1.1.2
 servers:
   - url: /api/v1
     description: 기본 API 서버
@@ -18,11 +23,44 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UserRegister'
+            examples:
+              성공:
+                value:
+                  email: test@newaccount.com
+                  password: newpass1234
+                  name: 새로운 테스트 사용자
+                  age: 28
+                  gender: F
+                  nickName: 새테스트닉네임
+                  phone: 01087654321
+                  address: 서울시 마포구
       responses:
         '201':
           description: 회원가입 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+              examples:
+                성공:
+                  value:
+                    success: true
+                    user:
+                      id: 30
+                      email: test@newaccount.com
+                      name: 새로운 테스트 사용자
         '400':
           description: 잘못된 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                중복이메일:
+                  value:
+                    success: false
+                    errorCode: DUPLICATE_EMAIL
+                    message: 이미 가입된 이메일입니다.
   /auth/login:
     post:
       summary: 로그인
@@ -33,26 +71,85 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UserLogin'
+            examples:
+              성공:
+                value:
+                  email: test@newaccount.com
+                  password: newpass1234
       responses:
         '200':
           description: 로그인 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserLoginResponse'
+              examples:
+                성공:
+                  value:
+                    success: true
+                    user:
+                      id: 30
+                      email: test@newaccount.com
+                    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
         '401':
           description: 인증 실패
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                실패:
+                  value:
+                    success: false
+                    errorCode: INVALID_PASSWORD
+                    message: 이메일 또는 비밀번호가 잘못되었습니다.
   /auth/social-login:
     post:
-      summary: 소셜 로그인
-      description: 카카오, 네이버 등 소셜 로그인
+      summary: 소셜 로그인 (네이버/카카오)
+      description: 네이버/카카오 인증 code로 소셜 로그인
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SocialLogin'
+              type: object
+              properties:
+                provider:
+                  type: string
+                  enum: [naver, kakao]
+                code:
+                  type: string
+            examples:
+              네이버:
+                value:
+                  provider: naver
+                  code: F0rJZr1ocKtYjnoxjv
+              카카오:
+                value:
+                  provider: kakao
+                  code: kakao_test_code
       responses:
         '200':
           description: 소셜 로그인 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserLoginResponse'
+              examples:
+                성공:
+                  value:
+                    success: true
+                    user:
+                      id: 2
+                      type: naver
+                      socialId: 4yIAKnsNZgGklMVGhQ3HceBdFDzXSKB13uOro69rT1w
+                    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
         '400':
           description: 잘못된 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /user/me:
     get:
       summary: 내 정보 조회
@@ -188,32 +285,55 @@ paths:
   # 매장
   /shops:
     get:
-      summary: 매장 목록 조회
-      description: 매장 리스트 조회, 제휴매장 우선
+      summary: 전체 사진관(매장) 목록 조회
+      description: 제휴/일반 사진관 구분, 정렬, 필터링 지원
       parameters:
         - in: query
-          name: page
+          name: onlyPartner
           schema:
-            type: integer
-          description: 페이지 번호
-        - in: query
-          name: limit
-          schema:
-            type: integer
-          description: 페이지당 항목 수
+            type: boolean
+          description: true면 제휴 사진관만 조회
         - in: query
           name: sort
           schema:
             type: string
-          description: 정렬 기준
-        - in: query
-          name: partner_only
-          schema:
-            type: boolean
-          description: 제휴매장만 조회 여부
+            enum: [price, review]
+          description: 정렬 옵션 (가격순, 리뷰순)
       responses:
         '200':
-          description: 매장 목록 반환
+          description: 매장 목록 조회 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Shop'
+              examples:
+                전체:
+                  value:
+                    success: true
+                    data:
+                      - id: 11670753
+                        title: 연희사진관
+                        is_partner: 1
+                        partner_status: active
+                      - id: 12040093
+                        title: 블링스튜디오
+                        is_partner: 1
+                        partner_status: active
+                      - id: 12890980
+                        title: 홍대 사진관 라임스튜디오
+                        is_partner: 1
+                        partner_status: active
+                      - id: 13000000
+                        title: 일반사진관
+                        is_partner: 0
+                        partner_status: null
   /shops/{id}:
     get:
       summary: 매장 상세 조회
@@ -224,7 +344,6 @@ paths:
           required: true
           schema:
             type: integer
-          description: 매장 ID
       responses:
         '200':
           description: 매장 정보 반환
@@ -241,7 +360,6 @@ paths:
           required: true
           schema:
             type: integer
-          description: 매장 ID
         - in: query
           name: page
           schema:
@@ -255,9 +373,7 @@ paths:
           description: 리뷰 목록 반환
     post:
       summary: 리뷰 작성
-      description: JWT 인증 필요, 리뷰 작성
-      security:
-        - bearerAuth: []
+      description: 인증 필요, 리뷰 텍스트 작성
       parameters:
         - in: path
           name: shopId
@@ -269,10 +385,97 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ReviewCreate'
+              type: object
+              properties:
+                description:
+                  type: string
+            examples:
+              성공:
+                value:
+                  description: 테스트 리뷰입니다 1746351958
       responses:
         '201':
           description: 리뷰 작성 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+              examples:
+                성공:
+                  value:
+                    success: true
+                    data: null
+        '401':
+          description: 인증 필요
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                인증필요:
+                  value:
+                    success: false
+                    errorCode: UNAUTHORIZED
+                    message: 인증이 필요합니다. 로그인 후 이용해주세요.
+  /reviews/shops/{shopId}/images:
+    post:
+      summary: 리뷰 이미지 업로드
+      description: 인증 필요, 리뷰 작성 후 이미지 업로드 (최대 5장)
+      parameters:
+        - in: path
+          name: shopId
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: index
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 5
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+            examples:
+              성공:
+                value:
+                  file: (이미지 파일)
+      responses:
+        '200':
+          description: 이미지 업로드 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  imageUrl:
+                    type: string
+              examples:
+                성공:
+                  value:
+                    success: true
+                    imageUrl: /uploads/review-images/115_1_83737b20-2bdb-4be3-a4fd-ef10bcd9a98d.png
+        '401':
+          description: 인증 필요
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /reviews/{reviewId}:
     get:
       summary: 리뷰 상세 조회
@@ -315,27 +518,50 @@ paths:
         '200':
           description: 리뷰 수정 성공
   # 신고
-  /reports/shops/{shopId}:
+  /reports:
     post:
-      summary: 매장 신고
-      description: JWT 인증 필요, 매장 신고
-      security:
-        - bearerAuth: []
-      parameters:
-        - in: path
-          name: shopId
-          required: true
-          schema:
-            type: integer
+      summary: 신고하기
+      description: 리뷰/사용자 등 신고
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ReportCreate'
+              type: object
+              properties:
+                targetType:
+                  type: string
+                  enum: [review, user]
+                targetId:
+                  type: integer
+                reason:
+                  type: string
+            examples:
+              리뷰신고:
+                value:
+                  targetType: review
+                  targetId: 113
+                  reason: 부적절한 내용
       responses:
         '201':
-          description: 신고 생성 성공
+          description: 신고 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+              examples:
+                성공:
+                  value:
+                    success: true
+        '400':
+          description: 잘못된 요청
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /reports/comments/{commentId}:
     post:
       summary: 댓글 신고
@@ -573,6 +799,242 @@ paths:
       responses:
         '200':
           description: 수정 성공
+  /snap-artists:
+    post:
+      summary: 스냅작가 등록
+      description: 새로운 스냅작가를 등록합니다.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SnapArtistCreate'
+            examples:
+              예시:
+                value:
+                  name: 홍길동
+                  phone: '01012345678'
+                  email: artist1@test.com
+                  instagram: hong_artist
+                  business_number: '123-45-67890'
+                  available_time: '09:00~18:00'
+                  main_images: 'main1.jpg,main2.jpg'
+                  floor_parking: '가능'
+                  equipment: '카메라, 조명'
+                  shoot_guide: '촬영 가이드'
+                  use_guide: '이용 가이드'
+                  etc: '기타 정보'
+                  photographer_count: 2
+                  intro: '소개글'
+                  intro_images: 'intro1.jpg,intro2.jpg'
+                  main_category: '웨딩'
+                  sub_categories: '스냅,야외'
+                  ad_category: '프리미엄'
+      responses:
+        '201':
+          description: 등록 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SnapArtistResponse'
+              examples:
+                예시:
+                  value:
+                    success: true
+                    data:
+                      id: 1
+                      name: 홍길동
+                      email: artist1@test.com
+                      ...
+    get:
+      summary: 스냅작가 목록 조회
+      description: 전체 스냅작가 목록을 조회합니다. (카테고리, 검색 등 필터 가능)
+      parameters:
+        - in: query
+          name: category
+          schema:
+            type: string
+          description: 메인 카테고리 필터
+      responses:
+        '200':
+          description: 스냅작가 목록 반환
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SnapArtist'
+              examples:
+                예시:
+                  value:
+                    success: true
+                    data:
+                      - id: 1
+                        name: 홍길동
+                        main_category: 웨딩
+                      - id: 2
+                        name: 김작가
+                        main_category: 돌잔치
+  /snap-artists/{id}:
+    get:
+      summary: 스냅작가 상세 조회
+      description: 특정 스냅작가의 상세 정보를 조회합니다.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 스냅작가 상세 정보 반환
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SnapArtistDetailResponse'
+    put:
+      summary: 스냅작가 정보 수정
+      description: 스냅작가 정보를 수정합니다.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SnapArtistUpdate'
+      responses:
+        '200':
+          description: 수정 성공
+    delete:
+      summary: 스냅작가 삭제
+      description: 스냅작가를 삭제합니다.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: 삭제 성공
+  /snap-artists/{artistId}/products:
+    post:
+      summary: 스냅작가 상품 등록
+      description: 해당 스냅작가의 촬영상품을 등록합니다.
+      parameters:
+        - in: path
+          name: artistId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SnapProductCreate'
+      responses:
+        '201':
+          description: 등록 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SnapProductResponse'
+    get:
+      summary: 스냅작가 상품 목록 조회
+      description: 해당 스냅작가의 상품 목록을 조회합니다.
+      parameters:
+        - in: path
+          name: artistId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 상품 목록 반환
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SnapProduct'
+  /snap-artists/{artistId}/products/{productId}:
+    get:
+      summary: 스냅작가 상품 상세 조회
+      description: 해당 스냅작가의 특정 상품 상세 정보를 조회합니다.
+      parameters:
+        - in: path
+          name: artistId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 상품 상세 정보 반환
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SnapProductResponse'
+    put:
+      summary: 스냅작가 상품 수정
+      description: 해당 스냅작가의 상품 정보를 수정합니다.
+      parameters:
+        - in: path
+          name: artistId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SnapProductUpdate'
+      responses:
+        '200':
+          description: 수정 성공
+    delete:
+      summary: 스냅작가 상품 삭제
+      description: 해당 스냅작가의 상품을 삭제합니다.
+      parameters:
+        - in: path
+          name: artistId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: 삭제 성공
 components:
   securitySchemes:
     bearerAuth:
@@ -589,7 +1051,15 @@ components:
           type: string
         name:
           type: string
+        age:
+          type: integer
+        gender:
+          type: string
+        nickName:
+          type: string
         phone:
+          type: string
+        address:
           type: string
     UserLogin:
       type: object
@@ -598,12 +1068,28 @@ components:
           type: string
         password:
           type: string
-    SocialLogin:
+    UserResponse:
       type: object
       properties:
-        provider:
-          type: string
-        code:
+        success:
+          type: boolean
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+            email:
+              type: string
+            name:
+              type: string
+    UserLoginResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        user:
+          type: object
+        token:
           type: string
     UserProfileUpdate:
       type: object
@@ -691,4 +1177,143 @@ components:
           type: string
           format: date
         status:
-          type: string 
+          type: string
+    Shop:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        is_partner:
+          type: integer
+        partner_status:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        errorCode:
+          type: string
+        message:
+          type: string
+    SnapArtist:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        instagram:
+          type: string
+        businessNumber:
+          type: string
+        availableTime:
+          type: string
+        mainImages:
+          type: array
+          items:
+            type: string
+        floorParking:
+          type: string
+        equipment:
+          type: string
+        shootGuide:
+          type: string
+        useGuide:
+          type: string
+        etc:
+          type: string
+        photographerCount:
+          type: integer
+        intro:
+          type: string
+        introImages:
+          type: array
+          items:
+            type: string
+        mainCategory:
+          type: string
+        subCategories:
+          type: array
+          items:
+            type: string
+        adCategory:
+          type: string
+    SnapArtistCreate:
+      allOf:
+        - $ref: '#/components/schemas/SnapArtist'
+      required:
+        - name
+        - phone
+        - instagram
+        - businessNumber
+        - availableTime
+        - mainImages
+        - floorParking
+        - equipment
+        - shootGuide
+        - useGuide
+        - photographerCount
+        - intro
+        - introImages
+        - mainCategory
+        - subCategories
+        - adCategory
+    SnapArtistUpdate:
+      allOf:
+        - $ref: '#/components/schemas/SnapArtist'
+    SnapArtistResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          $ref: '#/components/schemas/SnapArtist'
+    SnapArtistDetailResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          $ref: '#/components/schemas/SnapArtist'
+    SnapProduct:
+      type: object
+      properties:
+        id:
+          type: integer
+        artistId:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: integer
+        productImages:
+          type: array
+          items:
+            type: string
+    SnapProductCreate:
+      allOf:
+        - $ref: '#/components/schemas/SnapProduct'
+      required:
+        - name
+        - description
+        - price
+        - productImages
+    SnapProductUpdate:
+      allOf:
+        - $ref: '#/components/schemas/SnapProduct'
+    SnapProductResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          $ref: '#/components/schemas/SnapProduct' 

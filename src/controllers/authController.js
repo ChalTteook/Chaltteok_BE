@@ -7,7 +7,8 @@ const router = express.Router();
 const userService = UserService;
 
 router.post('/register', async (request, response) => {
-    const userModel = new UserModel(request.body);
+    const userData = { ...request.body, role: 'user' };
+    const userModel = new UserModel(userData);
     try {
         await userService.createUser(userModel);
         response.status(201).json({ success: true, message: '회원가입 성공' });

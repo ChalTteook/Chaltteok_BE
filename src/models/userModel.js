@@ -4,6 +4,7 @@ class UserModel {
 
     constructor(data) {
         this.id = data.id || null;
+        this.role = data.role || 'user';
         this.type = data.type || null;
         this.email = data.email || null;
         this.password = data.password || null;
@@ -82,6 +83,7 @@ class UserModel {
     toJSON() {
         return {
             id: this.id,
+            role: this.role,
             type: this.type,
             email: this.email,
             password: this.password,
@@ -99,9 +101,10 @@ class UserModel {
     }
 
     // Constructor with args (static factory method)
-    static from({id, type, email, password, name, age, gender, nickName, phone, address, socialId, profileImage, itPlc1, itPlc2, itPlc3, regDate, modDate}) {
-        const user = new UserModel();
+    static from({id, role, type, email, password, name, age, gender, nickName, phone, address, socialId, profileImage, itPlc1, itPlc2, itPlc3, regDate, modDate}) {
+        const user = new UserModel({});
         user.id = id;
+        user.role = role || 'user';
         user.type = type;
         user.email = email;
         user.password = password;

@@ -18,7 +18,7 @@ class LoginService {
             // const session = await SessionRepository.findSession(user.id);
             let token
             /* 세션 바로바로 교체하는거로 변경*/
-            token = JwtUtil.generateToken({ userId: user.id });
+            token = JwtUtil.generateToken({ userId: user.id, role: user.role });
             this.sessionRepository.saveSession(user.id, token);
 
             // if (session) {
