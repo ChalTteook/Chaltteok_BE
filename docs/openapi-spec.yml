@@ -150,7 +150,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /user/me:
+  /users/me:
     get:
       summary: 내 정보 조회
       description: JWT 인증 필요, 내 정보 반환
@@ -161,7 +161,7 @@ paths:
           description: 내 정보 반환
         '401':
           description: 인증 실패
-  /user/me/profile:
+  /users/me/profile:
     get:
       summary: 내 프로필 정보 조회
       description: JWT 인증 필요, 내 프로필 정보 반환
@@ -188,7 +188,7 @@ paths:
           description: 프로필 수정 성공
         '401':
           description: 인증 실패
-  /user/change-password:
+  /users/change-password:
     post:
       summary: 비밀번호 변경
       description: JWT 인증 필요, 비밀번호 변경
@@ -205,7 +205,7 @@ paths:
           description: 비밀번호 변경 성공
         '400':
           description: 잘못된 요청
-  /user/me/profile-image:
+  /users/me/profile-image:
     post:
       summary: 프로필 이미지 업로드
       description: JWT 인증 필요, 프로필 이미지 업로드
@@ -218,7 +218,7 @@ paths:
             schema:
               type: object
               properties:
-                profileImage:
+                file:
                   type: string
                   format: binary
       responses:
@@ -350,6 +350,112 @@ paths:
         '404':
           description: 매장 없음
   # 리뷰
+  /shops/{shopId}/reviews/{reviewId}:
+    put:
+      summary: 리뷰 수정
+      description: JWT 인증 필요, 리뷰 수정
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: shopId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: reviewId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewUpdate'
+      responses:
+        '200':
+          description: 리뷰 수정 성공
+  /shops/{shopId}/reviews/{reviewId}/images:
+    post:
+      summary: 리뷰 이미지 업로드
+      description: JWT 인증 필요, 리뷰 작성 후 이미지 업로드 (최대 5장)
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: shopId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: reviewId
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: index
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 5
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: 이미지 업로드 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      imageUrl:
+                        type: string
+        '401':
+          description: 인증 필요
+  /shops/{shopId}/reviews/{reviewId}/images/{imageIndex}:
+    delete:
+      summary: 리뷰 이미지 삭제
+      description: JWT 인증 필요, 리뷰 이미지 삭제
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: shopId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: reviewId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: imageIndex
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 5
+      responses:
+        '200':
+          description: 삭제 성공
+        '401':
+          description: 인증 필요
   /reviews/shops/{shopId}:
     get:
       summary: 매장 리뷰 목록 조회
@@ -422,60 +528,6 @@ paths:
                     success: false
                     errorCode: UNAUTHORIZED
                     message: 인증이 필요합니다. 로그인 후 이용해주세요.
-  /reviews/shops/{shopId}/images:
-    post:
-      summary: 리뷰 이미지 업로드
-      description: 인증 필요, 리뷰 작성 후 이미지 업로드 (최대 5장)
-      parameters:
-        - in: path
-          name: shopId
-          required: true
-          schema:
-            type: integer
-        - in: query
-          name: index
-          required: true
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 5
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                file:
-                  type: string
-                  format: binary
-            examples:
-              성공:
-                value:
-                  file: (이미지 파일)
-      responses:
-        '200':
-          description: 이미지 업로드 성공
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  success:
-                    type: boolean
-                  imageUrl:
-                    type: string
-              examples:
-                성공:
-                  value:
-                    success: true
-                    imageUrl: /uploads/review-images/115_1_83737b20-2bdb-4be3-a4fd-ef10bcd9a98d.png
-        '401':
-          description: 인증 필요
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
   /reviews/{reviewId}:
     get:
       summary: 리뷰 상세 조회
@@ -491,32 +543,6 @@ paths:
           description: 리뷰 정보 반환
         '404':
           description: 리뷰 없음
-  /shops/{shopId}/reviews/{reviewId}:
-    put:
-      summary: 리뷰 수정
-      description: JWT 인증 필요, 리뷰 수정
-      security:
-        - bearerAuth: []
-      parameters:
-        - in: path
-          name: shopId
-          required: true
-          schema:
-            type: integer
-        - in: path
-          name: reviewId
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReviewUpdate'
-      responses:
-        '200':
-          description: 리뷰 수정 성공
   # 신고
   /reports:
     post:

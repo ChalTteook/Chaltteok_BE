@@ -14,9 +14,9 @@
 - 회원가입: `POST /auth/register`
 - 로그인: `POST /auth/login`
 - 소셜 로그인: `POST /auth/social-login`
-- 내 정보/프로필 조회 및 수정: `GET/PATCH /user/me`, `GET/PATCH /user/me/profile`
-- 비밀번호 변경: `POST /user/change-password`
-- 프로필 이미지 업로드/삭제: `POST/DELETE /user/me/profile-image`
+- 내 정보/프로필 조회 및 수정: `GET/PATCH /users/me`, `GET/PATCH /users/me/profile`
+- 비밀번호 변경: `POST /users/change-password`
+- 프로필 이미지 업로드/삭제: `POST/DELETE /users/me/profile-image`
 
 ### 2. 공통
 - 휴대폰 인증번호 발송/확인: `POST /common/send/auth`, `POST /common/check/auth`
@@ -32,7 +32,8 @@
 - 리뷰 상세 조회: `GET /reviews/{reviewId}`
 - 리뷰 수정: `PUT /shops/{shopId}/reviews/{reviewId}` (JWT 필요)
 - 리뷰 삭제: `DELETE /shops/{shopId}/reviews/{reviewId}` (JWT 필요)
-- 리뷰 이미지 업로드/삭제: `POST/DELETE /shops/{shopId}/reviews/{reviewId}/images`
+- 리뷰 이미지 업로드: `POST /shops/{shopId}/reviews/{reviewId}/images` (JWT 필요, 최대 5장)
+- 리뷰 이미지 삭제: `DELETE /shops/{shopId}/reviews/{reviewId}/images/{imageIndex}` (JWT 필요)
 - 리뷰 좋아요: `POST /shops/{shopId}/reviews/{reviewId}/like` (JWT 필요)
 
 ### 5. 신고(Report)
@@ -40,9 +41,10 @@
 - 내 신고 목록/상세 조회: `GET /reports/me`, `GET /reports/me/{reportId}`
 - 관리자: 전체 신고 목록/상세/상태변경, 샵/댓글별 신고 목록, 신고 통계 등
 
-### 6. 스냅작가(Snap Artist)
-- 스냅작가 등록/목록/상세/수정/삭제: `POST/GET/PUT/DELETE /snap-artists`, `/snap-artists/{id}`
-- 스냅작가 상품 등록/목록/상세/수정/삭제: `POST/GET/PUT/DELETE /snap-artists/{artistId}/products`, `/snap-artists/{artistId}/products/{productId}`
+### 6. 관리자/제휴매장
+- 제휴매장 목록/상세/삭제: `GET/DELETE /admin/partner-shops`, `/admin/partner-shops/{shopId}` (관리자 권한 필요)
+- 전체 신고 목록/상세/상태변경: `GET/PUT /admin/reports`, `/admin/reports/{reportId}` (관리자 권한 필요)
+- 샵/댓글별 신고 목록, 신고 통계: `GET /admin/reports/shops/{shopId}`, `/admin/reports/comments/{commentId}`, `/admin/reports/stats`
 
 ---
 
