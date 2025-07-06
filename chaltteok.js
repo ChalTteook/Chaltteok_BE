@@ -3,6 +3,7 @@ import UserRouter from "./src/controllers/userController.js";
 import AuthRouter from "./src/controllers/authController.js";
 import ShopRouter from "./src/controllers/shopController.js";
 import CommonRouter from "./src/controllers/commonControlller.js"
+import VersionRouter from "./src/controllers/VersionController.js";
 
 const port = 9801;
 const app = express();
@@ -15,6 +16,7 @@ app.use(`${basePath}/common`, CommonRouter)
 app.use(`${basePath}/user`, UserRouter);
 app.use(`${basePath}/auth`, AuthRouter);
 app.use(`${basePath}/shops`, ShopRouter);
+app.use(`${basePath}/version`, VersionRouter);
 
 app.listen(port, '0.0.0.0', () => {
   console.log(`Backend Port : ${port}`);
