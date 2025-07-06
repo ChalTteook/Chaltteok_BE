@@ -1,6 +1,7 @@
 import { jest } from '@jest/globals';
+jest.mock('readline-sync', () => ({ question: jest.fn() }));
+const readlineSync = await import('readline-sync');
 import axios from 'axios';
-import readlineSync from 'readline-sync';
 import naverAuthService from '../src/services/naverAuthService.js';
 
 // axios 모킹
@@ -8,10 +9,6 @@ jest.mock('axios', () => ({
     get: jest.fn()
 }));
 
-// readline-sync 모킹
-jest.mock('readline-sync', () => ({
-    question: jest.fn()
-}));
 
 describe('NaverAuthService', () => {
     // 각 테스트 전에 실행
