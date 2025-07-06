@@ -23,17 +23,17 @@ class ShopRepository {
         }
     }
 
-    async getShops(limit=0, offset=20) {
+    async getShops(limit = 0, offset = 20) {
         const connection = await pool.getConnection();
         try {
             const query = mybatisMapper.getStatement(
                 'shop',
                 'getShops',
-                {},
+                { limit, offset },
                 this.format
             );
             const [result] = await connection.query(query);
-            return result; 
+            return result;
         } catch (err) {
             console.error('Failed to get shops:', err);
             throw err;
