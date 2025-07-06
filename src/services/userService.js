@@ -1,4 +1,3 @@
-import mybatisMapper from 'mybatis-mapper';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import UserRepository from '../dataaccess/repositories/userRepository.js';
