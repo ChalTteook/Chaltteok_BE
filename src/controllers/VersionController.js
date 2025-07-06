@@ -1,11 +1,18 @@
-import service from "../services/versionService.js";
+import express from 'express';
+import versionService from '../services/versionService.js';
 
-const getVersionCheck = async(req,res) => {
-    
-}
+const router = express.Router();
 
-export default {
-    getVersionCheck
-}
+const getVersionCheck = async (req, res) => {
+    try {
+        const data = await versionService.getVersion();
+        res.status(200).json({ success: true, ...data });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
 
-module.exports = router;
+router.get('/check', getVersionCheck);
+
+export default router;
