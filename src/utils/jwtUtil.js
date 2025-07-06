@@ -7,7 +7,7 @@ class JwtUtil {
     constructor(secretKey = process.env.JWT_SECRET_KEY) {
         this.secretKey = secretKey;
         // this.tokenExpiration = '1h';
-        // this.refreshTokenExpiration = '7d';
+        this.refreshTokenExpiration = '7d';
     }
 
     generateToken(payload) {
@@ -22,9 +22,9 @@ class JwtUtil {
     }
 
     generateRefreshToken(payload) {
-        return jwt.sign(payload, this.secretKey, { 
-            expiresIn: this.refreshTokenExpiration 
-        })[1];
+        return jwt.sign(payload, this.secretKey, {
+            expiresIn: this.refreshTokenExpiration
+        });
     }
 
     verifyToken(token) {
