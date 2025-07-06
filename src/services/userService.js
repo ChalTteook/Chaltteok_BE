@@ -29,8 +29,17 @@ class UserService {
 
             userModel.type = 'email';
             await userModel.hashPassword();
-            const savedUser = await this.userRepository.createUser(userModel);
-            return new UserModel(savedUser);
+            const result = await this.userRepository.createUser(userModel);
+            if (result && result.insertId) {
+                userModel.id = result.insertId.toString();
+            } else {
+                // Fallback: try fetching the newly created user
+                const created = await this.userRepository.findByEmail(userModel.email);
+                if (created && created.id) {
+                    userModel.id = created.id;
+                }
+            }
+            return userModel;
         } catch (error) {
             console.error('Error in createUser:', error);
             throw error;
