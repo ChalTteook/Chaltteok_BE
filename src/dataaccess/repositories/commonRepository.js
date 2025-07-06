@@ -21,7 +21,7 @@ class CommonRepository {
             mybatisMapper.createMapper([mapperPath]);
         } catch (err) {
             console.error('Failed to initialize:', mapperPath);
-            throw err;
+            return { success: false, message: err };
         }
     }
 
@@ -36,7 +36,7 @@ class CommonRepository {
             const [result] = await pool.query(query);
             return result.length > 0 ? result[0] : null; // Return user data
         } catch (err) {
-            return { success: true, message: err};
+            return { success: false, message: err };
         }
     }
 
@@ -51,7 +51,7 @@ class CommonRepository {
             const [result] = await pool.query(query);
             return result; // Return user data
         } catch (err) {
-            return { success: true, message: err};
+            return { success: false, message: err };
         }
     }
 
@@ -66,7 +66,7 @@ class CommonRepository {
             const [result] = await pool.query(query);
             return result; // Return user data
         } catch (err) {
-            return { success: true, message: err};
+            return { success: false, message: err };
         }
     }
 
@@ -81,7 +81,7 @@ class CommonRepository {
             const [result] = await connection.query(query);
             return result.length > 0 ? result[0] : null; // Return user data
         } catch (err) {
-            return { success: true, message: err};
+            return { success: false, message: err };
         }
     }
 
