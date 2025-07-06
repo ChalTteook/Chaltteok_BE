@@ -10,11 +10,11 @@ class ShopRepository {
     }
 
     async initialize() {
+        const mapperPath = path.join(
+            path.dirname(fileURLToPath(import.meta.url)),
+            '../mappers/shopMapper.xml'
+        );
         try {
-            const mapperPath = path.join(
-                path.dirname(fileURLToPath(import.meta.url)), 
-                '../mappers/shopMapper.xml'
-            );
             console.log('Mapper loaded:', mapperPath);
             mybatisMapper.createMapper([mapperPath]);
         } catch (err) {

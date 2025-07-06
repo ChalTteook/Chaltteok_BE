@@ -10,12 +10,12 @@ class CommonRepository {
     }
 
     async initialize() {
+        // 매퍼 XML 파일 경로 설정
+        const mapperPath = path.join(
+            path.dirname(fileURLToPath(import.meta.url)),
+            '../mappers/commonMapper.xml'
+        );
         try {
-            // 매퍼 XML 파일 경로 설정
-            const mapperPath = path.join(
-                path.dirname(fileURLToPath(import.meta.url)), 
-                '../mappers/commonMapper.xml'
-            );
             console.log('Mapper loaded:', mapperPath);
             // 매퍼 생성
             mybatisMapper.createMapper([mapperPath]);
