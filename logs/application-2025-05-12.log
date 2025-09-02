@@ -1,0 +1,735 @@
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:33"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:35"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:24:48"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:48"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:24:48"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:24:48"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:24:48"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:49"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:24:49"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:24:49"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:24:49"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:24:49"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:49"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:49"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:49"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:51"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:24:58"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:58"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:24:58"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:24:58"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:24:58"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:59"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:24:59"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:24:59"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:24:59"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:24:59"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:59"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:59"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:24:59"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:01"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:25:22"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:22"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:25:22"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:25:22"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:25:22"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:22"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:25:23"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:25:23"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:25:23"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:25:23"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:23"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:23"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:23"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:34"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:25:37"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:47"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:49"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:26:51"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:51"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:26:51"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:26:51"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:26:51"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:51"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:26:52"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:26:52"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:26:52"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:26:52"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:52"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:52"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:52"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:26:53"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:53"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:26:53"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:26:53"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:26:53"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:53"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:26:54"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:26:54"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:26:54"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:26:54"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:54"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:54"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:54"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:56"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:26:58"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:00"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:00"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:00"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:00"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:00"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:01"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:01"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:01"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:01"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:01"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:01"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:01"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:01"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:02"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:02"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:02"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:02"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:02"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:02"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:03"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:03"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:03"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:03"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:03"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:03"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:03"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:05"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:07"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:09"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:09"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:10"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:10"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:10"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:12"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:12"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:12"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:12"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:12"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:12"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:12"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:12"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:13"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:13"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:13"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:13"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:13"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:14"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:17"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:17"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:18"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:18"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:18"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:19"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:19"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:19"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:19"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:19"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:19"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:20"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:20"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:20"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:20"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:20"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:20"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:20"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:22"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:24"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:34"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:36"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:40"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:46"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:48"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:50"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:50"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:51"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:51"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:51"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:52"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:54"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:54"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:54"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:54"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:54"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:54"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:54"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:54"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:54"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:55"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:55"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:55"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:55"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:27:57"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:30:52"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:00"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:08"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:31:19"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:31:19"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:20"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:20"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:20"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:31:36"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981173560-1ibc5fgyq","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:32:53"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:32:53"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981178586-q7fohuj28","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:32:58"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:32:58"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:03"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:33:03"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:03"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10060ms)","metadata":{"meta":{"duration":"10060ms","requestId":"req-1746981173560-1ibc5fgyq","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:33:03"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981183737-lmsz8ennr","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:33:03"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:33:03"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:08"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:33:08"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:08"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10011ms)","metadata":{"meta":{"duration":"10011ms","requestId":"req-1746981178586-q7fohuj28","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:33:08"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981188765-jug42byfo","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:33:08"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:33:08"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:13"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:33:13"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:13"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10016ms)","metadata":{"meta":{"duration":"10016ms","requestId":"req-1746981183737-lmsz8ennr","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:33:13"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981193872-7bkyb73x2","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:33:13"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:33:13"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:18"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:33:18"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:18"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10025ms)","metadata":{"meta":{"duration":"10025ms","requestId":"req-1746981188765-jug42byfo","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:33:18"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981198869-4lkt5ehn4","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:33:18"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:33:18"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:23"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:33:23"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:23"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10016ms)","metadata":{"meta":{"duration":"10016ms","requestId":"req-1746981193872-7bkyb73x2","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:33:23"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:28"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:33:28"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:33:28"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10014ms)","metadata":{"meta":{"duration":"10014ms","requestId":"req-1746981198869-4lkt5ehn4","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:33:28"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:48"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:34:56"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:02"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:02"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:02"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:02"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:02"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:02"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:03"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:03"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:03"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:03"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:03"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:03"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:03"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:08"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:14"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:14"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:14"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:14"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:14"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:14"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:14"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:14"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:14"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:15"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:15"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:15"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:15"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:19"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:22"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:39"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:43"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:43"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:43"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:43"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:43"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:43"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:44"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:44"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:44"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:44"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:44"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:44"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:44"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:46"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:46"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:46"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:46"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:46"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:46"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:46"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:46"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:46"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:47"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:47"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:47"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:47"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-12 01:35:49"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981353578-8f2zyuqgk","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:35:53"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:35:53"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:03"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:36:03"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:03"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10054ms)","metadata":{"meta":{"duration":"10054ms","requestId":"req-1746981353578-8f2zyuqgk","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:36:03"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981363695-7noi51uql","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:36:03"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:36:03"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:13"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:36:13"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:13"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10014ms)","metadata":{"meta":{"duration":"10014ms","requestId":"req-1746981363695-7noi51uql","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:36:13"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981373846-2can8n7d9","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:36:13"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:36:13"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:23"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:36:23"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:23"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10023ms)","metadata":{"meta":{"duration":"10023ms","requestId":"req-1746981373846-2can8n7d9","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:36:23"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981384050-eqpw10krb","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:36:24"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:36:24"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:34"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:36:34"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:34"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10023ms)","metadata":{"meta":{"duration":"10023ms","requestId":"req-1746981384050-eqpw10krb","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:36:34"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981394224-1chfykem0","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:36:34"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:36:34"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:44"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:36:44"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:44"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10024ms)","metadata":{"meta":{"duration":"10024ms","requestId":"req-1746981394224-1chfykem0","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:36:44"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1746981404387-xvrh2qw80","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-12 01:36:44"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-12 01:36:44"}
+{"level":"error","message":"데이터베이스 연결 획득 실패","metadata":{"error":"connect ETIMEDOUT","meta":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:54"}
+{"level":"error","message":"쿼리 실행 실패","metadata":{"error":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"},"meta":{"error":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}},"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-12 01:36:54"}
+{"level":"error","message":"이메일로 사용자 조회 실패","metadata":{"error":"쿼리 실행 중 오류가 발생했습니다","meta":{"name":"DatabaseError","originalError":{"name":"DatabaseError","originalError":{"code":"ETIMEDOUT","errorno":"ETIMEDOUT","fatal":true,"syscall":"connect"}}}},"stack":"Error: connect ETIMEDOUT\n    at PoolConnection._handleTimeoutError (C:\\Users\\hope2\\dev\\Chaltteok_BE\\node_modules\\mysql2\\lib\\base\\connection.js:200:17)\n    at listOnTimeout (node:internal/timers:608:17)\n    at process.processTimers (node:internal/timers:543:7)","timestamp":"2025-05-12 01:36:54"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (10011ms)","metadata":{"meta":{"duration":"10011ms","requestId":"req-1746981404387-xvrh2qw80","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-12 01:36:54"}

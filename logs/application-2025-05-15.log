@@ -1,0 +1,449 @@
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-15 00:31:36"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:36"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-15 00:31:36"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-15 00:31:36"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-15 00:31:36"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:36"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-15 00:31:37"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-15 00:31:37"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-15 00:31:37"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-15 00:31:37"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:37"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:37"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:37"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236711644-94uqikzwl","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236711687-8985ljs69","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236711693-vrohvdvbt","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236711697-u4i7v3gox","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236711703-681dpdd8w","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":57}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":60}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":59}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":58}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (209ms)","metadata":{"meta":{"duration":"209ms","requestId":"req-1747236711644-94uqikzwl","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":57}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMX0.rsBN-149szpyGCd-N71GR1xQeSww2C3bC5i8DarkCtA'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMX0.rsBN-149szpyGCd-N71GR1xQeSww2C3bC5i8DarkCtA'"}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:51"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":61}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (375ms)","metadata":{"meta":{"duration":"375ms","requestId":"req-1747236711697-u4i7v3gox","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":59}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMn0.fnIk-utoMdr3cwp_v07860Q5sV0o9itmTkDMwQnH60w'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMn0.fnIk-utoMdr3cwp_v07860Q5sV0o9itmTkDMwQnH60w'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (385ms)","metadata":{"meta":{"duration":"385ms","requestId":"req-1747236711693-vrohvdvbt","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":58}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMn0.fnIk-utoMdr3cwp_v07860Q5sV0o9itmTkDMwQnH60w'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMn0.fnIk-utoMdr3cwp_v07860Q5sV0o9itmTkDMwQnH60w'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (394ms)","metadata":{"meta":{"duration":"394ms","requestId":"req-1747236711687-8985ljs69","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":60}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMn0.fnIk-utoMdr3cwp_v07860Q5sV0o9itmTkDMwQnH60w'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMn0.fnIk-utoMdr3cwp_v07860Q5sV0o9itmTkDMwQnH60w'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"요청 [GET] /api/v1/shops","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747236712083-uek3knlnk","url":"/api/v1/shops","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"제휴 매장 조인 상점 목록 조회","metadata":{"meta":{"limit":20,"offset":0}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"admin@test.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236712171-pxxflxyen","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"admin@test.com"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":61}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'admin@test.com'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (476ms)","metadata":{"meta":{"duration":"476ms","requestId":"req-1747236711703-681dpdd8w","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":57}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMn0.fnIk-utoMdr3cwp_v07860Q5sV0o9itmTkDMwQnH60w'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNjcxMn0.fnIk-utoMdr3cwp_v07860Q5sV0o9itmTkDMwQnH60w'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236712183-hafz9j5hp","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"요청 [GET] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747236712188-78c8c266a","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":20,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":20,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":34}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (101ms)","metadata":{"meta":{"duration":"101ms","requestId":"req-1747236712171-pxxflxyen","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":61}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '34',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDcyMzY3MTJ9._QMtNqax_44xZ7qVbDmKQFasA7vSSP9PGtXMuTW7SFc'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDcyMzY3MTJ9._QMtNqax_44xZ7qVbDmKQFasA7vSSP9PGtXMuTW7SFc'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"요청 [POST] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{"description":"댓글 테스트용 리뷰"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236712274-dhoyrp9vk","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰 생성 시작","metadata":{"meta":{"description":"댓글 테스트용 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":58}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"요청 [POST] /api/v1/reports/shops/1","metadata":{"meta":{"body":{"description":"단위 테스트 신고","reportType":"inappropriate"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236712281-wqfuv2uvd","url":"/api/v1/reports/shops/1","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"인증 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"신고 요청 받음","metadata":{"meta":{"reportType":"inappropriate","shopId":"1","user":{"iat":1747236712,"role":"user","userId":30},"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"신고 생성 쿼리 실행","metadata":{"meta":{"reportData":{"description":"단위 테스트 신고","reportType":"inappropriate","targetId":1,"targetType":"shop","userId":30}}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":57}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  report (\n    target_type,\n    target_id,\n    user_id,\n    report_type,\n    description,\n    status\n  )\nVALUES\n  (\n    'shop',\n    '1',\n    '30',\n    'inappropriate',\n    '단위 테스트 신고',\n    'pending'\n  )"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":62}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  s.id,\n  s.interest_id,\n  s.title,\n  s.description,\n  s.phone_number,\n  s.open_time,\n  s.close_time,\n  s.address,\n  s.latitude,\n  s.longitude,\n  s.parking,\n  s.floor,\n  s.price,\n  s.img,\n  s.reg_date,\n  s.mod_date,\n  CASE\n    WHEN p.id IS NOT NULL THEN true\n    ELSE false\n  END AS is_partner,\n  p.partner_date,\n  p.expiry_date,\n  p.status AS partner_status\nFROM\n  shop s\n  LEFT JOIN partner_shop p ON s.id = p.shop_id\n  AND p.status = 'active'\nORDER BY\n  p.id IS NOT NULL DESC,\n  p.partner_date ASC,\n  s.id ASC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"트랜잭션 시작","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"MyBatis 매퍼 파라미터","metadata":{"meta":{"description":"댓글 테스트용 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"warn","message":"MyBatis 매퍼 오류, 직접 쿼리 시도","metadata":{"meta":{"error":"XML is not well-formed character or markup. Consider using CDATA section."}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"직접 SQL 쿼리 생성 시도","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":34}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":63}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":64}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [GET] /api/v1/shops 200 (217ms)","metadata":{"meta":{"duration":"217ms","requestId":"req-1747236712083-uek3knlnk","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"직접 쿼리로 리뷰 생성 성공","metadata":{"meta":{"reviewId":127,"shopId":1,"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰 단일 조회 시작","metadata":{"meta":{"reviewId":127}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":62}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  s.title as shop_name,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN shop s ON r.shop_id = s.id\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.id = '127'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"신고 생성 성공","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"신고 생성 완료","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [POST] /api/v1/reports/shops/1 201 (27ms)","metadata":{"meta":{"duration":"27ms","requestId":"req-1747236712281-wqfuv2uvd","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":5,"limit":20,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [GET] /api/v1/shops/1/reviews 200 (204ms)","metadata":{"meta":{"duration":"204ms","requestId":"req-1747236712188-78c8c266a","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (210ms)","metadata":{"meta":{"duration":"210ms","requestId":"req-1747236712183-hafz9j5hp","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰를 찾을 수 없음","metadata":{"meta":{"reviewId":127}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"요청 [POST] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{"description":"단위 테스트 리뷰"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747236712398-n3iovc2by","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰 생성 시작","metadata":{"meta":{"description":"단위 테스트 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":62}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"트랜잭션 시작","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"MyBatis 매퍼 파라미터","metadata":{"meta":{"description":"단위 테스트 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"warn","message":"MyBatis 매퍼 오류, 직접 쿼리 시도","metadata":{"meta":{"error":"XML is not well-formed character or markup. Consider using CDATA section."}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"직접 SQL 쿼리 생성 시도","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"트랜잭션 커밋 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"트랜잭션 연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":1,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":1,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":58}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"직접 쿼리로 리뷰 생성 성공","metadata":{"meta":{"reviewId":128,"shopId":1,"userId":30}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰 단일 조회 시작","metadata":{"meta":{"reviewId":128}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":64}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  s.title as shop_name,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN shop s ON r.shop_id = s.id\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.id = '128'"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":1,"limit":1,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [POST] /api/v1/shops/1/reviews 201 (151ms)","metadata":{"meta":{"duration":"151ms","requestId":"req-1747236712274-dhoyrp9vk","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰를 찾을 수 없음","metadata":{"meta":{"reviewId":128}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"요청 [GET] /api/v1/reviews/127","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747236712431-k6kgliyak","url":"/api/v1/reviews/127","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"실패 [GET] /api/v1/reviews/127 404 (3ms)","metadata":{"meta":{"duration":"3ms","requestId":"req-1747236712431-k6kgliyak","statusCode":404,"statusMessage":"Not Found"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"트랜잭션 커밋 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"트랜잭션 연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":1,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":1,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":62}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":1,"limit":1,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"http","message":"응답 [POST] /api/v1/shops/1/reviews 201 (62ms)","metadata":{"meta":{"duration":"62ms","requestId":"req-1747236712398-n3iovc2by","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:31:52"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-15 00:45:01"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:01"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-15 00:45:01"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-15 00:45:01"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-15 00:45:01"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:01"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-15 00:45:02"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-15 00:45:02"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-15 00:45:02"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-15 00:45:02"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:02"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:02"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:02"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237506928-9dwsndw0f","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237506969-4dhkf5rz6","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237506975-cja799e25","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237506982-8i9ak80s9","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237506988-yzx9e0y40","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:45:06"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":65}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":66}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":68}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":67}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":69}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (198ms)","metadata":{"meta":{"duration":"198ms","requestId":"req-1747237506928-9dwsndw0f","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":65}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (425ms)","metadata":{"meta":{"duration":"425ms","requestId":"req-1747237506969-4dhkf5rz6","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":69}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (423ms)","metadata":{"meta":{"duration":"423ms","requestId":"req-1747237506975-cja799e25","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":68}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (423ms)","metadata":{"meta":{"duration":"423ms","requestId":"req-1747237506982-8i9ak80s9","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":67}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (424ms)","metadata":{"meta":{"duration":"424ms","requestId":"req-1747237506988-yzx9e0y40","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":66}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzUwN30.-RyYs-eqDU7jEwbXEFBsrdIkKbf7WMLveVSig2oiRfc'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"admin@test.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237507417-8lnn11frn","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"admin@test.com"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"요청 [POST] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{"description":"댓글 테스트용 리뷰"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237507424-0bd3yts57","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰 생성 시작","metadata":{"meta":{"description":"댓글 테스트용 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":65}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"요청 [GET] /api/v1/shops","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747237507435-faagu9xr0","url":"/api/v1/shops","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"제휴 매장 조인 상점 목록 조회","metadata":{"meta":{"limit":20,"offset":0}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":69}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  s.id,\n  s.interest_id,\n  s.title,\n  s.description,\n  s.phone_number,\n  s.open_time,\n  s.close_time,\n  s.address,\n  s.latitude,\n  s.longitude,\n  s.parking,\n  s.floor,\n  s.price,\n  s.img,\n  s.reg_date,\n  s.mod_date,\n  CASE\n    WHEN p.id IS NOT NULL THEN true\n    ELSE false\n  END AS is_partner,\n  p.partner_date,\n  p.expiry_date,\n  p.status AS partner_status\nFROM\n  shop s\n  LEFT JOIN partner_shop p ON s.id = p.shop_id\n  AND p.status = 'active'\nORDER BY\n  p.id IS NOT NULL DESC,\n  p.partner_date ASC,\n  s.id ASC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"요청 [GET] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747237507449-a6qx46ggc","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":20,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":20,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237507458-9vageydnq","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":67}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"트랜잭션 시작","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"MyBatis 매퍼 파라미터","metadata":{"meta":{"description":"댓글 테스트용 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"warn","message":"MyBatis 매퍼 오류, 직접 쿼리 시도","metadata":{"meta":{"error":"XML is not well-formed character or markup. Consider using CDATA section."}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"직접 SQL 쿼리 생성 시도","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [GET] /api/v1/shops 200 (44ms)","metadata":{"meta":{"duration":"44ms","requestId":"req-1747237507435-faagu9xr0","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (97ms)","metadata":{"meta":{"duration":"97ms","requestId":"req-1747237507458-9vageydnq","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"직접 쿼리로 리뷰 생성 성공","metadata":{"meta":{"reviewId":129,"shopId":1,"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰 단일 조회 시작","metadata":{"meta":{"reviewId":129}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":67}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  s.title as shop_name,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN shop s ON r.shop_id = s.id\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.id = '129'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰를 찾을 수 없음","metadata":{"meta":{"reviewId":129}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":70}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'admin@test.com'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":71}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"트랜잭션 커밋 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"트랜잭션 연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":1,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":1,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":65}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":34}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (248ms)","metadata":{"meta":{"duration":"248ms","requestId":"req-1747237507417-8lnn11frn","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":70}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '34',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDcyMzc1MDd9.7XkBXer8AgpqwriLvQ0Bv2J5qtbuAF1kiHDjY9YuMN8'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDcyMzc1MDd9.7XkBXer8AgpqwriLvQ0Bv2J5qtbuAF1kiHDjY9YuMN8'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":8,"limit":20,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [GET] /api/v1/shops/1/reviews 200 (221ms)","metadata":{"meta":{"duration":"221ms","requestId":"req-1747237507449-a6qx46ggc","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":1,"limit":1,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/shops/1/reviews 201 (249ms)","metadata":{"meta":{"duration":"249ms","requestId":"req-1747237507424-0bd3yts57","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"요청 [POST] /api/v1/reports/shops/1","metadata":{"meta":{"body":{"description":"단위 테스트 신고","reportType":"inappropriate"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237507675-i1ww3wgwj","url":"/api/v1/reports/shops/1","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"인증 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"신고 요청 받음","metadata":{"meta":{"reportType":"inappropriate","shopId":"1","user":{"iat":1747237507,"role":"user","userId":30},"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"신고 생성 쿼리 실행","metadata":{"meta":{"reportData":{"description":"단위 테스트 신고","reportType":"inappropriate","targetId":1,"targetType":"shop","userId":30}}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":65}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  report (\n    target_type,\n    target_id,\n    user_id,\n    report_type,\n    description,\n    status\n  )\nVALUES\n  (\n    'shop',\n    '1',\n    '30',\n    'inappropriate',\n    '단위 테스트 신고',\n    'pending'\n  )"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"요청 [POST] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{"description":"단위 테스트 리뷰"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237507683-cruxpmhyu","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰 생성 시작","metadata":{"meta":{"description":"단위 테스트 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":71}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"요청 [GET] /api/v1/reviews/129","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747237507689-6p9vvarkd","url":"/api/v1/reviews/129","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":34}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"실패 [GET] /api/v1/reviews/129 404 (4ms)","metadata":{"meta":{"duration":"4ms","requestId":"req-1747237507689-6p9vvarkd","statusCode":404,"statusMessage":"Not Found"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"신고 생성 성공","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"신고 생성 완료","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/reports/shops/1 201 (26ms)","metadata":{"meta":{"duration":"26ms","requestId":"req-1747237507675-i1ww3wgwj","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"트랜잭션 시작","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"MyBatis 매퍼 파라미터","metadata":{"meta":{"description":"단위 테스트 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"warn","message":"MyBatis 매퍼 오류, 직접 쿼리 시도","metadata":{"meta":{"error":"XML is not well-formed character or markup. Consider using CDATA section."}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"직접 SQL 쿼리 생성 시도","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"직접 쿼리로 리뷰 생성 성공","metadata":{"meta":{"reviewId":130,"shopId":1,"userId":30}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰 단일 조회 시작","metadata":{"meta":{"reviewId":130}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":65}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  s.title as shop_name,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN shop s ON r.shop_id = s.id\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.id = '130'"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰를 찾을 수 없음","metadata":{"meta":{"reviewId":130}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"트랜잭션 커밋 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"트랜잭션 연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":1,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":1,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":71}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":1,"limit":1,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"http","message":"응답 [POST] /api/v1/shops/1/reviews 201 (82ms)","metadata":{"meta":{"duration":"82ms","requestId":"req-1747237507683-cruxpmhyu","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:45:07"}
+{"level":"info","message":"환경 변수 확인","metadata":{"meta":{"JWT_SECRET_KEY":"***설정됨***","MODE":"PROD","NODE_ENV":"development","PROD_DB_HOST":"43.201.211.39","PROD_DB_NAME":"chaltteok","PROD_DB_PASSWORD":"***설정됨***","PROD_DB_PORT":"3306","PROD_DB_USER":"chal"}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"운영 환경(PROD) 데이터베이스 사용","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"데이터베이스 설정 확인","metadata":{"meta":{"database":"chaltteok","host":"43.201.211.39","port":"3306","user":"chal"}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"데이터베이스 연결 풀이 초기화되었습니다","metadata":{"meta":{"connectionLimit":20,"database":"chaltteok","host":"43.201.211.39"}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"사용자 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userMapper.xml"}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"debug","message":"JWT 유틸리티가 초기화되었습니다.","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"세션 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\userSessionMapper.xml"}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"매장 매퍼 로드됨","metadata":{"meta":{"path":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\shopMapper.xml"}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"공통 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\commonMapper.xml"},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"리포트 매퍼 로드됨:","metadata":{"meta":"C:\\Users\\hope2\\dev\\Chaltteok_BE\\src\\dataaccess\\mappers\\reportMapper.xml"},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"서버가 시작되었습니다 - http://localhost:9801","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"운영 환경: development","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"info","message":"API 기본 경로: /api/v1","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:36"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237601714-743sdxf29","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237601750-lif1rfo5v","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237601757-dkxg8ndxs","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237601762-jnzwe1h6u","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237601767-di17yi3e0","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":72}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":76}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":74}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":73}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":75}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (215ms)","metadata":{"meta":{"duration":"215ms","requestId":"req-1747237601714-743sdxf29","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":72}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMX0.uUK90af4PdSfACMNOGLqPLGyB20Eygey_UouLV0wEVY'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMX0.uUK90af4PdSfACMNOGLqPLGyB20Eygey_UouLV0wEVY'"}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:41"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (428ms)","metadata":{"meta":{"duration":"428ms","requestId":"req-1747237601767-di17yi3e0","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":73}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMn0.8rqYYkY-y_wIBbHM9TXb4INvNF3R77Z9DPK5C9e4gJg'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMn0.8rqYYkY-y_wIBbHM9TXb4INvNF3R77Z9DPK5C9e4gJg'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (439ms)","metadata":{"meta":{"duration":"439ms","requestId":"req-1747237601762-jnzwe1h6u","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":74}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMn0.8rqYYkY-y_wIBbHM9TXb4INvNF3R77Z9DPK5C9e4gJg'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMn0.8rqYYkY-y_wIBbHM9TXb4INvNF3R77Z9DPK5C9e4gJg'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (450ms)","metadata":{"meta":{"duration":"450ms","requestId":"req-1747237601757-dkxg8ndxs","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":75}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMn0.8rqYYkY-y_wIBbHM9TXb4INvNF3R77Z9DPK5C9e4gJg'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMn0.8rqYYkY-y_wIBbHM9TXb4INvNF3R77Z9DPK5C9e4gJg'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (463ms)","metadata":{"meta":{"duration":"463ms","requestId":"req-1747237601750-lif1rfo5v","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":76}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '30',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMn0.8rqYYkY-y_wIBbHM9TXb4INvNF3R77Z9DPK5C9e4gJg'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzIzNzYwMn0.8rqYYkY-y_wIBbHM9TXb4INvNF3R77Z9DPK5C9e4gJg'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"요청 [GET] /api/v1/shops","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747237602215-njsvpsmm3","url":"/api/v1/shops","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"제휴 매장 조인 상점 목록 조회","metadata":{"meta":{"limit":20,"offset":0}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"test@newaccount.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237602229-lkkom4h7x","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"test@newaccount.com"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":72}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'test@newaccount.com'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"요청 [POST] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{"description":"댓글 테스트용 리뷰"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237602237-1btfc7qfo","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 생성 시작","metadata":{"meta":{"description":"댓글 테스트용 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"요청 [POST] /api/v1/auth/login","metadata":{"meta":{"body":{"email":"admin@test.com","password":"******"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237602244-2i0b2i0mt","url":"/api/v1/auth/login","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"이메일로 사용자 조회","metadata":{"meta":{"email":"admin@test.com"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"요청 [GET] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747237602252-300spk133","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":20,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":20,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":73}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"실패 [POST] /api/v1/auth/login 401 (105ms)","metadata":{"meta":{"duration":"105ms","requestId":"req-1747237602229-lkkom4h7x","statusCode":401,"statusMessage":"Unauthorized"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":9,"limit":20,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [GET] /api/v1/shops/1/reviews 200 (87ms)","metadata":{"meta":{"duration":"87ms","requestId":"req-1747237602252-300spk133","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"요청 [POST] /api/v1/shops/1/reviews","metadata":{"meta":{"body":{"description":"단위 테스트 리뷰"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237602342-6hwmqobzr","url":"/api/v1/shops/1/reviews","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 생성 시작","metadata":{"meta":{"description":"단위 테스트 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":73}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":77}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  s.id,\n  s.interest_id,\n  s.title,\n  s.description,\n  s.phone_number,\n  s.open_time,\n  s.close_time,\n  s.address,\n  s.latitude,\n  s.longitude,\n  s.parking,\n  s.floor,\n  s.price,\n  s.img,\n  s.reg_date,\n  s.mod_date,\n  CASE\n    WHEN p.id IS NOT NULL THEN true\n    ELSE false\n  END AS is_partner,\n  p.partner_date,\n  p.expiry_date,\n  p.status AS partner_status\nFROM\n  shop s\n  LEFT JOIN partner_shop p ON s.id = p.shop_id\n  AND p.status = 'active'\nORDER BY\n  p.id IS NOT NULL DESC,\n  p.partner_date ASC,\n  s.id ASC\nLIMIT\n  20\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":78}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":79}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  id,\n  role,\n  type,\n  email,\n  password,\n  is_retry,\n  name,\n  age,\n  gender,\n  nick_name,\n  phone,\n  address,\n  social_id,\n  profile_image,\n  it_plc_1,\n  it_plc_2,\n  it_plc_3,\n  reg_date,\n  mod_date\nFROM\n  user\nWHERE\n  email = 'admin@test.com'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"트랜잭션 시작","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"MyBatis 매퍼 파라미터","metadata":{"meta":{"description":"단위 테스트 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"warn","message":"MyBatis 매퍼 오류, 직접 쿼리 시도","metadata":{"meta":{"error":"XML is not well-formed character or markup. Consider using CDATA section."}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"직접 SQL 쿼리 생성 시도","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [GET] /api/v1/shops 200 (171ms)","metadata":{"meta":{"duration":"171ms","requestId":"req-1747237602215-njsvpsmm3","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"트랜잭션 시작","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"MyBatis 매퍼 파라미터","metadata":{"meta":{"description":"댓글 테스트용 리뷰","shopId":1,"shopPrdId":0,"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"warn","message":"MyBatis 매퍼 오류, 직접 쿼리 시도","metadata":{"meta":{"error":"XML is not well-formed character or markup. Consider using CDATA section."}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"직접 SQL 쿼리 생성 시도","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"직접 쿼리로 리뷰 생성 성공","metadata":{"meta":{"reviewId":131,"shopId":1,"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 단일 조회 시작","metadata":{"meta":{"reviewId":131}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":79}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  s.title as shop_name,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN shop s ON r.shop_id = s.id\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.id = '131'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"사용자 세션 저장","metadata":{"meta":{"userId":34}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [POST] /api/v1/auth/login 200 (230ms)","metadata":{"meta":{"duration":"230ms","requestId":"req-1747237602244-2i0b2i0mt","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":77}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  user_session (user_id, session)\nVALUES\n  (\n    '34',\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDcyMzc2MDJ9.sBNubHEN7Hvx6PLHAJf9YR_7w-dc1A3sYN6fqhpL0rE'\n  ) ON DUPLICATE KEY\nUPDATE session = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDcyMzc2MDJ9.sBNubHEN7Hvx6PLHAJf9YR_7w-dc1A3sYN6fqhpL0rE'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"직접 쿼리로 리뷰 생성 성공","metadata":{"meta":{"reviewId":132,"shopId":1,"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 단일 조회 시작","metadata":{"meta":{"reviewId":132}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":72}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  s.title as shop_name,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN shop s ON r.shop_id = s.id\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.id = '132'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"요청 [POST] /api/v1/reports/shops/1","metadata":{"meta":{"body":{"description":"단위 테스트 신고","reportType":"inappropriate"},"ip":"127.0.0.1","method":"POST","requestId":"req-1747237602483-tv095l79f","url":"/api/v1/reports/shops/1","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"인증 성공","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"신고 요청 받음","metadata":{"meta":{"reportType":"inappropriate","shopId":"1","user":{"iat":1747237602,"role":"user","userId":30},"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"신고 생성 쿼리 실행","metadata":{"meta":{"reportData":{"description":"단위 테스트 신고","reportType":"inappropriate","targetId":1,"targetType":"shop","userId":30}}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":76}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"UPDATE/DELETE 쿼리 실행","metadata":{"meta":{"params":[],"sql":"INSERT INTO\n  report (\n    target_type,\n    target_id,\n    user_id,\n    report_type,\n    description,\n    status\n  )\nVALUES\n  (\n    'shop',\n    '1',\n    '30',\n    'inappropriate',\n    '단위 테스트 신고',\n    'pending'\n  )"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰를 찾을 수 없음","metadata":{"meta":{"reviewId":131}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰를 찾을 수 없음","metadata":{"meta":{"reviewId":132}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"세션 저장 성공","metadata":{"meta":{"userId":34}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"신고 생성 성공","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"신고 생성 완료","metadata":{"meta":{"userId":30}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [POST] /api/v1/reports/shops/1 201 (23ms)","metadata":{"meta":{"duration":"23ms","requestId":"req-1747237602483-tv095l79f","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"트랜잭션 커밋 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"트랜잭션 연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":1,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":1,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":73}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"트랜잭션 커밋 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"트랜잭션 연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"매장별 리뷰 목록 조회 시작","metadata":{"meta":{"limit":1,"offset":0,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 목록 쿼리 실행","metadata":{"meta":{"params":{"limit":1,"offset":0,"shopId":1},"query":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":78}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.shop_id = '1'\nORDER BY\n  r.reg_date DESC\nLIMIT\n  1\nOFFSET\n  0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":1,"limit":1,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [POST] /api/v1/shops/1/reviews 201 (179ms)","metadata":{"meta":{"duration":"179ms","requestId":"req-1747237602342-6hwmqobzr","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"info","message":"리뷰 목록 조회 성공","metadata":{"meta":{"count":1,"limit":1,"page":1,"shopId":1}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [POST] /api/v1/shops/1/reviews 201 (286ms)","metadata":{"meta":{"duration":"286ms","requestId":"req-1747237602237-1btfc7qfo","statusCode":201,"statusMessage":"Created"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"요청 [GET] /api/v1/reviews/132","metadata":{"meta":{"body":{},"ip":"127.0.0.1","method":"GET","requestId":"req-1747237602527-qauloskwa","url":"/api/v1/reviews/132","userAgent":"axios/1.9.0"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 단일 조회 시작","metadata":{"meta":{"reviewId":132}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"데이터베이스 연결 획득","metadata":{"meta":{"connectionId":78}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"쿼리 실행","metadata":{"meta":{"params":[],"sql":"SELECT\n  r.*,\n  s.title as shop_name,\n  u.name as user_name,\n  u.profile_image as user_profile_image\nFROM\n  shop_review r\n  LEFT JOIN shop s ON r.shop_id = s.id\n  LEFT JOIN user u ON r.user_id = u.id\nWHERE\n  r.id = '132'"}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"연결 반환 완료","metadata":{"meta":{}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"debug","message":"리뷰 조회 성공","metadata":{"meta":{"reviewId":132}},"timestamp":"2025-05-15 00:46:42"}
+{"level":"http","message":"응답 [GET] /api/v1/reviews/132 200 (14ms)","metadata":{"meta":{"duration":"14ms","requestId":"req-1747237602527-qauloskwa","statusCode":200,"statusMessage":"OK"}},"timestamp":"2025-05-15 00:46:42"}

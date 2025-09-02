@@ -1,0 +1,50 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\.6136160257935cbd5c9944d1d70a9d221cb9893b-audit.json",
+    "files": [
+        {
+            "date": 1746331333749,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\exception-2025-05-04.log",
+            "hash": "33f5609deac0369d02f54171d8777d7b5ce75358c5c62baf3b600679331341de"
+        },
+        {
+            "date": 1746543589707,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\exception-2025-05-06.log",
+            "hash": "03dafc33455f748ae32cf873d1e62345ab7ddf010e8771010372f12e0bea868c"
+        },
+        {
+            "date": 1746543758779,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\exception-2025-05-07.log",
+            "hash": "731c89a99f0fb034e52368af0614cba1a34813d27949138e3a9d82037c55b63e"
+        },
+        {
+            "date": 1746639836598,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\exception-2025-05-08.log",
+            "hash": "ddd33a0a312349ca2571b2df6579d6c5ac07c183c21716e49a712ad2311ee3fc"
+        },
+        {
+            "date": 1746937364266,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\exception-2025-05-11.log",
+            "hash": "930e3f997824cb02bcfbb29e5396ed8239302f2b03af68a7410e4923cced9e8a"
+        },
+        {
+            "date": 1746980673131,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\exception-2025-05-12.log",
+            "hash": "01f27d89ac0043034a264e4aade77aa0d92b3a9e0cafc03ea99df098ff70dd8c"
+        },
+        {
+            "date": 1747148949644,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\exception-2025-05-14.log",
+            "hash": "d190a9e08ce9cf7b9907c81c2ab8461848cd660223302a7391553d8219232197"
+        },
+        {
+            "date": 1747236696796,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\exception-2025-05-15.log",
+            "hash": "5ace70c165f240b639047567ecda301d8155395a96a1572a20abfaaf442f9903"
+        }
+    ],
+    "hashType": "sha256"
+}

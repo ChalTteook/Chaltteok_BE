@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ReviewMapper">
+  <!-- 리뷰 조회 -->
+  <select id="getReviewById">
+    SELECT 
+      r.*,
+      s.title as shop_name,
+      u.name as user_name,
+      u.profile_image as user_profile_image
+    FROM shop_review r
+    LEFT JOIN shop s ON r.shop_id = s.id
+    LEFT JOIN user u ON r.user_id = u.id
+    WHERE r.id = #{reviewId}
+  </select>
+
+  <!-- 리뷰 목록 조회 - 상점 ID 기준 -->
+  <select id="getReviewsByShopId">
+    SELECT 
+      r.*,
+      u.name as user_name,
+      u.profile_image as user_profile_image
+    FROM shop_review r
+    LEFT JOIN user u ON r.user_id = u.id
+    WHERE r.shop_id = #{shopId}
+    ORDER BY r.reg_date DESC
+    LIMIT ${limit} OFFSET ${offset}
+  </select>
+
+  <!-- 새 리뷰 생성 -->
+  <insert id="createReview">
+    <![CDATA[
+    INSERT INTO shop_review (
+      shop_id,
+      shop_prd_id,
+      user_id,
+      description
+    ) VALUES (
+      #{shopId},
+      #{shopPrdId},
+      #{userId},
+      #{description}
+    )
+    ]]>
+    <selectKey keyProperty="id" resultType="bigint" order="AFTER">
+      <![CDATA[
+      SELECT LAST_INSERT_ID()
+      ]]>
+    </selectKey>
+  </insert>
+
+  <!-- 리뷰 수정 -->
+  <update id="updateReview">
+    UPDATE shop_review
+    SET
+      description = #{description},
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 삭제 -->
+  <delete id="deleteReview">
+    DELETE FROM shop_review
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </delete>
+
+  <!-- 리뷰 이미지 업데이트 - 인덱스 1 -->
+  <update id="updateImage1">
+    UPDATE shop_review
+    SET 
+      img_1 = #{imageUrl},
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 업데이트 - 인덱스 2 -->
+  <update id="updateImage2">
+    UPDATE shop_review
+    SET 
+      img_2 = #{imageUrl},
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 업데이트 - 인덱스 3 -->
+  <update id="updateImage3">
+    UPDATE shop_review
+    SET 
+      img_3 = #{imageUrl},
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 업데이트 - 인덱스 4 -->
+  <update id="updateImage4">
+    UPDATE shop_review
+    SET 
+      img_4 = #{imageUrl},
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 업데이트 - 인덱스 5 -->
+  <update id="updateImage5">
+    UPDATE shop_review
+    SET 
+      img_5 = #{imageUrl},
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 삭제 - 인덱스 1 -->
+  <update id="deleteImage1">
+    UPDATE shop_review
+    SET 
+      img_1 = NULL,
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 삭제 - 인덱스 2 -->
+  <update id="deleteImage2">
+    UPDATE shop_review
+    SET 
+      img_2 = NULL,
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 삭제 - 인덱스 3 -->
+  <update id="deleteImage3">
+    UPDATE shop_review
+    SET 
+      img_3 = NULL,
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 삭제 - 인덱스 4 -->
+  <update id="deleteImage4">
+    UPDATE shop_review
+    SET 
+      img_4 = NULL,
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 이미지 삭제 - 인덱스 5 -->
+  <update id="deleteImage5">
+    UPDATE shop_review
+    SET 
+      img_5 = NULL,
+      mod_date = NOW()
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </update>
+
+  <!-- 리뷰 소유권 확인 -->
+  <select id="checkReviewOwnership">
+    SELECT COUNT(1) as count
+    FROM shop_review
+    WHERE id = #{reviewId} AND user_id = #{userId}
+  </select>
+
+  <!-- 좋아요 추가 -->
+  <update id="incrementLike">
+    UPDATE shop_review
+    SET 
+      like_count = like_count + 1,
+      mod_date = NOW()
+    WHERE id = #{reviewId}
+  </update>
+
+  <!-- 좋아요 취소 -->
+  <update id="decrementLike">
+    UPDATE shop_review
+    SET 
+      like_count = CASE
+        WHEN like_count > 0 THEN like_count - 1
+        ELSE 0
+      END,
+      mod_date = NOW()
+    WHERE id = #{reviewId}
+  </update>
+</mapper> 

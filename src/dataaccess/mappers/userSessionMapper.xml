@@ -24,3 +24,4 @@
             user_id = #{userId}
         </where>
     </select>
+</mapper>

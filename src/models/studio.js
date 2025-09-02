@@ -16,6 +16,10 @@ class Shop {
         this.img = data.img;
         this.regDate = data.reg_date;
         this.modDate = data.mod_date;
+        
+        // 정렬 관련 추가 데이터
+        this.reviewCount = data.review_count || 0;
+        this.totalLikes = data.total_likes || 0;
     }
 }
 

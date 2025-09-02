@@ -4,6 +4,7 @@ class UserModel {
 
     constructor(data) {
         this.id = data.id || null;
+        this.role = data.role || 'user';
         this.type = data.type || null;
         this.email = data.email || null;
         this.password = data.password || null;
@@ -15,15 +16,28 @@ class UserModel {
         this.phone = data.phone || '';
         this.address = data.address || '';
         this.socialId = data.socialId || data.social_id || null;
+        this.profileImage = data.profileImage || data.profile_image || null;
         this.regDate = data.regDate || data.reg_date || null;
         this.modDate = data.modDate || data.mod_date || null;
     }
 
     async verifyPassword(password) {
-        if(!this.isRetry) {
-            return await bcrypt.compare(password, this.password);
-        } else {
-            return password === this.password;
+        try {
+            // 비밀번호가 이미 해시된 경우
+            if (this.password.startsWith('$2a$') || this.password.startsWith('$2b$')) {
+                return await bcrypt.compare(password, this.password);
+            }
+            // 임시 비밀번호인 경우 (is_retry가 1인 경우)
+            else if (this.isRetry === 1) {
+                return password === this.password;
+            }
+            // 기타 경우 (기본적으로 해시된 비밀번호와 비교)
+            else {
+                return await bcrypt.compare(password, this.password);
+            }
+        } catch (error) {
+            console.error('Password verification error:', error);
+            return false;
         }
     }
 
@@ -46,18 +60,19 @@ class UserModel {
         this.nickName = userData.nickName ?? this.nickName;
         this.phone = userData.phone ?? this.phone;
         this.address = userData.address ?? this.address;
+        this.profileImage = userData.profileImage ?? this.profileImage;
         this.itPlc1 = userData.itPlc1 ?? this.itPlc1;
         this.itPlc2 = userData.itPlc2 ?? this.itPlc2;
         this.itPlc3 = userData.itPlc3 ?? this.itPlc3;
     }
 
     async updatePassword(password) {
+        // 비밀번호 해싱
+        const salt = await bcrypt.genSalt(10);
+        this.password = await bcrypt.hash(password, salt);
 
-        this.password = password;
-
-        await this.hashPassword();
-
-        if ( this.isRetry === 1 ) {
+        // 임시 비밀번호 상태 리셋
+        if (this.isRetry === 1) {
             this.isRetry = 0;
         }
 
@@ -68,6 +83,7 @@ class UserModel {
     toJSON() {
         return {
             id: this.id,
+            role: this.role,
             type: this.type,
             email: this.email,
             password: this.password,
@@ -78,15 +94,17 @@ class UserModel {
             phone: this.phone,
             address: this.address,
             socialId: this.socialId,
+            profileImage: this.profileImage,
             createdAt: this.createdAt,
             updatedAt: this.updatedAt
         };
     }
 
     // Constructor with args (static factory method)
-    static from({id, type, email, password, name, age, gender, nickName, phone, address, socialId, itPlc1, itPlc2, itPlc3, regDate, modDate}) {
-        const user = new UserModel();
+    static from({id, role, type, email, password, name, age, gender, nickName, phone, address, socialId, profileImage, itPlc1, itPlc2, itPlc3, regDate, modDate}) {
+        const user = new UserModel({});
         user.id = id;
+        user.role = role || 'user';
         user.type = type;
         user.email = email;
         user.password = password;
@@ -97,6 +115,7 @@ class UserModel {
         user.phone = phone;
         user.address = address;
         user.socialId = socialId;
+        user.profileImage = profileImage;
         user.itPlc1 = itPlc1;
         user.itPlc2 = itPlc2;
         user.itPlc3 = itPlc3;

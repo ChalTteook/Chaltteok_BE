@@ -4,6 +4,7 @@
   <select id="findUserById">
     SELECT
       id,
+      role,
       type,
       email,
       password,
@@ -15,6 +16,7 @@
       phone,
       address,
       social_id,
+      profile_image,
       it_plc_1,
       it_plc_2,
       it_plc_3,
@@ -30,6 +32,7 @@
    <select id="findUserByEmail">
     SELECT
       id,
+      role,
       type,
       email,
       password,
@@ -41,6 +44,7 @@
       phone,
       address,
       social_id,
+      profile_image,
       it_plc_1,
       it_plc_2,
       it_plc_3,
@@ -56,6 +60,7 @@
    <select id="findUserBySocialId">
     SELECT
       id,
+      role,
       type,
       email,
       password,
@@ -67,6 +72,7 @@
       phone,
       address,
       social_id,
+      profile_image,
       it_plc_1,
       it_plc_2,
       it_plc_3,
@@ -81,6 +87,7 @@
 
   <insert id="insertUser">
     INSERT INTO user (
+      role,
       type,
       email,
       password,
@@ -90,8 +97,10 @@
       nick_name,
       phone,
       address,
-      social_id
+      social_id,
+      profile_image
     ) VALUES (
+      #{role},
       #{type}, 
       #{email}, 
       #{password}, 
@@ -101,12 +110,14 @@
       #{nickName},
       #{phone},
       #{address},
-      #{socialId}
+      #{socialId},
+      #{profileImage}
     )
   </insert>
 
   <update id="updateUser">
     UPDATE user SET
+      role = #{role},
       password = #{password},
       is_retry = #{isRetry},
       name = #{name},
@@ -117,7 +128,8 @@
       nick_name = #{nickName},
       type = #{type},
       email = #{email},
-      social_id = #{socialId}
+      social_id = #{socialId},
+      profile_image = #{profileImage}
     WHERE id = #{id}
   </update>
 </mapper>

@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/Users/hj/work/Chaltteok_BE/logs/.fa69815a0a841a0e551501aa8315ed43c74f7d61-audit.json",
+    "files": [
+        {
+            "date": 1743089067863,
+            "name": "/Users/hj/work/Chaltteok_BE/logs/rejection-2025-03-28.log",
+            "hash": "b630c2783d58abfe7b2ccbf48ea97375be20afed453f1a991c7b80c9976596a1"
+        },
+        {
+            "date": 1743313453154,
+            "name": "/Users/hj/work/Chaltteok_BE/logs/rejection-2025-03-30.log",
+            "hash": "09a8542318f9b0be10711a3cf7f9939fabcaf50e655fd6ffec05cd4b79953a97"
+        },
+        {
+            "date": 1743531636441,
+            "name": "/Users/hj/work/Chaltteok_BE/logs/rejection-2025-04-02.log",
+            "hash": "9a9fc39c12679d9bc4185811fb39915d7c29eb4f9f73707a901bc48145d004b5"
+        }
+    ],
+    "hashType": "sha256"
+}

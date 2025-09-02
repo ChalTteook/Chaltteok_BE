@@ -1,0 +1,50 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\.5dc7ca0128596f3498f3385fd3d89c26bd95a1f7-audit.json",
+    "files": [
+        {
+            "date": 1746331333729,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\application-2025-05-04.log",
+            "hash": "c35a811b550ab89bf061b027a7691364eba0d73a799ea8338fca70ec307a80bc"
+        },
+        {
+            "date": 1746543589694,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\application-2025-05-06.log",
+            "hash": "25b19d52b8c45b3773e74ac53758682183947caed579f4226862bb306bf30c50"
+        },
+        {
+            "date": 1746543758769,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\application-2025-05-07.log",
+            "hash": "ce12a3ff46a15c2d0d8d0325358a389d24995db9d33bcf9d84ca4bac2eea7b13"
+        },
+        {
+            "date": 1746639836586,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\application-2025-05-08.log",
+            "hash": "aea7f60c2bc96de55b53663115ad8defdcfabf9911fc867425447f39231ba1c0"
+        },
+        {
+            "date": 1746937364251,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\application-2025-05-11.log",
+            "hash": "6463222b2592a4d2b132afc91ca4f2e882ef4199104bdc31314bf56b03b15c35"
+        },
+        {
+            "date": 1746980673117,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\application-2025-05-12.log",
+            "hash": "98c1453e3e508c3489eb1c6e6b1c1bb37dfbbeba2af9a8ecbf622cb561a1bc11"
+        },
+        {
+            "date": 1747148949636,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\application-2025-05-14.log",
+            "hash": "8d06e8dadd30e48e49a6af29a02248a00dfa075164ba8f9f6046a3ee0991f4d6"
+        },
+        {
+            "date": 1747236696788,
+            "name": "C:\\Users\\hope2\\dev\\Chaltteok_BE\\logs\\application-2025-05-15.log",
+            "hash": "ecd66a82574b52542405b8582cfba214632421980737fc3e0888daf8408ecb61"
+        }
+    ],
+    "hashType": "sha256"
+}
