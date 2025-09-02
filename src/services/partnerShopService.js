@@ -1,20 +1,16 @@
-import mysql from 'mysql2/promise';
-import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import mybatisMapper from 'mybatis-mapper';
+import { db } from '../utils/database.js';
+import { logDebug, logInfo, logWarn } from '../utils/logger.js';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+mybatisMapper.createMapper([
+  path.join(__dirname, '../dataaccess/mappers/partnerShopMapper.xml')
+]);
 
-// 현재 모드에 따른 DB 설정 가져오기
-const mode = process.env.MODE || 'DEV';
-const dbPrefix = mode === 'PROD' ? 'PROD' : mode === 'DEV' ? 'DEV' : 'LOCAL';
-
-// 데이터베이스 연결 설정
-const dbConfig = {
-  host: process.env[`${dbPrefix}_DB_HOST`] || 'localhost',
-  user: process.env[`${dbPrefix}_DB_USER`] || 'root',
-  password: process.env[`${dbPrefix}_DB_PASSWORD`] || '',
-  database: process.env[`${dbPrefix}_DB_NAME`] || 'chaltteok',
-  port: process.env[`${dbPrefix}_DB_PORT`] || '3306'
-};
+const format = { language: 'sql', indent: '  ' };
 
 class PartnerShopService {
   /**
@@ -25,49 +21,14 @@ class PartnerShopService {
    * @returns {Promise<{total: number, data: Array}>} 총 개수와 제휴매장 목록
    */
   async getPartnerShops(page = 1, limit = 20, status = null) {
-    let connection;
-    try {
-      connection = await mysql.createConnection(dbConfig);
-      
-      const offset = (page - 1) * limit;
-      let queryParams = [limit, offset];
-      let statusFilter = '';
-      
-      if (status) {
-        statusFilter = 'WHERE ps.status = ?';
-        queryParams.unshift(status);
-      }
-      
-      // 총 개수 쿼리
-      let countQuery = `
-        SELECT COUNT(*) as total 
-        FROM partner_shop ps 
-        ${statusFilter}
-      `;
-      
-      // 데이터 조회 쿼리
-      let selectQuery = `
-        SELECT ps.*, s.title 
-        FROM partner_shop ps 
-        JOIN shop s ON ps.shop_id = s.id 
-        ${statusFilter}
-        ORDER BY ps.id DESC 
-        LIMIT ? OFFSET ?
-      `;
-      
-      const [countRows] = await connection.execute(countQuery, status ? [status] : []);
-      const [rows] = await connection.execute(selectQuery, queryParams);
-      
-      return {
-        total: countRows[0].total,
-        data: rows
-      };
-    } catch (error) {
-      console.error('제휴매장 목록 조회 중 오류:', error);
-      throw new Error('제휴매장 목록 조회 중 오류가 발생했습니다.');
-    } finally {
-      if (connection) await connection.end();
-    }
+    const offset = (page - 1) * limit;
+    const param = { limit, offset, status };
+    logDebug('제휴매장 목록 조회 파라미터', param);
+    const countSql = mybatisMapper.getStatement('PartnerShopMapper', 'countPartnerShops', param, format);
+    const listSql = mybatisMapper.getStatement('PartnerShopMapper', 'selectPartnerShops', param, format);
+    const totalRows = await db.queryOne(countSql);
+    const rows = await db.query(listSql);
+    return { total: totalRows.total, data: rows };
   }
 
   /**
@@ -76,28 +37,13 @@ class PartnerShopService {
    * @returns {Promise<Object>} 제휴매장 정보
    */
   async getPartnerShopById(shopId) {
-    let connection;
-    try {
-      connection = await mysql.createConnection(dbConfig);
-      
-      const [rows] = await connection.execute(`
-        SELECT ps.*, s.title 
-        FROM partner_shop ps 
-        JOIN shop s ON ps.shop_id = s.id 
-        WHERE ps.shop_id = ?
-      `, [shopId]);
-      
-      if (rows.length === 0) {
-        throw new Error('해당 제휴매장을 찾을 수 없습니다.');
-      }
-      
-      return rows[0];
-    } catch (error) {
-      console.error('제휴매장 상세 정보 조회 중 오류:', error);
-      throw error;
-    } finally {
-      if (connection) await connection.end();
+    const param = { shopId };
+    const sql = mybatisMapper.getStatement('PartnerShopMapper', 'findByShopId', param, format);
+    const rows = await db.query(sql);
+    if (!rows || rows.length === 0) {
+      throw new Error('해당 제휴매장을 찾을 수 없습니다.');
     }
+    return rows[0];
   }
 
   /**
@@ -108,49 +54,25 @@ class PartnerShopService {
    * @returns {Promise<Object>} 등록된 제휴매장 정보
    */
   async addPartnerShop(shopId, partnerDate, expiryDate) {
-    let connection;
-    try {
-      connection = await mysql.createConnection(dbConfig);
-      
-      // 이미 등록된 제휴매장인지 확인
-      const [existing] = await connection.execute(`
-        SELECT * FROM partner_shop WHERE shop_id = ?
-      `, [shopId]);
-      
-      if (existing.length > 0) {
-        throw new Error('이미 제휴매장으로 등록된 매장입니다.');
-      }
-      
-      // shop 테이블에 해당 매장이 존재하는지 확인
-      const [shop] = await connection.execute(`
-        SELECT * FROM shop WHERE id = ?
-      `, [shopId]);
-      
-      if (shop.length === 0) {
-        throw new Error('등록하려는 매장이 존재하지 않습니다.');
-      }
-      
-      // 제휴매장 등록
-      await connection.execute(`
-        INSERT INTO partner_shop (shop_id, partner_date, expiry_date, status)
-        VALUES (?, ?, ?, 'active')
-      `, [shopId, partnerDate, expiryDate]);
-      
-      // 등록된 제휴매장 정보 조회
-      const [newPartnerShop] = await connection.execute(`
-        SELECT ps.*, s.title 
-        FROM partner_shop ps 
-        JOIN shop s ON ps.shop_id = s.id 
-        WHERE ps.shop_id = ?
-      `, [shopId]);
-      
-      return newPartnerShop[0];
-    } catch (error) {
-      console.error('제휴매장 등록 중 오류:', error);
-      throw error;
-    } finally {
-      if (connection) await connection.end();
+    // 이미 등록 여부
+    const existsSql = mybatisMapper.getStatement('PartnerShopMapper', 'findByShopId', { shopId }, format);
+    const existing = await db.query(existsSql);
+    if (existing && existing.length > 0) {
+      throw new Error('이미 제휴매장으로 등록된 매장입니다.');
     }
+    // shop 존재 확인
+    const existsShopSql = mybatisMapper.getStatement('PartnerShopMapper', 'existsShopById', { shopId }, format);
+    const existsShop = await db.queryOne(existsShopSql);
+    if (!existsShop || existsShop.cnt === 0) {
+      throw new Error('등록하려는 매장이 존재하지 않습니다.');
+    }
+    // 삽입
+    const insertSql = mybatisMapper.getStatement('PartnerShopMapper', 'insertPartnerShop', { shopId, partnerDate, expiryDate }, format);
+    await db.execute(insertSql);
+    // 조회
+    const findSql = mybatisMapper.getStatement('PartnerShopMapper', 'findByShopId', { shopId }, format);
+    const rows = await db.query(findSql);
+    return rows[0];
   }
 
   /**
@@ -160,65 +82,17 @@ class PartnerShopService {
    * @returns {Promise<Object>} 업데이트된 제휴매장 정보
    */
   async updatePartnerShop(shopId, updateData) {
-    let connection;
-    try {
-      connection = await mysql.createConnection(dbConfig);
-      
-      // 제휴매장이 존재하는지 확인
-      const [existing] = await connection.execute(`
-        SELECT * FROM partner_shop WHERE shop_id = ?
-      `, [shopId]);
-      
-      if (existing.length === 0) {
-        throw new Error('해당 제휴매장을 찾을 수 없습니다.');
-      }
-      
-      // 업데이트할 필드와 값을 동적으로 구성
-      const updates = [];
-      const params = [];
-      
-      if (updateData.partnerDate) {
-        updates.push('partner_date = ?');
-        params.push(updateData.partnerDate);
-      }
-      
-      if (updateData.expiryDate) {
-        updates.push('expiry_date = ?');
-        params.push(updateData.expiryDate);
-      }
-      
-      if (updateData.status) {
-        updates.push('status = ?');
-        params.push(updateData.status);
-      }
-      
-      if (updates.length === 0) {
-        throw new Error('업데이트할 데이터가 없습니다.');
-      }
-      
-      // 업데이트 쿼리 실행
-      params.push(shopId);
-      await connection.execute(`
-        UPDATE partner_shop
-        SET ${updates.join(', ')}
-        WHERE shop_id = ?
-      `, params);
-      
-      // 업데이트된 제휴매장 정보 조회
-      const [updated] = await connection.execute(`
-        SELECT ps.*, s.title 
-        FROM partner_shop ps 
-        JOIN shop s ON ps.shop_id = s.id 
-        WHERE ps.shop_id = ?
-      `, [shopId]);
-      
-      return updated[0];
-    } catch (error) {
-      console.error('제휴매장 정보 업데이트 중 오류:', error);
-      throw error;
-    } finally {
-      if (connection) await connection.end();
+    // 존재 확인
+    const existing = await db.query(mybatisMapper.getStatement('PartnerShopMapper', 'findByShopId', { shopId }, format));
+    if (!existing || existing.length === 0) {
+      throw new Error('해당 제휴매장을 찾을 수 없습니다.');
     }
+    // 업데이트 실행
+    const updateSql = mybatisMapper.getStatement('PartnerShopMapper', 'updatePartnerShop', { shopId, ...updateData }, format);
+    await db.execute(updateSql);
+    // 결과 조회
+    const rows = await db.query(mybatisMapper.getStatement('PartnerShopMapper', 'findByShopId', { shopId }, format));
+    return rows[0];
   }
 
   /**
@@ -227,31 +101,13 @@ class PartnerShopService {
    * @returns {Promise<boolean>} 삭제 성공 여부
    */
   async deletePartnerShop(shopId) {
-    let connection;
-    try {
-      connection = await mysql.createConnection(dbConfig);
-      
-      // 제휴매장이 존재하는지 확인
-      const [existing] = await connection.execute(`
-        SELECT * FROM partner_shop WHERE shop_id = ?
-      `, [shopId]);
-      
-      if (existing.length === 0) {
-        throw new Error('해당 제휴매장을 찾을 수 없습니다.');
-      }
-      
-      // 제휴매장 삭제
-      await connection.execute(`
-        DELETE FROM partner_shop WHERE shop_id = ?
-      `, [shopId]);
-      
-      return true;
-    } catch (error) {
-      console.error('제휴매장 삭제 중 오류:', error);
-      throw error;
-    } finally {
-      if (connection) await connection.end();
+    const existing = await db.query(mybatisMapper.getStatement('PartnerShopMapper', 'findByShopId', { shopId }, format));
+    if (!existing || existing.length === 0) {
+      throw new Error('해당 제휴매장을 찾을 수 없습니다.');
     }
+    const delSql = mybatisMapper.getStatement('PartnerShopMapper', 'deleteByShopId', { shopId }, format);
+    await db.execute(delSql);
+    return true;
   }
 }
 

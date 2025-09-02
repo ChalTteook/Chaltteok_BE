@@ -151,55 +151,28 @@ class ReviewService {
       
       // 트랜잭션 사용하여 리뷰 생성
       return await db.transaction(async (connection) => {
-        try {
-          const param = reviewData;
-          logDebug('MyBatis 매퍼 파라미터', param);
-          
-          const query = mybatisMapper.getStatement(
-            'ReviewMapper', 
-            'createReview', 
-            param,
-            this.format
-          );
-          
-          logDebug('리뷰 생성 쿼리 실행', { query });
-          
-          const [result] = await connection.query(query);
-          const reviewId = result.insertId;
-          
-          logInfo('리뷰 생성 성공', { 
-            reviewId,
-            shopId: safeShopId, 
-            userId: safeUserId 
-          });
-          
-          return this.getReviewById(reviewId);
-        } catch (mybatisError) {
-          logWarn('MyBatis 매퍼 오류, 직접 쿼리 시도', { error: mybatisError.message });
-          
-          // MyBatis 오류 시 직접 SQL 쿼리 생성
-          logDebug('직접 SQL 쿼리 생성 시도');
-          const directQuery = `
-            INSERT INTO shop_review (shop_id, shop_prd_id, user_id, description) 
-            VALUES (?, ?, ?, ?)
-          `;
-          
-          const [directResult] = await connection.query(directQuery, [
-            safeShopId, 
-            safeShopPrdId, 
-            safeUserId, 
-            safeDescription
-          ]);
-          
-          const reviewId = directResult.insertId;
-          logInfo('직접 쿼리로 리뷰 생성 성공', { 
-            reviewId,
-            shopId: safeShopId, 
-            userId: safeUserId 
-          });
-          
-          return this.getReviewById(reviewId);
-        }
+        const param = reviewData;
+        logDebug('MyBatis 매퍼 파라미터', param);
+
+        const query = mybatisMapper.getStatement(
+          'ReviewMapper', 
+          'createReview', 
+          param,
+          this.format
+        );
+
+        logDebug('리뷰 생성 쿼리 실행', { query });
+
+        const [result] = await connection.query(query);
+        const reviewId = result.insertId;
+
+        logInfo('리뷰 생성 성공', { 
+          reviewId,
+          shopId: safeShopId, 
+          userId: safeUserId 
+        });
+
+        return this.getReviewById(reviewId);
       });
     } catch (error) {
       logError('리뷰 생성 중 오류 발생', {
